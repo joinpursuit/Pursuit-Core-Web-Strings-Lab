@@ -101,3 +101,127 @@ function withoutLastLetter(i) {
 }
 
 console.log(withoutLastLetter(string));
+
+// ## Bonus Questions
+//
+// 1. Write a code block that adds a "#" to a string if the string has an odd number of characters,
+// otherwise leave it as is.
+// print/log the result
+//
+//     Examples:
+//
+//   ```js
+//   let name = 'taq'  // should log 'taq#'
+//   let name2 ='john' // should log 'john'
+//   ```
+// ___
+
+function hashTag(str) {
+  str.length % 2 ? str += `#` : str; //str.length % 2 = 0(falsey) or 1(truthy)
+  return str;
+}
+
+console.log(hashTag(string));
+console.log(hashTag(`taq`));
+console.log(hashTag(`john`));
+
+// 2. Write a code block that prints/logs the 3rd to last characters of a string.
+// If the string is not at least 3 characters long then log an error message.
+// <details>
+//     <summary>
+//         Hint
+//     </summary>
+//     It should work for strings of any length.
+// </details>
+//
+// Examples, for variables:
+// ```js
+// let name1 = 'Taq' // Should log 'Taq'
+// let sentence = 'He is Taq'// Should log 'Taq'
+// ```
+// ___
+
+function thirdToLast(str) {
+  str.length >= 3 ? console.log(str.slice(-3)) : console.log(`error string not long enough`);
+}
+
+thirdToLast(string);
+thirdToLast(`Taq`);
+thirdToLast(`He is Taq`);
+
+// 3. Write a code block that prints/logs whether a string `x` starts with a vowel.
+// <details>
+//   <summary>
+//     Extra
+//   </summary>
+//
+//   Make it [case insensitive](https://en.wikipedia.org/wiki/Case_sensitivity)
+//
+// </details>
+//
+// ___
+
+function vowelTest(x) {
+  switch (x[0]) {
+    case `a`:
+    case `A`:
+    case `e`:
+    case `E`:
+    case `i`:
+    case `I`:
+    case `o`:
+    case `O`:
+    case `u`:
+    case `U`:
+      console.log(`The string: '${x}'. begins with a vowel.`);
+      break;
+    default:
+      console.log(`The string: '${x}'. DOES NOT begin with a vowel`);
+  }
+}
+
+vowelTest(string);
+vowelTest(`testing`);
+vowelTest(`All rise`);
+vowelTest(`OMG`);
+
+// 4. Write a code block that given two strings, `str1` and `str2`,
+//  prints/logs a new string with `str2` mashed into the middle of `str1`
+//
+// Examples:
+//
+//   - For `str1` = 'help' and `str2` = 'me'. Your program should log `'hemelp'`
+//
+//    - For `str1` = 'hello' and `str2` = 'world'. Your program should log `'helworldlo'`
+//
+// ___
+//
+// 5. Write a code block that prints/logs whether a string `x` has at least one vowel in it.
+//
+// Examples:
+//   - For `x` = 'taq'. Your program should log `'taq' has a vowel'`
+//   - For `x` = 'dfghjkl'. Your program should log `'dfghjkl' does not have a vowel'`
+//   - For `x` = '' Your program should log `'' does not have a vowel'`
+//
+// <details>
+//   <summary>
+//     Extra & Hint:
+//   </summary>
+//
+//   - **Hint**: Abstain from using loops. Explore string methods.
+//
+//   - **Extra**: Make it [case insensitive](https://en.wikipedia.org/wiki/Case_sensitivity). So that for `x` = 'TAQ' it should log
+//   `'TAQ' has a vowel`
+// </details>
+//
+// ___
+//
+// ### Practice Makes Perfect.
+// Find at [CodingBat](https://codingbat.com/java/String-1) more problems/questions to keep practicing.
+// You can pick which ones to do. You can ignore the fact that their solutions are supposed to be
+// written in Java, I trust you that you can write a solution code block in JavaScript.
+// Create a file `codingBatStrings.js` copy and paste the problem statement as a comment,
+// underneath write your solution.
+//
+// > **Remember**: This are bonuses and extra points. You don't have to do them but if you do,
+// you will just get better.
