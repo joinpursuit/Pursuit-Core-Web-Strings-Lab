@@ -91,7 +91,8 @@ if (word.slice(word.length - 3) === "ing") {
 
 console.log("7._________________________________");
 
-let x = "Bubonic";
-let withOutLast = x.slice(0, x.length - 1);
+let x = "I'm happy to be learning JavaScript";
+let words = x.split(" ");
+let withOutLast = words.slice(0, words.length - 1);
 
 console.log(withOutLast);
