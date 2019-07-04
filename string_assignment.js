@@ -91,8 +91,104 @@ if (word.slice(word.length - 3) === "ing") {
 
 console.log("7._________________________________");
 
-let x = "I'm happy to be learning JavaScript";
-let words = x.split(" ");
+let h = "I'm happy to be learning JavaScript";
+let words = h.split(" ");
 let withOutLast = words.slice(0, words.length - 1);
+let combined = withOutLast.join(" ");
 
-console.log(withOutLast);
+
+console.log(combined);
+
+//BONUS QUESTIONS
+//
+//1. Write a code block that adds a "#" to a string if the string has an odd number of characters, otherwise leave it as is. print/log the result
+//
+// Examples:
+//
+// let name = 'taq'  // should log 'taq#'
+// let name2 ='john' // should log 'john'
+
+
+console.log("Bonus Question 1._________________________________");
+
+let name = "Bob";
+
+if (name.length % 2 !== 0) {
+  name += "#";
+  console.log(name);
+} else {
+  console.log(name);
+}
+
+
+// 2. Write a code block that prints/logs the 3rd to last characters of a string. If the string is not at least 3 characters long then log an error message.
+//  Hint
+// It should work for strings of any length.
+// Examples, for variables:
+//
+// let name1 = 'Taq' // Should log 'Taq'
+// let sentence = 'He is Taq'// Should log 'Taq'
+
+console.log("Bonus Question 2._________________________________");
+
+let example = "This is the start of a great career, Tim";
+
+if (example.length >= 3) {
+  console.log(example.slice(example.length - 3));
+} else {
+  console.log("This string is too short.");
+}
+
+
+// 3. Write a code block that prints/logs whether a string x starts with a vowel.
+//  Extra
+// Make it case insensitive
+
+console.log("Bonus Number 3._________________________________");
+
+let x = "Alpha";
+let vowel = "aeiouAEIOU";
+let y = "yY";
+
+if (vowel.includes(x[0])) {
+  console.log("This word begins with a vowel");
+} else if (y.includes(x[0])) {
+  console.log("Y is tricky because sometimes it's a vowel and sometimes it isn't!");
+} else {
+  console.log("This word begins with a consonent");
+}
+
+
+//4. Write a code block that given two strings, str1 and str2, prints/logs a new string with str2 mashed into the middle of str1
+// Examples:
+//
+// For str1 = 'help' and str2 = 'me'. Your program should log 'hemelp'
+//
+// For str1 = 'hello' and str2 = 'world'. Your program should log 'helworldlo'
+
+let str1 = "Good";
+let str2 = "Morning";
+let middle = Math.floor(str1.length / 2);
+
+console.log(str1.slice(0, middle) + str2 + str1.slice(middle, str1.length));
+
+// 5. Write a code block that prints/logs whether a string x has at least one vowel in it.
+// Examples:
+//
+// For x = 'taq'. Your program should log 'taq' has a vowel'
+// For x = 'dfghjkl'. Your program should log 'dfghjkl' does not have a vowel'
+// For x = '' Your program should log '' does not have a vowel'
+//  Extra & Hint:
+// Hint: Abstain from using loops. Explore string methods.
+//
+// Extra: Make it case insensitive. So that for x = 'TAQ' it should log 'TAQ' has a vowel
+
+
+let w = "Chance";
+let v = "aeiouAEIOU";
+
+if (v.includes(w[0, (w.length - 1)])) {
+  console.log(`${w} has a vowel.`);
+} else {
+  console.log(`${w} does not have a vowel`);
+}
