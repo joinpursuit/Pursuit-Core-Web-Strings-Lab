@@ -4,7 +4,7 @@
 
 2. console.log the length of a string.
 
-3. console.log the last character of any string. 
+3. console.log the last character of any string.
 
 4. Create a code block that takes a single string variable, and returns a copy of the string with the last letter capitalized. For example:
 
@@ -23,7 +23,7 @@ let amount = 1000000
 // =>  1000000 dollars (pinky)
 ```
 
-6. Create a `verbing` code block. It should take a single string variable. If its length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead. If the string length is less than 3, it should leave it unchanged. 
+6. Create a `verbing` code block. It should take a single string variable. If its length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead. If the string length is less than 3, it should leave it unchanged.
 For example:
 
 ```js
@@ -36,5 +36,5 @@ verbing('swimming')
 verbing('go')
 // =>  'go'
 ```
- 
-7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the  last 
+
+7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the  last
