@@ -161,7 +161,7 @@ thirdToLast(`He is Taq`);
 //
 // ___
 
-function vowelTest(x) {
+function vowelStartTest(x) {
   switch (x[0]) {
     case `a`:
     case `A`:
@@ -180,10 +180,10 @@ function vowelTest(x) {
   }
 }
 
-vowelTest(string);
-vowelTest(`testing`);
-vowelTest(`All rise`);
-vowelTest(`OMG`);
+vowelStartTest(string);
+vowelStartTest(`testing`);
+vowelStartTest(`All rise`);
+vowelStartTest(`OMG`);
 
 // 4. Write a code block that given two strings, `str1` and `str2`,
 //  prints/logs a new string with `str2` mashed into the middle of `str1`
@@ -195,7 +195,15 @@ vowelTest(`OMG`);
 //    - For `str1` = 'hello' and `str2` = 'world'. Your program should log `'helworldlo'`
 //
 // ___
-//
+
+function middleMash(i, j) {
+  return k = i.slice(0, Math.ceil(i.length / 2)) + j + i.slice(Math.ceil(i.length / 2));
+}
+
+console.log(middleMash(string, string));
+console.log(middleMash(`help`, `me`));
+console.log(middleMash(`hello`, `world`));
+
 // 5. Write a code block that prints/logs whether a string `x` has at least one vowel in it.
 //
 // Examples:
@@ -215,7 +223,17 @@ vowelTest(`OMG`);
 // </details>
 //
 // ___
-//
+
+function vowelTest(x) {
+  x.search(/a/i, /e/i, /i/i, /o/i, /u/i) === -1 ?
+    console.log(`The string: '${x}'. DOES NOT contain a vowel.`) :
+    console.log(`The string: '${x}'. contains a vowel.`);
+}
+
+vowelTest(string);
+vowelTest(`ttttt`);
+vowelTest(`kkfkkwa`);
+
 // ### Practice Makes Perfect.
 // Find at [CodingBat](https://codingbat.com/java/String-1) more problems/questions to keep practicing.
 // You can pick which ones to do. You can ignore the fact that their solutions are supposed to be
