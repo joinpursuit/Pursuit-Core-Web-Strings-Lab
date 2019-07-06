@@ -79,28 +79,23 @@ verbing(string);
 // 7. Create a `withoutLast` code block that takes a single string variable,
 // and returns a copy of the string without the  last word.
 
-// function withoutLastWord(i) {
-//   for (let j = i.length - 1; j >= 0; j--) {
-//     if (i[j] === ` ` || i[j] === `\n`) {
-//       return k = i.slice(0, j);
-//       break;
-//     }
-//   }
-// }
-//
-// console.log(withoutLastWord(`hello`));
-// console.log(withoutLastWord(`hello world`));
-// console.log(withoutLastWord(`hello world its`));
-// console.log(withoutLastWord(`hello world its a`));
-// console.log(withoutLastWord(`hello world its a nice`));
-// console.log(withoutLastWord(`hello world its a nice day`));
-// console.log(`hello world its a nice day`);
-//
-// function withoutLastLetter(i) {
-//   return k = i.slice(0, i.length - 1);
-// }
-//
-// console.log(withoutLastLetter(string));
+function withoutLastWord(i) {
+  return j = i.slice(0, (i.lastIndexOf(` `) + 1));
+}
+
+console.log(withoutLastWord(`hello`));
+console.log(withoutLastWord(`hello world`));
+console.log(withoutLastWord(`hello world its`));
+console.log(withoutLastWord(`hello world its a`));
+console.log(withoutLastWord(`hello world its a nice`));
+console.log(withoutLastWord(`hello world its a nice day`));
+console.log(`hello world its a nice day`);
+
+function withoutLastLetter(i) {
+  return k = i.slice(0, i.length - 1);
+}
+
+console.log(withoutLastLetter(string));
 
 // ## Bonus Questions
 //
