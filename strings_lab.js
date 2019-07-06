@@ -79,28 +79,28 @@ verbing(string);
 // 7. Create a `withoutLast` code block that takes a single string variable,
 // and returns a copy of the string without the  last word.
 
-function withoutLastWord(i) {
-  for (let j = i.length - 1; j >= 0; j--) {
-    if (i[j] === ` ` || i[j] === `\n`) {
-      return k = i.slice(0, j);
-      break;
-    }
-  }
-}
-
-console.log(withoutLastWord(`hello`));
-console.log(withoutLastWord(`hello world`));
-console.log(withoutLastWord(`hello world its`));
-console.log(withoutLastWord(`hello world its a`));
-console.log(withoutLastWord(`hello world its a nice`));
-console.log(withoutLastWord(`hello world its a nice day`));
-console.log(`hello world its a nice day`);
-
-function withoutLastLetter(i) {
-  return k = i.slice(0, i.length - 1);
-}
-
-console.log(withoutLastLetter(string));
+// function withoutLastWord(i) {
+//   for (let j = i.length - 1; j >= 0; j--) {
+//     if (i[j] === ` ` || i[j] === `\n`) {
+//       return k = i.slice(0, j);
+//       break;
+//     }
+//   }
+// }
+//
+// console.log(withoutLastWord(`hello`));
+// console.log(withoutLastWord(`hello world`));
+// console.log(withoutLastWord(`hello world its`));
+// console.log(withoutLastWord(`hello world its a`));
+// console.log(withoutLastWord(`hello world its a nice`));
+// console.log(withoutLastWord(`hello world its a nice day`));
+// console.log(`hello world its a nice day`);
+//
+// function withoutLastLetter(i) {
+//   return k = i.slice(0, i.length - 1);
+// }
+//
+// console.log(withoutLastLetter(string));
 
 // ## Bonus Questions
 //
@@ -162,22 +162,9 @@ thirdToLast(`He is Taq`);
 // ___
 
 function vowelStartTest(x) {
-  switch (x[0]) {
-    case `a`:
-    case `A`:
-    case `e`:
-    case `E`:
-    case `i`:
-    case `I`:
-    case `o`:
-    case `O`:
-    case `u`:
-    case `U`:
-      console.log(`The string: '${x}'. begins with a vowel.`);
-      break;
-    default:
-      console.log(`The string: '${x}'. DOES NOT begin with a vowel`);
-  }
+  x.search(/a|e|i|o|u/i) === 0 ?
+    console.log(`The string: '${x}'. begins with a vowel.`) :
+    console.log(`The string: '${x}'. DOES NOT begin with a vowel`);
 }
 
 vowelStartTest(string);
@@ -225,7 +212,7 @@ console.log(middleMash(`hello`, `world`));
 // ___
 
 function vowelTest(x) {
-  x.search(/a/i, /e/i, /i/i, /o/i, /u/i) === -1 ?
+  x.search((/a|e|i|o|u/i)) === -1 ?
     console.log(`The string: '${x}'. DOES NOT contain a vowel.`) :
     console.log(`The string: '${x}'. contains a vowel.`);
 }
