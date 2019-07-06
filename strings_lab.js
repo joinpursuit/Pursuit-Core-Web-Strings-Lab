@@ -207,7 +207,7 @@ console.log(middleMash(`hello`, `world`));
 // ___
 
 function vowelTest(x) {
-  x.search((/a|e|i|o|u/i)) === -1 ?
+  x.search(/a|e|i|o|u/i) === -1 ?
     console.log(`The string: '${x}'. DOES NOT contain a vowel.`) :
     console.log(`The string: '${x}'. contains a vowel.`);
 }
