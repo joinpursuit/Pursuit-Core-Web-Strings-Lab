@@ -71,7 +71,7 @@ console.log("---------------------------------- \n");
 
 // 7. Create a withoutLast code block that takes a single string variable,
 //and returns a copy of the string without the last character
-
+console.log(`Removing the last character from the string : ${string}`);
 console.log("Methode1 : " + string.slice(0,string.length - 1));
 
 let withoutLast = "";
@@ -83,6 +83,17 @@ console.log(`Methode3 : ${string}\b `);
 
 //let last = string[string.length - 1];
 //console.log("Methode4 : ", string.split(last));
+
+let str3 = "Had some hard time with this part"
+console.log(`\nRemoving the last word from the string : ${str3}`);
+let space = str3.lastIndexOf(" ");
+
+if (space === -1){
+  console.log(`${str3} is a one word string, this operation wont affect it`);
+} else {
+  withoutLast = str3.slice(0, space);
+  console.log(withoutLast);
+}
 console.log("---------------------------------- \n");
 
 
@@ -106,7 +117,7 @@ console.log("---------------------------------- \n");
 //Bonus2:
 //Write a code block that prints/logs the 3rd to last characters of a string.
 //If the string is not at least 3 characters long then log an error message.
-let sentence = "Doing sothing", word = "";
+let sentence = "Doing something", word = "";
 
 if (sentence.length >= 3){
   word = sentence.slice(-3)
