@@ -16,7 +16,7 @@ console.log(name[name.length-1]);
 // // => 'jimmY'
 let newName = "Reione";
 let length = newName.length-1;
-console.log(newName[length].toUpperCase());
+console.log(newName.substring(0,length) + newName.slice(length).toUpperCase());
 
 
 // ```
@@ -54,7 +54,7 @@ console.log(sentence);
 // ```
 
 let verb = "knowing";
-str_length = verb.length;
+let str_length = verb.length;
 
 if (str_length >= 3){
   if (verb.slice(verb.length-3) !== "ing"){
