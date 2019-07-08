@@ -20,7 +20,17 @@ console.log(leaguer[0] + leaguer[1] + leaguer[2] + leaguer[leaguer.length-1].toU
 // let amount = 1000000
 // // =>  1000000 dollars (pinky)
 // ```
-//
+
+let variableAmount = 18;
+let drEvil = variableAmount + " dollars";
+  if (variableAmount === 1000000) {
+    console.log(drEvil + " (pinky)");
+  } else {
+    console.log(drEvil);
+  }
+
+
+
 // 6. Create a `verbing` code block. It should take a single string variable. If its length is at least 3,
 // it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead.
 // If the string length is less than 3, it should leave it unchanged.
