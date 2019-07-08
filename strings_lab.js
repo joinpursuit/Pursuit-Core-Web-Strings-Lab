@@ -54,15 +54,19 @@ let amount = 10;
 // // =>  'go'
 // ```
 
-let verb = 'run';
-if (verb.slice(-3)== 'ing'){
-  console.log(verb +'ly')
-}else{
+
+let verb = 'fly';
+if(verb.slice(-3)=== 'ing'){
+  console.log(verb + 'ly');
+} else if(verb.length!==3){
   console.log(verb);
+} else {
+  console.log(verb + 'ing');
 }
 
+
 // 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the  last
-//
+
 // ## Bonus Questions
 //
 // 1. Write a code block that adds a "#" to a string if the string has an odd number of characters, otherwise leave it as is.
