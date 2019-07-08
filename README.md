@@ -4,13 +4,29 @@
 
 2. `console.log` the length of a string.
 
-3. `console.log` the last character of any string. 
+3. `console.log` the last character of any string.
 
 4. Create a code block that takes a single string variable, and returns a copy of the string with the last letter capitalized. For example:
 
 ```js
 'jimmy'
 // => 'jimmY'
+
+//Answers to 1-3 Lines 16-19
+let str = "pearl"
+console.log(str[0]);
+console.log(str.length);
+console.log(str.charAt(str.length-1));
+
+//Answer to 4 lines 22-29
+let str = "pearl"
+let lastCap = str.slice(0,4)+ str[4].toUpperCase()
+console.log(lastCap);
+
+//Better answer:
+let str = "alejandro"
+let lastCap = str[str.length-1] + str[str.length-1].toUpperCase()
+  console.log(lastCap);
 ```
 
 5. Create a drEvil code block that will take a single number variable, and log the '<variableAmount> dollars',
@@ -22,8 +38,15 @@ let amount = 10
 let amount = 1000000
 // =>  1000000 dollars (pinky)
 ```
+let x = 1000000;
+if (x < 1000000){
+  console.log(x + " dollars")
+} else {
+  console.log(x + " dollars" + " pinky")
+}
 
-6. Create a `verbing` code block. It should take a single string variable. If its length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead. If the string length is less than 3, it should leave it unchanged. 
+
+6. Create a `verbing` code block. It should take a single string variable. If its length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead. If the string length is less than 3, it should leave it unchanged.
 For example:
 
 ```js
@@ -36,8 +59,26 @@ verbing('swimming')
 verbing('go')
 // =>  'go'
 ```
- 
+//Answer to 6 lines 63-74-??? Not clear
+let str = "dock"
+let atLeastThree= "ing"
+let alreadyEnding = "ly"
+
+if (str.length >= 3){
+  console.log(str + atLeastThree)
+} else {
+if (str + atLeastThree)
+  console.log(str + "ly")
+if str.length < 3,
+  console.log(str)
+}
+
+
 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
+
+let words = "Let them eat cake";
+let res = words.slice(0,13);
+console.log(res);
 
 ## Bonus Questions
 
@@ -58,10 +99,10 @@ If the string is not at least 3 characters long then log an error message.
     <summary>
         Hint
     </summary>
-    It should work for strings of any length. 
+    It should work for strings of any length.
 </details>
 
-Examples, for variables: 
+Examples, for variables:
 ```js
 let name1 = 'Taq' // Should log 'Taq'
 let sentence = 'He is Taq'// Should log 'Taq'
@@ -101,10 +142,10 @@ Examples:
   <summary>
     Extra & Hint:
   </summary>
-  
+
   - **Hint**: Abstain from using loops. Explore string methods.
 
-  - **Extra**: Make it [case insensitive](https://en.wikipedia.org/wiki/Case_sensitivity). So that for `x` = 'TAQ' it should log 
+  - **Extra**: Make it [case insensitive](https://en.wikipedia.org/wiki/Case_sensitivity). So that for `x` = 'TAQ' it should log
   `'TAQ' has a vowel`
 </details>
 
@@ -114,4 +155,3 @@ ___
 Find at [CodingBat](https://codingbat.com/java/String-1) more problems/questions to keep practicing. You can pick which ones to do. You can ignore the fact that their solutions are supposed to be written in Java, I trust you that you can write a solution code block in JavaScript. Create a file `codingBatStrings.js` copy and paste the problem statement as a comment, underneath write your solution.
 
 > **Remember**: This are bonuses and extra points. You don't have to do them but if you do, you will just get better.
-
