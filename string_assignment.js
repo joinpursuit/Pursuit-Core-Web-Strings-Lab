@@ -29,8 +29,6 @@ let drEvil = variableAmount + " dollars";
     console.log(drEvil);
   }
 
-
-
 // 6. Create a `verbing` code block. It should take a single string variable. If its length is at least 3,
 // it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead.
 // If the string length is less than 3, it should leave it unchanged.
@@ -46,7 +44,17 @@ let drEvil = variableAmount + " dollars";
 // verbing('go')
 // // =>  'go'
 // ```
-//
+
+// let myString = "grow";
+// if (myString.length < 3) {
+//   console.log(myString);
+// } else if (myString.length >= 3 && myString.length(-3) === "ing"); {
+//   console.log(myString + "ingly");
+// } else if (myString.length >= 3 && myString.length(-3) != "ing") {
+//   console.log(myString + "ing");
+// }
+
+
 // 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
 let weatherToday = "partly cloudy sunny";
 if (weatherToday) {
