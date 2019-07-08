@@ -8,7 +8,7 @@ console.log(str[0]);
 let fud = "lasagna";
 console.log(fud.length);
 
-// 3. console.log the last character of any string.
+// // 3. console.log the last character of any string.
 let flower = "tulip";
 console.log(flower[flower.length -1]);
 
@@ -66,6 +66,9 @@ if(verb.slice(-3)=== 'ing'){
 
 
 // 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the  last
+let yay = "Congratulations! You did it!";
+let yay2= yay.slice(0,-1);
+console.log(yay2);
 
 // ## Bonus Questions
 //
@@ -96,9 +99,9 @@ if(verb.slice(-3)=== 'ing'){
 // ```
 // ___
 
-let str = 'red';
+let col = 'red';
 let sentence = 'I like to wear the color red';
-if(str.length() !== 3){
+if(col.length !== 3){
   console.log('This is an error message!');
 } else{
   console.log(str);
@@ -127,7 +130,7 @@ if(str.length() !== 3){
 //    - For `str1` = 'hello' and `str2` = 'world'. Your program should log `'helworldlo'`
 //
 // ___
-
+//
 let item1 = 'yuck';
 let item2 = 'yum';
 let mixy = item1.slice(0,2) + item2 + item1.slice(2,4);
