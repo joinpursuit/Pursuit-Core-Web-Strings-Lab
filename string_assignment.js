@@ -45,14 +45,14 @@ let drEvil = variableAmount + " dollars";
 // // =>  'go'
 // ```
 
-// let myString = "grow";
-// if (myString.length < 3) {
-//   console.log(myString);
-// } else if (myString.length >= 3 && myString.length(-3) === "ing"); {
-//   console.log(myString + "ingly");
-// } else if (myString.length >= 3 && myString.length(-3) != "ing") {
-//   console.log(myString + "ing");
-// }
+let myString = "grow";
+if (myString.length >= 3 && myString.endsWith("ing")) {
+  console.log(myString + "ly");
+} else if (myString.length >= 3) {
+  console.log(myString + "ing")
+} else {
+  console.log(myString);
+}
 
 
 // 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
