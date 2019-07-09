@@ -74,7 +74,14 @@ if (weatherToday) {
 //   let name2 ='john' // should log 'john'
 //   ```
 // ___
-//
+
+let planty = "cactus";
+if (planty.length % 2 !== 0) {
+  console.log(planty + "#");
+} else {
+  console.log(planty);
+}
+
 // 2. Write a code block that prints/logs the 3rd to last characters of a string.
 // If the string is not at least 3 characters long then log an error message.
 // <details>
@@ -90,7 +97,13 @@ if (weatherToday) {
 // let sentence = 'He is Taq'// Should log 'Taq'
 // ```
 // ___
-//
+
+if (planty.length >= 3) {
+  console.log(planty[planty.length-3]);
+} else {
+  console.log("Error!");
+}
+
 // 3. Write a code block that prints/logs whether a string `x` starts with a vowel.
 // <details>
 //   <summary>
