@@ -53,7 +53,10 @@ drEvil(1000001)
 // // =>  'go'
 // ```
 function verbing(strings) {
-  if (strings.length > 2) {
+  let last3 = strings.slice(-3)
+  if (strings.length > 2 && last3 === 'ing') {
+    console.log(strings + 'ly')
+  } else if (strings.length > 2) {
     console.log(strings + 'ing')
   } else {
     console.log (strings)
@@ -61,6 +64,7 @@ function verbing(strings) {
 }
 verbing('it')
 verbing('cool')
+verbing('chilling')
 
 // 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
 function withoutLast(word) {
