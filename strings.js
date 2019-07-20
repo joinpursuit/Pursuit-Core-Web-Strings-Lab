@@ -34,3 +34,26 @@ if (num >= 1000000) {
 // at least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case 
 // it should add 'ly' instead.If the string length is less than 3, it should leave it unchanged.
 
+function verbing(str) {
+    if (str.slice(-3) === "ing") {
+        return str += "ly"
+    } else if (str.length > 2) {
+        return str += "ing"  
+    } else if (str.length < 3) {
+        return str
+    }
+}
+
+console.log(verbing("box"));
+console.log(verbing("train"));
+console.log(verbing("swimming"));
+
+
+// 7. Create a`withoutLast` code block that takes a single string variable, and returns a copy 
+// of the string without the last word.
+
+let str1 = "Hello there! How are you?"
+let split = str1.split(' ')
+let newStr = split.slice(0, -1)
+let withoutLast = newStr.join()
+console.log(withoutLast);
