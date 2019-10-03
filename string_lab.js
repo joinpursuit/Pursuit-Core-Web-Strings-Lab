@@ -106,6 +106,12 @@ console.log(newStr2);
 //   let name2 ='john' // should log 'john'
 //   ```
 // ___
+let str3 = "add a# if this is an odd string"
+if (str3.length % 2 === 1){
+  console.log(str3 + "#");
+} else{
+  console.log(str3);
+}
 
 // 2. Write a code block that prints/logs the 3rd to last characters of a string.
 // If the string is not at least 3 characters long then log an error message.
@@ -122,6 +128,15 @@ console.log(newStr2);
 // let sentence = 'He is Taq'// Should log 'Taq'
 // ```
 // ___
+let str3Char = "a";
+let newStr3Char = "";
+let e = 0;
+if ( str3Char.length < 3){
+    console.log("Error: String must be AT LEAST 3 characters.")
+} else {
+    console.log(str3Char.charAt(str3Char.length-3) + str3Char.charAt(str3Char.length-2) + str3Char.charAt(str3Char.length-1));
+}
+e++;
 
 // 3. Write a code block that prints/logs whether a string `x` starts with a vowel.
 // <details>
