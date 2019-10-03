@@ -55,7 +55,7 @@ if (amount >= 1000000){
 // verbing('go')
 // // =>  'go'
 // ```
-
+// -----FUNCTION
 // function verbing(string){
 //     if (string[string.length-3] === "i" && string[string.length-2] === "n" && string[string.length-1] === "g"){
 //         console.log(string+ "ly");
@@ -77,13 +77,28 @@ if (verbing[verbing.length-3] === "i" && verbing[verbing.length-2] === "n" && ve
 }
  
 // 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
-
+let str2 = "Hello my name is Kevin";
+let words = str2.split(" ");    // splits string by spaces into an array words = ["hello", "world"];
+let newStr2 = "";
+for(let j = 0; j <= words.length-2; j++){
+    newStr2 += words[j] + " ";
+}
+console.log(newStr2);
+// -----FUNCTION
+// function withoutLast(string2){
+//     let words2 = string2.split(" ");
+//     let newString2 = "";
+//     for(let k = 0; k <= words2.length-2; k++){
+//         newString2 += words2[k] + " ";
+//     }
+//     console.log(newString2);
+// }
+// withoutLast("my name is Terry.");
 
 // ## Bonus Questions
 
 // 1. Write a code block that adds a "#" to a string if the string has an odd number of characters, otherwise leave it as is.
 // print/log the result
-
 //     Examples:
 
 //   ```js
