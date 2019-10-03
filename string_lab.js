@@ -55,6 +55,26 @@ if (amount >= 1000000){
 // verbing('go')
 // // =>  'go'
 // ```
+
+// function verbing(string){
+//     if (string[string.length-3] === "i" && string[string.length-2] === "n" && string[string.length-1] === "g"){
+//         console.log(string+ "ly");
+//     } else if(string.length >= 3){
+//         console.log(string + "ing");
+//     } else {
+//         console.log(string);
+//     }
+// }
+// verbing("swimming");
+
+let verbing = "swimming";
+if (verbing[verbing.length-3] === "i" && verbing[verbing.length-2] === "n" && verbing[verbing.length-1] === "g"){
+    console.log(verbing+ "ly");
+} else if(verbing.length >= 3){
+    console.log(verbing + "ing");
+} else {
+    console.log(verbing);
+}
  
 // 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
 
