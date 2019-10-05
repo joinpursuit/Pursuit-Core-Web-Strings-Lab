@@ -24,3 +24,8 @@ console.log(verb + "ing")
 }else {
     console.log (verb)
 }
+
+// Problem 7
+const sentence = "It's time to go home."
+const withoutLast = sentence.split(" ")
+console.log (withoutLast - )
