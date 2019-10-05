@@ -12,12 +12,15 @@
 //     console.log(`${amount} dollars`);
 // }
 
-let str = "box";
-let strIndex = str.length - 1;
-if(str.length >= 3 && str[strIndex] === "g" && str[strIndex - 1] === "n" && str[strIndex - 2] === "i") {
-    console.log(`${str}ly`);
-} else if (str.length >= 3) {
-    console.log(`${str}ing`);
-} else {
-    console.log(str);
-}
+// let str = "box";
+// let strIndex = str.length - 1;
+// if(str.length >= 3 && str[strIndex] === "g" && str[strIndex - 1] === "n" && str[strIndex - 2] === "i") {
+//     console.log(`${str}ly`);
+// } else if (str.length >= 3) {
+//     console.log(`${str}ing`);
+// } else {
+//     console.log(str);
+// }
+
+const str = "I love coding";
+console.log(str.split(""))
