@@ -45,7 +45,14 @@ if (amount === 1000000) {
 // 6. Create a `verbing` code block. It should take a single string variable. If its length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead. If the string length is less than 3, it should leave it unchanged. 
 // For example:
 
-let verbing = "training"
+let verbing = "marry"
+if (verbing.endsWith("ing")) {
+    console.log(verbing + "ly")
+}else if (verbing.length >= 3) {
+    console.log(verbing + "ing")
+} else if (verbing.length < 3) {
+    console.log(verbing)
+}
 
 
 // ```js
