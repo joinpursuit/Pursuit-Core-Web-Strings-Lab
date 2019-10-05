@@ -74,7 +74,12 @@
 
 
 
-// 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
+// 7. Create a `withoutLast` code block that takes a single string variable, 
+// and returns a copy of the string without the last word.
+
+let str = "maria martinez"
+console.log(str.split(" ", 1));
+
 
 // ## Bonus Questions
 
