@@ -22,5 +22,12 @@
 //     console.log(str);
 // }
 
-const str = "I love coding";
-console.log(str.split(""))
+// const str = "I love coding";
+// console.log(str.split(""))
+
+// let name = "popi";
+// if(name.length % 2 === 1) {
+//     console.log(`${name}#`);
+// } else {
+//     console.log(name);
+// }
