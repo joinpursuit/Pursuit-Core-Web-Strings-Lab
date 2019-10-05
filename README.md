@@ -48,8 +48,17 @@ verbing('swimming')
 verbing('go')
 // =>  'go'
 ```
- 
+ let verb = "swimming"
+if(verb.endsWith("ing")){
+    console.log(verb + "ly")
+} else if(verb.length >= 3){
+    console.log(verb + "ing")
+} else if(verb.length < 3){
+    console.log(verb)
+}
 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
+let sentence = "beast coast"
+console.log(sentence.slice(0, 5))
 
 ## Bonus Questions
 
