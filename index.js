@@ -23,7 +23,9 @@
 // }
 
 // const str = "I love coding";
-// console.log(str.split("coding"))
+// let arr = str.split(" ");
+// arr.splice(arr.length -1);
+// console.log(arr);
 
 // let name = "popi";
 // if(name.length % 2 === 1) {
@@ -51,16 +53,16 @@
 // const str1Half = Math.floor(str1.length / 2);
 // console.log(str1.slice(0,str1Half + 1) + str2 + str1.slice(str1Half + 1));
 
-let str = "taq";
-let vowel;
-for (let i = 0; i < str.length; i += 1) {
-    if(str[i].toUpperCase() === "A" || str[i].toUpperCase() === "E" || str[i].toUpperCase() === "I" || str[i].toUpperCase() === "O" || str[i].toUpperCase() === "U") {
-        vowel = true;
-    }
-}
-if (vowel === true) {
-    console.log(`'${str}' has a vowel.`);
-} else {
-    console.log(`'${str}' does not have a vowel`);
-}
+// let str = "taq";
+// let vowel;
+// for (let i = 0; i < str.length; i += 1) {
+//     if(str[i].toUpperCase() === "A" || str[i].toUpperCase() === "E" || str[i].toUpperCase() === "I" || str[i].toUpperCase() === "O" || str[i].toUpperCase() === "U") {
+//         vowel = true;
+//     }
+// }
+// if (vowel === true) {
+//     console.log(`'${str}' has a vowel.`);
+// } else {
+//     console.log(`'${str}' does not have a vowel`);
+// }
 
