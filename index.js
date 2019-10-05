@@ -51,10 +51,10 @@
 // const str1Half = Math.floor(str1.length / 2);
 // console.log(str1.slice(0,str1Half + 1) + str2 + str1.slice(str1Half + 1));
 
-let str = "TAQ";
+let str = "taq";
 let vowel;
 for (let i = 0; i < str.length; i += 1) {
-    if(str[i] === "A" || str[i] === "E" || str[i] === "I" || str[i] === "O" || str[i] === "U") {
+    if(str[i].toUpperCase() === "A" || str[i].toUpperCase() === "E" || str[i].toUpperCase() === "I" || str[i].toUpperCase() === "O" || str[i].toUpperCase() === "U") {
         vowel = true;
     }
 }
