@@ -101,11 +101,12 @@
 
 
 
-let x = "apple";
-
-for (let i = 0; i<x.length; i ++){
-    console.log(x[i])
-}
+// let x = "jjtw";
+//  if(x.includes("a") + x.includes("e") + x.includes("i")+ x.includes("o") +  x.includes("u")){
+//      console.log("has a vowel")
+//  }else {
+//      console.log("has no vowel")
+//  }
 
 
 
