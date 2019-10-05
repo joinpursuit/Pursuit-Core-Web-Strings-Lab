@@ -15,15 +15,17 @@ console.log(str1[str1.length-1]);
 // 'jimmy'
 // // => 'jimmY'
 // ```
-let newStr1 = ""
-for(let i = 0; i <= str1.length-1; i++){
-    if(str1[i] !== str1[str1.length-1] ){
-        newStr1 += str1[i];
-    } else{
-        newStr1 += str1.charAt(str1.length-1).toUpperCase();
-    }
-}
-console.log(newStr1);
+console.log(str1.slice(0, str1.length-1) + str1[str1.length-1].toUpperCase());
+
+// let newStr1 = ""
+// for(let i = 0; i <= str1.length-1; i++){
+//     if(str1[i] !== str1[str1.length-1] ){
+//         newStr1 += str1[i];
+//     } else{
+//         newStr1 += str1.charAt(str1.length-1).toUpperCase();
+//     }
+// }
+// console.log(newStr1);
 
 
 // 5. Create a drEvil code block that will take a single number variable, and log the '<variableAmount> dollars',
@@ -50,7 +52,7 @@ if (amount >= 1000000){
 // // => 'boxing'
 // verbing('train')
 // // => 'training'
-// verbing('swimming')
+// verbing('swimmingly')
 // // =>  'swimmingly'
 // verbing('go')
 // // =>  'go'
@@ -68,13 +70,23 @@ if (amount >= 1000000){
 // verbing("swimming");
 
 let verbing = "swimming";
-if (verbing[verbing.length-3] === "i" && verbing[verbing.length-2] === "n" && verbing[verbing.length-1] === "g"){
+// if (verbing[verbing.length-3] === "i" && verbing[verbing.length-2] === "n" && verbing[verbing.length-1] === "g"){
+//     console.log(verbing+ "ly");
+// } else if(verbing.length >= 3){
+//     console.log(verbing + "ing");
+// } else {
+//     console.log(verbing);
+// }
+
+if (verbing.slice(-3) === "ing"){
     console.log(verbing+ "ly");
 } else if(verbing.length >= 3){
     console.log(verbing + "ing");
 } else {
     console.log(verbing);
 }
+
+
  
 // 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
 let str2 = "Hello my name is Kevin";
@@ -84,6 +96,15 @@ for(let j = 0; j <= words.length-2; j++){
     newStr2 += words[j] + " ";
 }
 console.log(newStr2);
+
+// ----- Without creating array
+const sentence = "I was late to class"
+for (i=sentence.length-1; i >= 0; i--){
+    if(sentence[i] === " ") {
+        console.log(sentence.slice(0,i))
+        break
+    }
+}
 // -----FUNCTION
 // function withoutLast(string2){
 //     let words2 = string2.split(" ");
@@ -113,8 +134,16 @@ if (str3.length % 2 === 1){
   console.log(str3);
 }
 
+if(str3.length % 2 === 1){
+    console.log(`${str3}#`);
+} else {
+    console.log(`${str3}`);
+}
+
+
 // 2. Write a code block that prints/logs the 3rd to last characters of a string.
 // If the string is not at least 3 characters long then log an error message.
+
 // <details>
 //     <summary>
 //         Hint
@@ -128,15 +157,13 @@ if (str3.length % 2 === 1){
 // let sentence = 'He is Taq'// Should log 'Taq'
 // ```
 // ___
-let str3Char = "a";
-let newStr3Char = "";
-let e = 0;
+let str3Char = "BRuce lee";
 if ( str3Char.length < 3){
     console.log("Error: String must be AT LEAST 3 characters.")
 } else {
-    console.log(str3Char.charAt(str3Char.length-3) + str3Char.charAt(str3Char.length-2) + str3Char.charAt(str3Char.length-1));
+    console.log(str3Char.slice(-3));        // equivalent to console.log(str3Char.slice(str3Char.length-3))
 }
-e++;
+
 
 // 3. Write a code block that prints/logs whether a string `x` starts with a vowel.
 // <details>
@@ -147,7 +174,13 @@ e++;
 //   Make it [case insensitive](https://en.wikipedia.org/wiki/Case_sensitivity)
 
 // </details>
-
+let x = "elephants are fat";
+if (x.toLowerCase([0]) !== "a" || x.toLowerCase([0]) !== "e" || x.toLowerCase([0]) !== "i" 
+    || x.toLowerCase([0]) !== "o" || x.toLowerCase([0]) !== "u"){
+        console.log("String '" + x + "' begins with a vowel");
+} else {
+    console.log ("String '" + x + "' does not begin with a vowel");
+}
 // ___
 
 // 4. Write a code block that given two strings, `str1` and `str2`, prints/logs a new string with `str2` mashed into the middle of `str1`
