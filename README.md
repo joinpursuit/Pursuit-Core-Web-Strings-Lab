@@ -47,7 +47,7 @@ if (amount === 1000000){
 6. Create a `verbing` code block. It should take a single string variable. If its length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead. If the string length is less than 3, it should leave it unchanged. 
 For example:
 
-```js
+<!-- ```js
 verbing('box')
 // => 'boxing'
 verbing('train')
@@ -56,9 +56,28 @@ verbing('swimming')
 // =>  'swimmingly'
 verbing('go')
 // =>  'go'
-```
- 
+``` -->
+
+let x = "push"
+if(x.length < 3){
+console.log(x)
+} else if((x[x.length-3] + x[x.length-2] + x[x.length-1]) === "ing"){
+  console.log(x + "ly")
+} else {
+  console.log(x + "ing")
+}
+
+
+
+
 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
+
+n = "Today is Saturday"
+let a = n.split(" ")
+console.log(a)
+let b = a.slice(0,[a.length-1])
+console.log(b.join(" "))
+
 
 ## Bonus Questions
 
@@ -72,6 +91,13 @@ print/log the result
   let name2 ='john' // should log 'john'
   ```
 ___
+
+let y = "lunch"
+if(y.length%2 !== 0 ){
+  console.log(`${y}#`)
+} else {
+  console.log(y)
+}
 
 2. Write a code block that prints/logs the 3rd to last characters of a string.
 If the string is not at least 3 characters long then log an error message.
