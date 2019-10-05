@@ -122,3 +122,4 @@ Find at [CodingBat](https://codingbat.com/java/String-1) more problems/questions
 
 > **Remember**: This are bonuses and extra points. You don't have to do them but if you do, you will just get better.
 
+
