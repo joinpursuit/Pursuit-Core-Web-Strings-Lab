@@ -45,7 +45,7 @@ if (amount === 1000000) {
 // 6. Create a `verbing` code block. It should take a single string variable. If its length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead. If the string length is less than 3, it should leave it unchanged. 
 // For example:
 
-let verbing = "marry"
+let verbing = "training"
 if (verbing.endsWith("ing")) {
     console.log(verbing + "ly")
 }else if (verbing.length >= 3) {
@@ -83,6 +83,13 @@ console.log(thirdWord)
 // 1. Write a code block that adds a "#" to a string if the string has an odd number of characters, otherwise leave it as is.
 // print/log the result
 
+let testString = "You are hidden";
+if (testString.length % 2 !== 0) {
+    console.log(testString + "#")
+} else {
+    console.log(testString)
+}
+
 //     Examples:
 
 //   ```js
@@ -93,6 +100,14 @@ console.log(thirdWord)
 
 // 2. Write a code block that prints/logs the 3rd to last characters of a string.
 // If the string is not at least 3 characters long then log an error message.
+
+let lyrics = "there"
+let newWord1 = lyrics.split(" ")
+if (newWord1.length >= 3) {
+    console.log(newWord1[2])
+} else {
+    console.log("error message")
+}
 // <details>
 //     <summary>
 //         Hint
@@ -103,11 +118,28 @@ console.log(thirdWord)
 // Examples, for variables: 
 // ```js
 // let name1 = 'Taq' // Should log 'Taq'
-// let sentence = 'He is Taq'// Should log 'Taq'
+// let sentence = 'He is Taq'
+// Should log 'Taq'
 // ```
 // ___
 
 // 3. Write a code block that prints/logs whether a string `x` starts with a vowel.
+
+let vowel = "Ear were forgotten"
+let var1 = vowel.split(" ")
+console.log(var1)
+let var2 = var1[0]
+console.log(var2)
+let var3 = var2[0].toLowerCase()
+console.log(var3)
+
+
+if (var3 === "a" || var3 === "e" || var3 === "i" || var3 === "o" || var3 === "u") {
+  console.log("contains a vowel")
+} else {
+  console.log("does not contain a vowel")
+}
+
 // <details>
 //   <summary>
 //     Extra
@@ -121,6 +153,14 @@ console.log(thirdWord)
 
 // 4. Write a code block that given two strings, `str1` and `str2`, prints/logs a new string with `str2` mashed into the middle of `str1`
 
+let str1 = "hello"
+let str2 = "world"
+let newWord2 = str1.slice(0, 3)
+console.log(newWord2)
+let newWord3 = str1.slice(3, 6)
+console.log(newWord3)
+console.log(newWord2 + str2 + newWord3)
+
 // Examples:
 
 //   - For `str1` = 'help' and `str2` = 'me'. Your program should log `'hemelp'`
@@ -130,6 +170,16 @@ console.log(thirdWord)
 // ___
 
 // 5. Write a code block that prints/logs whether a string `x` has at least one vowel in it.
+
+let string = "You are not forgotten"
+let var13 = string.toLowerCase()
+console.log(var13)
+if (var13.includes('a') || var13.includes('e') || var13.includes('i') || var13.includes('o') || var13.includes('u'))){
+ console.log("'" + var13 + "'" + " contains a vowel")
+} else {
+ console.log("'" + var13 + "'" + " does not contain a vowel")
+}
+
 
 // Examples:
 //   - For `x` = 'taq'. Your program should log `'taq' has a vowel'`
