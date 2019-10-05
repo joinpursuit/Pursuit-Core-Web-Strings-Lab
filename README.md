@@ -1,6 +1,6 @@
 # String Exercises
 
-1. `console.log` the first character of a string.
+// 1. `console.log` the first character of a string.
 
 2. `console.log` the length of a string.
 
