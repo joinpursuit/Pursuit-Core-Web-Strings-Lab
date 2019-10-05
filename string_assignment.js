@@ -15,3 +15,12 @@ if(amount >= 1000000){
 } else {
     console.log(drEvil)
 }
+// Problem 6
+const verb = "up"
+if (verb.slice(verb.length-3) === "ing"){
+    console.log (verb + "ly")
+}else if (verb.length >= 3) {
+console.log(verb + "ing")
+}else {
+    console.log (verb)
+}
