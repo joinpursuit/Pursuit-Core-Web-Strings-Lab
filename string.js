@@ -18,11 +18,11 @@ console.log(str.length)
 
     //problem 5
 
-    let number = 1000
+    let number = 1000000
     let variableAmount = "dollars"
 
     if (number === 1000000){
-        console.log(`${number} ${variableAmount} ${"pinky"}`)
+        console.log(`${number} ${variableAmount} ${"(pinky)"}`)
     } else{
         console.log(`${number} ${variableAmount}`)
     }
