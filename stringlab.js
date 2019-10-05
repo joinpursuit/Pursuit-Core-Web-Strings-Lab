@@ -11,11 +11,16 @@
 //     }else {
 //         console.log(dollars)
 //     }
-let word = "box"
-let verb = word[1] + "ing"
-console.log(`${word} ${verb}`)
+// let verb = "swimming"
+// if(verb.endsWith("ing")){
+//     console.log(verb + "ly")
+// } else if(verb.length >= 3){
+//     console.log(verb + "ing")
+// } else if(verb.length < 3){
+//     console.log(verb)
+// }
 
 
-
-
+let sentence = "beast coast"
+console.log(sentence.slice(0, 5))
 
