@@ -62,6 +62,12 @@ let lastWord = sentence.lastIndexOf(" ");
 sentence = sentence.substring(0, lastWord)
 console.log(sentence)
 
+let words = sentence.split(" ");
+let newsen = "";
+for(let i = 0; i <= words.length - 2; i++){
+    newsen += words[i] + " ";
+}
+console.log(newsen)
 ## Bonus Questions
 
 1. Write a code block that adds a "#" to a string if the string has an odd number of characters, otherwise leave it as is.
