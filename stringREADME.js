@@ -38,6 +38,18 @@ console.log(name.slice(0,name.length - 1) + name[name.length - 1].toUpperCase())
 // // =>  1000000 dollars (pinky)
 // ```
 
+
+
+let amount = 2
+
+    if (amount === 1000000) {
+        console.log(amount + " dollars" + " (pinky)")
+    } else if (amount === 1) {
+        console.log(amount + " dollar")
+    } else {
+        console.log(amount + " dollars")
+    }
+
 // 6. Create a `verbing` code block. It should take a single string variable. If its length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead. If the string length is less than 3, it should leave it unchanged. 
 // For example:
 
@@ -52,12 +64,43 @@ console.log(name.slice(0,name.length - 1) + name[name.length - 1].toUpperCase())
 // // =>  'go'
 // ```
  
+let verb = "pooing";
+  if (verb[verb.length -1] === "g") {
+    console.log(verb + "ly");
+} else if (verb.length < 3) {
+    console.log(verb);
+} else {
+    console.log(verb + "ing");
+}
+
+
 // 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
+
+let sentence = “My Name Is Destiny”;
+let words = sentence.split(” “);
+let newSen = “”;
+console.log(newSen);
+for(let i = 0; i <= words.length - 2; i++) {
+ newSen += words[i] + ” “;
+}
+// console.log(block.slice(0,(block.length - block.lastIndexOf(block.length -6," "))))
+
 
 // ## Bonus Questions
 
 // 1. Write a code block that adds a "#" to a string if the string has an odd number of characters, otherwise leave it as is.
 // print/log the result
+
+
+
+let word = "blac"
+if (word.length % 2 != 0){
+    console.log(word + "#")
+} else {
+    console.log(word)
+}
+
+
 
 //     Examples:
 
@@ -68,6 +111,14 @@ console.log(name.slice(0,name.length - 1) + name[name.length - 1].toUpperCase())
 // ___
 
 // 2. Write a code block that prints/logs the 3rd to last characters of a string.
+
+
+let srt = "mm"
+if (srt.length < 3) {
+    console.log("error")
+} else {
+    console.log(srt.slice(srt.length -3))
+}
 // If the string is not at least 3 characters long then log an error message.
 // <details>
 //     <summary>
@@ -84,6 +135,14 @@ console.log(name.slice(0,name.length - 1) + name[name.length - 1].toUpperCase())
 // ___
 
 // 3. Write a code block that prints/logs whether a string `x` starts with a vowel.
+
+let pie = "pink"
+if (pie[pie.length -1] === "a" || pie[pie.length -1] === "e" || pie[pie.length -1] === "i" || pie[pie.length -1] === "o" || pie[pie.length -1] === "u") {
+    console.log ("the word " + pie + " is a vowel")
+} else {
+    console.log(pie)
+}
+
 // <details>
 //   <summary>
 //     Extra
@@ -104,9 +163,18 @@ console.log(name.slice(0,name.length - 1) + name[name.length - 1].toUpperCase())
 //    - For `str1` = 'hello' and `str2` = 'world'. Your program should log `'helworldlo'`
 
 // ___
+let word1 = "elephant"
+let word2 = "six"
+console.log(word1.slice(0,word1.length/2) + word2 + word1.slice(word1.length/2,word1.length))
 
 // 5. Write a code block that prints/logs whether a string `x` has at least one vowel in it.
 
+let string = "apple"
+if ((string.includes("a")) || (string.includes("e")) || (string.includes("i")) || (string.includes("o")) || (string.includes("u"))) {
+    console.log(string + " has at least one vowel in it" )
+} else {
+    console.log(string + " has no vowels in it")
+}
 // Examples:
 //   - For `x` = 'taq'. Your program should log `'taq' has a vowel'`
 //   - For `x` = 'dfghjkl'. Your program should log `'dfghjkl' does not have a vowel'`
