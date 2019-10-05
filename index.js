@@ -38,3 +38,10 @@
 //     } else {
 //         console.log("String isn't long enough")
 //     }
+
+// const str = "Ire";
+// if(str[0] === "A" || str[0] === "E" || str[0] === "I" || str[0] === "O" || str[0] === "U") {
+//     console.log(`${str} starts with a vowel`);
+// } else {
+//     console.log(`${str} doesn't start with a vowel`);
+// }
