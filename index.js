@@ -23,7 +23,7 @@
 // }
 
 // const str = "I love coding";
-// console.log(str.split(""))
+// console.log(str.split("coding"))
 
 // let name = "popi";
 // if(name.length % 2 === 1) {
