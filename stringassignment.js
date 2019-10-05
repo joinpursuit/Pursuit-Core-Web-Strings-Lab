@@ -26,12 +26,12 @@
 // // =>  1000000 dollars (pinky)
 // ```
 
-let drEvil = 10000000
-if(drEvil >= 1000000) {
-    console.log(drEvil + " dollars" + "(pinky)");
-} else {
-    console.log(drEvil + " dollars");
-}
+// let drEvil = 10000000
+// if(drEvil >= 1000000) {
+//     console.log(drEvil + " dollars" + "(pinky)");
+// } else {
+//     console.log(drEvil + " dollars");
+// }
 
 
 // 6. Create a `verbing` code block. It should take a single string variable. If its length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead. If the string length is less than 3, it should leave it unchanged. 
@@ -47,7 +47,17 @@ if(drEvil >= 1000000) {
 // verbing('go')
 // // =>  'go'
 // ```
- 
+ let verb = "grow"
+
+if(verb[verb.length -1] === "g"){
+    console.log(verb + "ly")
+} else if(verb.length >= 3){
+    console.log(verb + "ing")
+ } else{
+     console.log(verb)
+ }
+
+
 // 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
 
 // ## Bonus Questions
