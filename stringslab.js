@@ -68,6 +68,16 @@ if (verbing.endsWith("ing")) {
  
 // 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
 
+let withoutLast = "bad days"
+// console.log(withoutLast.length)
+// console.log(withoutLast.slice(0, 5))
+
+let newWord = withoutLast.split(" ")
+console.log (newWord)
+let thirdWord = newWord[0]
+console.log(thirdWord)
+
+
 // ## Bonus Questions
 
 // 1. Write a code block that adds a "#" to a string if the string has an odd number of characters, otherwise leave it as is.
