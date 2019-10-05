@@ -50,3 +50,17 @@
 // let str2 = "world";
 // const str1Half = Math.floor(str1.length / 2);
 // console.log(str1.slice(0,str1Half + 1) + str2 + str1.slice(str1Half + 1));
+
+let str = "TAQ";
+let vowel;
+for (let i = 0; i < str.length; i += 1) {
+    if(str[i] === "A" || str[i] === "E" || str[i] === "I" || str[i] === "O" || str[i] === "U") {
+        vowel = true;
+    }
+}
+if (vowel === true) {
+    console.log(`'${str}' has a vowel.`);
+} else {
+    console.log(`'${str}' does not have a vowel`);
+}
+
