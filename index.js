@@ -65,16 +65,10 @@
 // console.log(str1.slice(0,str1Half + 1) + str2 + str1.slice(str1Half + 1));
 
 //BONUS 5
-// let str = "taq";
-// let vowel;
-// for (let i = 0; i < str.length; i += 1) {
-//     if(str[i].toUpperCase() === "A" || str[i].toUpperCase() === "E" || str[i].toUpperCase() === "I" || str[i].toUpperCase() === "O" || str[i].toUpperCase() === "U") {
-//         vowel = true;
-//     }
-// }
-// if (vowel === true) {
-//     console.log(`'${str}' has a vowel.`);
-// } else {
-//     console.log(`'${str}' does not have a vowel`);
-// }
+let str = "taq";
+if (str.match(/[aeiouAEIOU]/)) {
+    console.log(`'${str}' has a vowel.`);
+} else {
+    console.log(`'${str}' does not have a vowel`);
+}
 
