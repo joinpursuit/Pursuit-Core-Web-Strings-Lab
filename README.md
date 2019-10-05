@@ -57,9 +57,17 @@ if(verb.endsWith("ing")){
     console.log(verb)
 }
 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
-let sentence = "beast coast"
-console.log(sentence.slice(0, 5))
+let sentence = "beast coast is the best coast"
+let lastWord = sentence.lastIndexOf(" ");
+sentence = sentence.substring(0, lastWord)
+console.log(sentence)
 
+let words = sentence.split(" ");
+let newsen = "";
+for(let i = 0; i <= words.length - 2; i++){
+    newsen += words[i] + " ";
+}
+console.log(newsen)
 ## Bonus Questions
 
 1. Write a code block that adds a "#" to a string if the string has an odd number of characters, otherwise leave it as is.

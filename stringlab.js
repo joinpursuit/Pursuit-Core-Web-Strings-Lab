@@ -35,6 +35,13 @@ if(word.length -1 === verb); {
 >>>>>>> 199a0cd50cee25dcf52662145e8a6ddea30cb4b9
 
 
-let sentence = "beast coast"
-console.log(sentence.slice(0, 5))
-
+let sentence = "beast coast is the best coast"
+// let lastWord = sentence.lastIndexOf(" ");
+// sentence = sentence.substring(0, lastWord)
+// console.log(sentence)
+let words = sentence.split(" ");
+let newsen = "";
+for(let i = 0; i <= words.length - 2; i++){
+    newsen += words[i] + " ";
+}
+console.log(newsen)
