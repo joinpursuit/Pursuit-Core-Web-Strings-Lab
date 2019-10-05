@@ -67,7 +67,7 @@ let newsen = "";
 for(let i = 0; i <= words.length - 2; i++){
     newsen += words[i] + " ";
 }
-console.log(newsen)
+console.log(newsen) 
 ## Bonus Questions
 
 1. Write a code block that adds a "#" to a string if the string has an odd number of characters, otherwise leave it as is.
