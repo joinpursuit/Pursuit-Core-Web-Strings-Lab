@@ -175,8 +175,8 @@ if ( str3Char.length < 3){
 
 // </details>
 let x = "elephants are fat";
-if (x.toLowerCase([0]) !== "a" || x.toLowerCase([0]) !== "e" || x.toLowerCase([0]) !== "i" 
-    || x.toLowerCase([0]) !== "o" || x.toLowerCase([0]) !== "u"){
+if (x[0].toLowerCase() !== "a" || x[0].toLowerCase() !== "e" || x[0].toLowerCase() !== "i" 
+    || x[0].toLowerCase() !== "o" || x[0].toLowerCase() !== "u"){
         console.log("String '" + x + "' begins with a vowel");
 } else {
     console.log ("String '" + x + "' does not begin with a vowel");
@@ -192,6 +192,14 @@ if (x.toLowerCase([0]) !== "a" || x.toLowerCase([0]) !== "e" || x.toLowerCase([0
 //    - For `str1` = 'hello' and `str2` = 'world'. Your program should log `'helworldlo'`
 
 // ___
+let strOne = "hello";
+let strTwo = "world";
+if(strOne.length % 2 === 0){
+    console.log(strOne.slice(0,(strOne.length/2)) + strTwo + strOne.slice(strOne.length/2));
+} else {
+    console.log(strOne.slice(0,(strOne.length/2)+1) + strTwo + strOne.slice((strOne.length+1)/2));
+}
+
 
 // 5. Write a code block that prints/logs whether a string `x` has at least one vowel in it.
 
@@ -199,6 +207,20 @@ if (x.toLowerCase([0]) !== "a" || x.toLowerCase([0]) !== "e" || x.toLowerCase([0
 //   - For `x` = 'taq'. Your program should log `'taq' has a vowel'`
 //   - For `x` = 'dfghjkl'. Your program should log `'dfghjkl' does not have a vowel'`
 //   - For `x` = '' Your program should log `'' does not have a vowel'`
+let strX = "Mr. Bob";
+let v = ["a", "e", "i", "o", "u"];
+let checkStr = "";
+for (let y = 0; y < strX.length; y++){    
+    if (v.includes(strX[y])){
+        checkStr = (`The string ${strX} contains a vowel.`);
+        break;
+    }
+}
+!checkStr ? checkStr = (`The string ${strX} does not contain a vowel.`) : null;
+console.log(checkStr);
+
+
+
 
 // <details>
 //   <summary>
