@@ -39,4 +39,19 @@ console.log(str.length)
         console.log(verbing)
     }
 
+    //  problem 7
+
     
+ let withoutLast = "Hello there my name is Rafid"
+    for(let i = withoutLast.length -1; i >= 0; i--) {
+        if (withoutLast[i] === " "){
+             console.log(withoutLast.slice(0, i))
+             break;
+         }
+    }
+    // let name1 = "taqe"
+    // if (name1.length % 2 === 0){
+    //     console.log(name1)
+    // } else{
+    //     console.log(name1 + "#")
+    // }
