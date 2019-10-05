@@ -117,7 +117,11 @@ console.log(wrd[wrd.length -1])
 
 // </details>
 
-// ___
+let xyz = "look"
+
+if(xyz[0] === "a" || xyz[0] === "e" || xyz[0] === "i" || xyz[0] === "o" || xyz[0] === "u") {
+    console.log(xyz)
+}
 
 // 4. Write a code block that given two strings, `str1` and `str2`, prints/logs a new string with `str2` mashed into the middle of `str1`
 
