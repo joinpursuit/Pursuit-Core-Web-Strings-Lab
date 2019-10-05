@@ -113,6 +113,16 @@ Examples, for variables:
 let name1 = 'Taq' // Should log 'Taq'
 let sentence = 'He is Taq'// Should log 'Taq'
 ```
+let  name1 = "Cassidy"
+
+let name1 = "Cassidy"
+
+if (name1.length<3){
+  console.log("This is an Error")
+} else (name1.length<=3)
+  console.log(name1.slice(2,[name1.length]))
+
+
 ___
 
 3. Write a code block that prints/logs whether a string `x` starts with a vowel.
@@ -124,8 +134,13 @@ ___
   Make it [case insensitive](https://en.wikipedia.org/wiki/Case_sensitivity)
 
 </details>
-
 ___
+
+let x = "Apple"
+if (x[0]==="A" || x[0]==="E"||x[0]==="I" || x[0]==="O" || x[0]==="U" ){
+  console.log(`${x} starts with a vowel`)
+}
+
 
 4. Write a code block that given two strings, `str1` and `str2`, prints/logs a new string with `str2` mashed into the middle of `str1`
 
@@ -135,6 +150,7 @@ Examples:
 
    - For `str1` = 'hello' and `str2` = 'world'. Your program should log `'helworldlo'`
 
+console.log(`${str1.slice(0,(str1.length/2))}${str2}${str1.slice((str1.length/2),str1.length)}`)
 ___
 
 5. Write a code block that prints/logs whether a string `x` has at least one vowel in it.
@@ -154,6 +170,15 @@ Examples:
   - **Extra**: Make it [case insensitive](https://en.wikipedia.org/wiki/Case_sensitivity). So that for `x` = 'TAQ' it should log 
   `'TAQ' has a vowel`
 </details>
+
+let x = "nilber"
+if (x.match(/[aeiouAEIOU]/)){
+  console.log(`${x} has a vowel`)
+} else {
+  console.log(`${x} does not have a vowel`)
+}
+
+ 
 
 ___
 
