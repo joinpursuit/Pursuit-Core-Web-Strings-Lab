@@ -131,7 +131,9 @@ if(xyz[0] === "a" || xyz[0] === "e" || xyz[0] === "i" || xyz[0] === "o" || xyz[0
 
 //    - For `str1` = 'hello' and `str2` = 'world'. Your program should log `'helworldlo'`
 
-// ___
+let str1 = 'hello'
+let str2 = 'world'
+console.log(str1.slice(0, 3) + str2 + str1.slice(3))
 
 // 5. Write a code block that prints/logs whether a string `x` has at least one vowel in it.
 
