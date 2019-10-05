@@ -127,3 +127,21 @@ console.log(string3);
 console.log(string3);
 }
 
+// 5. Write a code block that prints/logs whether a string `x` has at least one vowel in it.
+
+// let vowel = ["a", "e", "i" , "o" , "u" , "y"]
+
+let xTwo = "hhhttta "
+let check = ""
+
+for ( let i = 0; i < xTwo.length; i++){
+    if (vowel.includes(xTwo[i])) {
+        check =(` ${xTwo} Has a vowel`)
+        break
+    }
+}
+
+!check ? check = (` ${xTwo} does not have vowel`) : null
+
+
+console.log (check)
