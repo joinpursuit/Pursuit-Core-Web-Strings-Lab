@@ -48,4 +48,6 @@ const withoutlast = "I like food"
 
 
 let arr = withoutlast.split(" ") 
-console.log(arr.slice (0, arr.length - 1))
+console.log(arr.slice (0, arr.length - 1));
+
+console.log(withoutlast.split(" ").slice (0,withoutlast.split.length ));
