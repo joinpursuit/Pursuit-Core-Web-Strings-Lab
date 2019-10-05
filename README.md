@@ -57,8 +57,10 @@ if(verb.endsWith("ing")){
     console.log(verb)
 }
 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
-let sentence = "beast coast"
-console.log(sentence.slice(0, 5))
+let sentence = "beast coast is the best coast"
+let lastWord = sentence.lastIndexOf(" ");
+sentence = sentence.substring(0, lastWord)
+console.log(sentence)
 
 ## Bonus Questions
 
