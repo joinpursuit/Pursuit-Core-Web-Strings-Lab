@@ -4,13 +4,13 @@
 
 // let amount = 10
 
-// let amount = 100
-// let dollars = amount + " dollars"
-//     if(amount === 1000000){
-//     console.log(amount + " pinky");
-//     }else {
-//         console.log(dollars)
-//     }
+let amount = 100 
+let dollars = amount + " dollars"
+    if(amount === 1000000){
+    console.log(`${amount}` + " pinky");
+    }else {
+        console.log(dollars)
+    }
 // let verb = "swimming"
 // if(verb.endsWith("ing")){
 //     console.log(verb + "ly")
@@ -21,13 +21,13 @@
 // }
 
 
-let sentence = "beast coast is the best coast"
-// let lastWord = sentence.lastIndexOf(" ");
-// sentence = sentence.substring(0, lastWord)
-// console.log(sentence)
-let words = sentence.split(" ");
-let newsen = "";
-for(let i = 0; i <= words.length - 2; i++){
-    newsen += words[i] + " ";
-}
-console.log(newsen)
+// let sentence = "beast coast is the best coast"
+// // let lastWord = sentence.lastIndexOf(" ");
+// // sentence = sentence.substring(0, lastWord)
+// // console.log(sentence)
+// let words = sentence.split(" ");
+// let newsen = "";
+// for(let i = 0; i <= words.length - 2; i++){
+//     newsen += words[i] + " ";
+// }
+// console.log(newsen)
