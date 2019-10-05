@@ -42,12 +42,32 @@ if (str.length >= 3 && str.slice(str.length-3) === "ing"){
 }
 
 // 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
-const withoutlast = "I like food"
+const withoutlast = "I really like food"
 
 // console.log(withoutlast.split(" ").slice (0, withoutlast.length - 1))
 
+// console.log(withoutlast.length-1)
 
-let arr = withoutlast.split(" ") 
-console.log(arr.slice (0, arr.length - 1));
+// let arr = withoutlast.split(" ") 
+// console.log(arr.slice (0, arr.length - 1));
 
-console.log(withoutlast.split(" ").slice (0,withoutlast.split.length ));
+// console.log(withoutlast.split(" ").slice (0,withoutlast.split.length));
+
+// console.log(withoutlast.split(" ").length);
+
+let space = 0
+
+let emptyString = ""
+
+for (let i = withoutlast.length-1; i >= 0; i --){
+    
+    if (withoutlast[i] === " ") {
+    break
+    }
+    space = i
+} 
+for (let i = 0; i < space; i++) {
+    emptyString += withoutlast[i];
+}
+
+console.log(emptyString)
