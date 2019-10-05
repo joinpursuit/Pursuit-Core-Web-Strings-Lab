@@ -1,8 +1,8 @@
-// const name = "kiara";
+// exercice #1  //const name = "kiara";
 
-// console.log(name[0]);
+// exercise #2  //console.log(name[0]);
 
-// console.log(name.length);
+// exercise #3  //console.log(name.length);
 
 // console.log(name[name.length -1]);
 
