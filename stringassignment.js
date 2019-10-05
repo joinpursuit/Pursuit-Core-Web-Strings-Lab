@@ -47,23 +47,24 @@
 // verbing('go')
 // // =>  'go'
 // ```
- let verb = "grow"
 
-if(verb[verb.length -1] === "g"){
-    console.log(verb + "ly")
-} else if(verb.length >= 3){
-    console.log(verb + "ing")
- } else{
-     console.log(verb)
- }
+//  let verb = "grow"
+
+// if(verb[verb.length -1] === "g"){
+//     console.log(verb + "ly")
+// } else if(verb.length >= 3){
+//     console.log(verb + "ing")
+//  } else{
+//      console.log(verb)
+//  }
 
 
 // 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
 
-let withoutLast = "The dog went to the gym."
-let arr = withoutLast.split(" ")
-arr.splice(arr.length - 1)
-console.log(arr)
+// let withoutLast = "The dog went to the gym."
+// let arr = withoutLast.split(" ")
+// arr.splice(arr.length - 1)
+// console.log(arr.join(" "))
 
 // ## Bonus Questions
 
@@ -77,6 +78,15 @@ console.log(arr)
 //   let name2 ='john' // should log 'john'
 //   ```
 // ___
+let name = 'Kevin'
+let name2 = 'Danielle' 
+let name3 = 'Dre'
+
+if(name3.length % 2 === 0){
+    console.log(name3)
+} else {
+    console.log(name3 + '#')
+}
 
 // 2. Write a code block that prints/logs the 3rd to last characters of a string.
 // If the string is not at least 3 characters long then log an error message.
@@ -93,6 +103,9 @@ console.log(arr)
 // let sentence = 'He is Taq'// Should log 'Taq'
 // ```
 // ___
+let str = 'Hey, how are you'
+let wrd = str.split(" ")
+console.log(wrd[wrd.length -1])
 
 // 3. Write a code block that prints/logs whether a string `x` starts with a vowel.
 // <details>
