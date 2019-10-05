@@ -71,3 +71,12 @@ for (let i = 0; i < space; i++) {
 }
 
 console.log(emptyString)
+
+// 1. Write a code block that adds a "#" to a string if the string has an odd number of characters, otherwise leave it as is.
+
+let str2 = "Today is Wednesday."
+if (str2.length % 2 === 1) {
+    console.log(`${str2} #`); 
+} else {
+    console.log(`${str2}`);
+}
