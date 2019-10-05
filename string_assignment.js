@@ -26,6 +26,10 @@ console.log(verb + "ing")
 }
 
 // Problem 7
-const sentence = "It's time to go home."
-const withoutLast = sentence.split(" ")
-console.log (withoutLast - )
+const sentence = "I was late to class"
+for (i=sentence.length-1; i >= 0; i--){
+    if(sentence[i] === " ") {
+        console.log(sentence.slice(0,i))
+        break
+    }
+}
