@@ -18,7 +18,7 @@ console.log(str.length)
 
     //problem 5
 
-    let number = 1000000
+    let number = 1000
     let variableAmount = "dollars"
 
     if (number === 1000000){
@@ -26,3 +26,12 @@ console.log(str.length)
     } else{
         console.log(`${number} ${variableAmount}`)
     }
+
+
+    // problem 6
+
+    let verb = "swim"
+    if(verb.length >= 3){
+        console.log(verb + "ing")
+    }
+            
