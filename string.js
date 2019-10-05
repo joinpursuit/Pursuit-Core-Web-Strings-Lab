@@ -30,8 +30,13 @@ console.log(str.length)
 
     // problem 6
 
-    let verb = "swim"
-    if(verb.length >= 3){
-        console.log(verb + "ing")
+    let verbing = "swim"
+    if (verbing.endsWith("ing")) {
+        console.log(verbing + "ly")
+    } else if (verbing.length >= 3){
+        console.log(verbing + "ing")
+    } else if(verbing.length < 3){
+        console.log(verbing)
     }
-            
+
+    
