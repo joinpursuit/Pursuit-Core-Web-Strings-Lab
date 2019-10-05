@@ -80,3 +80,50 @@ if (str2.length % 2 === 1) {
 } else {
     console.log(`${str2}`);
 }
+
+// 2. Write a code block that prints/logs the 3rd to last characters of a string.
+// If the string is not at least 3 characters long then log an error message.
+let endStr = ""
+
+if (str2.length < 3){
+    console.log("Error too short")
+}else{
+
+    for (let i = str2.length-3; i < str2.length; i++){
+        endStr += str2[i];
+    }
+    console.log(endStr);
+}
+
+// 3. Write a code block that prints/logs whether a string `x` starts with a vowel.
+
+let x = "i feel clever today."
+let vowel = ["a", "e", "i" , "o" , "u" , "y"]
+
+// if (x[0] === "a" || x[0] === "e" || x[0] === "i" || x[0] === "o" || x[0] === "u" || x[0] === "y") {
+//     console.log("is a vowel")
+// } else {
+//     console.log("is not a vowel")
+// }
+
+if(vowel.includes(x[0])){
+    console.log ("is a vowel")
+}else(
+    console.log ("has no vowel")
+)
+
+// 4. Write a code block that given two strings, `str1` and `str2`, prints/logs a new string with `str2` mashed into the middle of `str1`
+
+let string1 = "hello"
+let string2 = "world"
+let string3 = ""
+
+
+if (string1.length % 2 === 1) {
+    string3 = string1.slice(0, (string1.length / 2)+1) + string2 + string1.slice((string1.length+1) / 2);
+console.log(string3);
+} else {
+    string3 = string1.slice(0, (string1.length / 2)) + string2 + string1.slice((string1.length) / 2);
+console.log(string3);
+}
+
