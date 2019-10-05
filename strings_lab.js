@@ -1,46 +1,43 @@
-const name = "kiara";
+// const name = "kiara";
 
-console.log(name[0]);
+// console.log(name[0]);
 
-console.log(name.length);
+// console.log(name.length);
 
-console.log(name[name.length -1]);
+// console.log(name[name.length -1]);
 
-console.log(name.slice(0,4) + name[4].toUpperCase());
+// console.log(name.slice(0,4) + name[4].toUpperCase());
 
 
 
-let drEvil = 1000000
+// let drEvil = 1000000
 
-if( drEvil === 1000000){
-    console.log(`${drEvil} dollars pinky`)
-}else{
+// if( drEvil === 1000000){
+//     console.log(`${drEvil} dollars pinky`)
+// }else{
     
-    console.log(`${drEvil} dollars `)
-}
+//     console.log(`${drEvil} dollars `)
+// }
 
 
 
-let verbing =  "laughing"
+// let verbing =  "laughing"
 
-if (verbing.length >= 3){
-    console.log(verbing + "ing")
-}else if(verbing.split(verbing.length >= 4)){
-    console.log(verbing + "ly")
-} 
-
-
+// if (verbing.length >= 3){
+//     console.log(verbing + "ing")
+// }else if(verbing.split(verbing.length >= 4)){
+//     console.log(verbing + "ly")
+// } 
 
 
-let sentence = 'everyone is funny';
 
 
-for (let i = sentence.length -6; i >= 0; i -= 1){
-    console.log(sentence[i])
-}
+// let sentence = 'everyone is funny';
 
 
-console.log(sentence.split('funny'));
+// for (let i = sentence.length -6; i >= 0; i -= 1){
+//     console.log(sentence[i])
+// }
 
 
 
@@ -51,62 +48,63 @@ console.log(sentence.split('funny'));
 
 
 
-BONUS QUESTIONS
 
-let name = "erik";
+// BONUS QUESTIONS
 
-
-if(name.length % 2=== 1){
-    console.log(name + "#")
-}else {
-    console.log(name)
-}
+// let name = "erik";
 
 
-let word = "go";
-//  let sentence = "she is"
-
-if (word.length >=3){
-    console.log(word.slice(word.length -3))
-}else {
-    console.log("error")
-}
+// if(name.length % 2=== 1){
+//     console.log(name + "#")
+// }else {
+//     console.log(name)
+// }
 
 
+// let word = "go";
+// //  let sentence = "she is"
 
-let x = "orange";
+// if (word.length >=3){
+//     console.log(word.slice(word.length -3))
+// }else {
+//     console.log("error")
+// }
 
-if(x[0] === "a" || x[0] === "i" || x[0] === "o" || x[0]=== "e" || x[0]=== "u"){
-console.log( x + " " + "starts with a vowel.")
-}
+
+
+// let x = "orange";
+
+// if(x[0] === "a" || x[0] === "i" || x[0] === "o" || x[0]=== "e" || x[0]=== "u"){
+// console.log( x + " " + "starts with a vowel.")
+// }
 
     
 
-let str = "hello";
-let str2 = "world";
+// let str = "hello";
+// let str2 = "world";
 
 
-console.log(str.slice(0,3) + str2.slice(0,2) + str.slice(2,5) + str2.slice(1,5));
-
-
-
-let x = "jjklsdwq";
-
-if( x.split('a') ||   x.split('i') ||   x.split('o') ||  x.split('e') ||  x.split('u')){
-console.log( x + " " + "has a vowel.")
-} else{
-    console.log(x + " " + "has no vowel")
-}
+// console.log(str.slice(0,3) + str2.slice(0,2) + str.slice(2,5) + str2.slice(1,5));
 
 
 
+// let x = "jjklsdwq";
 
-let x = "jjtw";
- if(x.includes("a") + x.includes("e") + x.includes("i")+ x.includes("o") +  x.includes("u")){
-     console.log("has a vowel")
- }else {
-     console.log("has no vowel")
- }
+// if( x.split('a') ||   x.split('i') ||   x.split('o') ||  x.split('e') ||  x.split('u')){
+// console.log( x + " " + "has a vowel.")
+// } else{
+//     console.log(x + " " + "has no vowel")
+// }
+
+
+
+
+// let x = "jjtw";
+//  if(x.includes("a") + x.includes("e") + x.includes("i")+ x.includes("o") +  x.includes("u")){
+//      console.log("has a vowel")
+//  }else {
+//      console.log("has no vowel")
+//  }
 
 
 
