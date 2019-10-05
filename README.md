@@ -185,7 +185,17 @@ if (x.match(/[aeiouAEIOU]/)){
   console.log(`${x} does not have a vowel`)
 }
 
- 
+let z = "cassidy"
+for (y=0; y<x.length; y++){
+  if (z[y]=== "a" || z[y] === "e" || z[y] === "i" || z[y] === "o" || z[y] === "u"){
+  console.log(`${z} has a vowel`)
+ }else {
+    console.log(`${z} does not have a vowel`)
+  }
+} console.log(`${z} has a vowel`)
+
+
+
 
 ___
 
