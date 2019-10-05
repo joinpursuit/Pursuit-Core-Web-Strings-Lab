@@ -31,3 +31,10 @@
 // } else {
 //     console.log(name);
 // }
+
+// const str = "Ro";
+//     if (str.length >= 3) {
+//         console.log(`${str[str.length - 3]}${str[str.length - 2]}${str[str.length - 1]}`)
+//     } else {
+//         console.log("String isn't long enough")
+//     }
