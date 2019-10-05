@@ -137,10 +137,10 @@
 // ___
 
 // 4. Write a code block that given two strings, `str1` and `str2`, prints/logs a new string with `str2` mashed into the middle of `str1`
-let str = "ironman"
-let st2 = "help"
-let middle = Math.floor(str.length / 2)
-console.log(str.slice(0,3) + st2 + str.slice(3, str.length))
+// let str = "ironman"
+// let st2 = "help"
+// let middle = Math.floor(str.length / 2)
+// console.log(str.slice(0,3) + st2 + str.slice(3, str.length))
 
 
 
