@@ -8,14 +8,14 @@ console.log(group[0]);
 console.log(group.length)
 
 // 3. `console.log` the last character of any string. 
-
+console.log(group[group.length - 1])
 // 4. Create a code block that takes a single string variable, and returns a copy of the string with the last letter capitalized. For example:
 
 // ```js
 // 'jimmy'
 // // => 'jimmY'
 // ```
-
+console.log(group.slice(0,4) + group[4].toUpperCase())
 // 5. Create a drEvil code block that will take a single number variable, and log the '<variableAmount> dollars',
 // your code block should add '(pinky)' at the end of the amount if it's 1 million. For example:
 
