@@ -150,8 +150,15 @@ Examples:
 
    - For `str1` = 'hello' and `str2` = 'world'. Your program should log `'helworldlo'`
 
-console.log(`${str1.slice(0,(str1.length/2))}${str2}${str1.slice((str1.length/2),str1.length)}`)
+let str1 = "help"
+let str2 = "me"
+console.log(`${str1.slice(0,(str1.length/2))}${str2}${str1.slice(str1.length/2)}`)
+
+let split = Math.floor(str1.length/2)
+console.log(`${str1.slice(0,split)}${str2}${str1.slice(split)}`)
 ___
+
+
 
 5. Write a code block that prints/logs whether a string `x` has at least one vowel in it.
 
