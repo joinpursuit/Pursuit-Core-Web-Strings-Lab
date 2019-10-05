@@ -11,10 +11,16 @@
 //     }else {
 //         console.log(dollars)
 //     }
-let word = "box"
-let verb = word[1] + "ing"
-console.log(`${word} ${verb}`)
+// let word = "box"
+// let verb = verb== + "ing"
+// console.log(`${word} ${verb}`)
 
+
+let word = "swimming"
+let verb = "ing"
+if(word.length -1 === verb); {
+    console.log(word)
+}
 
 
 
