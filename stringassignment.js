@@ -60,6 +60,11 @@ if(verb[verb.length -1] === "g"){
 
 // 7. Create a `withoutLast` code block that takes a single string variable, and returns a copy of the string without the last word.
 
+let withoutLast = "The dog went to the gym."
+let arr = withoutLast.split(" ")
+arr.splice(arr.length - 1)
+console.log(arr)
+
 // ## Bonus Questions
 
 // 1. Write a code block that adds a "#" to a string if the string has an odd number of characters, otherwise leave it as is.
