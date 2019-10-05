@@ -45,3 +45,8 @@
 // } else {
 //     console.log(`${str} doesn't start with a vowel`);
 // }
+
+// let str1 = "hello";
+// let str2 = "world";
+// const str1Half = Math.floor(str1.length / 2);
+// console.log(str1.slice(0,str1Half + 1) + str2 + str1.slice(str1Half + 1));
