@@ -1,3 +1,10 @@
+
+let name = "Britt"
+console.log(name[0])
+
+
+
+
 // let name = "jimmy"
 // console.log(name.slice(0) + name[name.length -1].toUpperCase(4))
 // console.log(name.slice(0, 4) + name[4].toUpperCase())
@@ -11,19 +18,7 @@
 //     }else {
 //         console.log(dollars)
 //     }
-<<<<<<< HEAD
-// let word = "box"
-// let verb = verb== + "ing"
-// console.log(`${word} ${verb}`)
 
-
-let word = "swimming"
-let verb = "ing"
-if(word.length -1 === verb); {
-    console.log(word)
-}
-
-=======
 // let verb = "swimming"
 // if(verb.endsWith("ing")){
 //     console.log(verb + "ly")
@@ -32,16 +27,16 @@ if(word.length -1 === verb); {
 // } else if(verb.length < 3){
 //     console.log(verb)
 // }
->>>>>>> 199a0cd50cee25dcf52662145e8a6ddea30cb4b9
 
 
-let sentence = "beast coast is the best coast"
-// let lastWord = sentence.lastIndexOf(" ");
-// sentence = sentence.substring(0, lastWord)
-// console.log(sentence)
-let words = sentence.split(" ");
-let newsen = "";
-for(let i = 0; i <= words.length - 2; i++){
-    newsen += words[i] + " ";
-}
-console.log(newsen)
+
+// let sentence = "beast coast is the best coast"
+// // let lastWord = sentence.lastIndexOf(" ");
+// // sentence = sentence.substring(0, lastWord)
+// // console.log(sentence)
+// let words = sentence.split(" ");
+// let newsen = "";
+// for(let i = 0; i <= words.length - 2; i++){
+//     newsen += words[i] + " ";
+// }
+// console.log(newsen)
