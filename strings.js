@@ -1,32 +1,38 @@
-// let firstString = "marathon";
-// // console.log(firstString[0])
-// // console.log(firstString.length)
-// // console.log(firstString[firstString.length-1])
-// //console.log(firstString.slice(0,7).toLowerCase() + firstString[firstString.length-1].toUpperCase())
-// let varAmount = 6
-// let currency = 'dollars'
-// console.log(`${varAmount} ${currency} hahahaha (pinky)`)
+let theWord = 'holloween'
 
-// let singleString = "number";
-// if (singleString.length >= 3){
-//     console.log(singleString + "ing")
-// }else (
-//     console.log(singleString)
-// )
+//1)
+console.log(theWord[0])
+//2)
+console.log(theWord.length)
+//3)
+console.log(theWord[theWord.length -1])
 
+//4)
+let newTheWord = theWord.slice(0,theWord.length -1)
+let lastNewWord = theWord[theWord.length - 1].toUpperCase()
+let wholeNewWord = newTheWord + lastNewWord
+console.log(wholeNewWord)
 
-// let withoutLast = "Mo money mo problems"
-// let copy = withoutLast.slice(0, 11)
-//     console.log(copy)
+//5)
 
+let amount = 1000000; 
+    if(amount >= 1000000){
+        console.log(`${amount} dollars (pinky)`);
+    }else {
+        console.log(`${amount} dollars`)
+    }
 
-// let codeBlock = "add"
-// if (codeBlock.length % 2 === 1){
-//     console.log(codeBlock + "#")
-// }
+//6)
 
-let errorCode = "Onesies"
+let word = 'hurt';
+    if(word[word.length -1] === 'g'){
+        console.log(`${word}ly`)
+    }else if(word[word.length -1] !== 'g'){
+        console.log(`${word}ing`)
+    }
 
-if (errorCode.length <= 3)(
-    console.log("error! error! error!")
-); else (console.log(errorCode [errorCode.length-3]))
+//7
+
+let withoutLast = 'halloween'
+let newWithoutLast = withoutLast.slice(0,withoutLast.length-1)
+console.log(newWithoutLast)
