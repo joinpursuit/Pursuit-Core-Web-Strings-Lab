@@ -55,22 +55,67 @@
 // // =>  'go'
 // ```
 
-let verb = "go"
- if (verb.length >= 3 && verb.slice(verb.length-3) === "ing") {
-  console.log (verb + "ly")
-  } else if (verb.length >=3) {
-  console.log(verb + "ing" )
- } else { 
-  console.log(verb)
-}
+// let verb = "go"
+//  if (verb.length >= 3 && verb.slice(verb.length-3) === "ing") {
+//   console.log (verb + "ly")
+//   } else if (verb.length >=3) {
+//   console.log(verb + "ing" )
+//  } else { 
+//   console.log(verb)
+// }
 
 //7. Create a `withoutLast` code block that takes a single string variable, 
 //and returns a copy of the string without the last word.
 
-let str = "I love codding";
-let strSplit = str.split(" ")
-  strSplit.pop()
-console.log(strSplit.join(" "))
+// let str = "I love codding";
+// let strSplit = str.split(" ")
+//   strSplit.pop()
+// console.log(strSplit.join(" "))
+
+
+// ## Bonus Questions
+
+// 1. Write a code block that adds a "#" to a string if the string has 
+// an odd number of characters, otherwise leave it as is.
+// print/log the result
+
+//     Examples:
+
+//   ```js
+  // let name = 'taq'  // should log 'taq#'
+   let name ='john' // should log 'john'
+  
+  
+    if (name.length % 2 === 0) {
+      console.log(name)
+    } else {
+      console.log(name +"#")
+    }
+
+//     2. Write a code block that prints/logs the 3rd to last characters of a string.
+// If the string is not at least 3 characters long then log an error message.
+// <details>
+//     <summary>
+//         Hint
+//     </summary>
+//     It should work for strings of any length. 
+// </details>
+
+// Examples, for variables: 
+// ```js
+// let name1 = 'Taq' // Should log 'Taq'
+// let sentence = 'He is Taq'// Should log 'Taq'
+// ```
+let str = "He is Taq";
+let str1 = str.split(" ")
+if (str1.length >= 3) {
+  console.log(str1.pop())
+} else {
+  console.log("error")
+}
+  
+
+
 
 
 
