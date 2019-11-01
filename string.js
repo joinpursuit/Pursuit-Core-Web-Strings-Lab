@@ -106,10 +106,12 @@
 // let name1 = 'Taq' // Should log 'Taq'
 // let sentence = 'He is Taq'// Should log 'Taq'
 // ```
-let str = "He is Taq";
+
+// let str = "He is Taq";
+let str = "I love coding I am crazy"
 let str1 = str.split(" ")
 if (str1.length >= 3) {
-  console.log(str1.pop())
+  console.log(str1.slice(2, str1.length).join(" "))
 } else {
   console.log("error")
 }
