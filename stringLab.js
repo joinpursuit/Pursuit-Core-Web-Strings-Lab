@@ -19,9 +19,10 @@ console.log(str.slice(str.length - 1));
 // // => 'jimmY'
 // `
 // ``
-let strFour = "Stephanie"
+let strFour = "javascript"
 
-strFour = strFour.slice(0, strFour.length - 1) + strFour[strFour.length - 1].toUpperCase()
+strFour = strFour.slice(0, strFour.length - 1) + strFour[strFour.length - 1].toUpperCase();
+// cutting length not inclusive of the last word then adding and capitalizing the last letter only
 console.log(strFour);
 
 // another way
@@ -43,10 +44,10 @@ console.log(strFour);
 
 let numAmount = 200;
 
-if (numAmount >= 1000000000) {
+if (numAmount >= 1000000000) { // add "(pinky) only if anything its greater than a million"
     console.log(numAmount + " dollars " + " (pinky) ");
 } else {
-    console.log(numAmount + " dollars ");
+    console.log(numAmount + " dollars "); // anything below add "dollars"
 }
 
 // `
@@ -75,21 +76,31 @@ if (numAmount >= 1000000000) {
 let strSix = "box"
 
 if (strSix.slice(strSix.length - 3) === "ing" && strSix.length >= 3) {
-    console.log(strSix + "ly");
+    console.log(strSix + "ly"); // include "ing" then add "ly"
 } else if (strSix.length >= 3) {
-    console.log(strSix + "ing")
+    console.log(strSix + "ing"); // if not ending with "ing" then add "ing"
 } else {
-    console.log("unchanged ")
+    console.log("unchanged "); // "if doesn't meet any of the above statement, leave unchanged"
 }
-
 
 // 7. Create a `withoutLast`
 // code block that takes a single string variable, and returns a copy of the string without the last word.
 
+// let strSeven = " Hello, Stephanie"
+// let withoutFirst = strSeven.slice(0, 7)
+// let withoutLast = strSeven.slice(7, strSeven.length)
+// console.log(withoutLast)
+
+let strSeven = "Stephanie can code in javascript language"
+let newStrSeven = strSeven.split(" "); // important to leave a space in _.split(" ")b/c it will split it by letters ex s,t,e ect. if its left _.split(""))
+newStrSeven.pop(); // pop removes the last element 
+console.log(newStrSeven);
+
+
+
 // ## Bonus Questions
 
-// 1. Write a code block that adds a "#"
-// to a string
+// 1. Write a code block that adds a "#" to a string
 // if the string has an odd number of characters, otherwise leave it as is.
 // print / log the result
 
@@ -102,6 +113,15 @@ if (strSix.slice(strSix.length - 3) === "ing" && strSix.length >= 3) {
 //   `
 // ``
 // ___
+
+
+let strBonusOne = "two"
+
+if (strBonusOne.length % 2 !== 0) { // add "#" only if the length of the string is odd/even 
+    console.log(strBonusOne + "#");
+} else {
+    console.log(strBonusOne);
+}
 
 // 2. Write a code block that prints / logs the 3 rd to last characters of a string.
 // If the string is not at least 3 characters long then log an error message. <
@@ -123,6 +143,15 @@ if (strSix.slice(strSix.length - 3) === "ing" && strSix.length >= 3) {
 // `
 // ``
 // ___
+let strBonusTwo = "don't forget split, slice, and splice"
+let lastElem = strBonusTwo.split(" ")
+
+if (lastElem.length >= 3) {
+    console.log(lastElem.slice(2, strBonusTwo.length).join(" "))
+} else {
+    console.log("error")
+}
+
 
 // 3. Write a code block that prints / logs whether a string `x`
 // starts with a vowel. <
