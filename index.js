@@ -27,3 +27,16 @@ if (amount === 1000000) {
 } else {
     console.log(amount + " dollars")
 }
+
+//Problem Six
+
+let verb = "swimming"
+let ing = "ing"
+
+if (verb.length > 3 && verb.includes(ing)) {
+    console.log(verb + "ly")
+} else if (verb.length >= 3) {
+    console.log(verb + "ing")
+} else if (verb.length < 3) {
+    console.log(verb)
+}
