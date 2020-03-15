@@ -40,3 +40,10 @@ if (verb.length > 3 && verb.includes(ing)) {
 } else if (verb.length < 3) {
     console.log(verb)
 }
+
+//Problem Seven
+
+let withoutLast = "Hello world"
+let separate = withoutLast.split(" ")
+
+separate.splice(0, separate.length-1).join(" ")
