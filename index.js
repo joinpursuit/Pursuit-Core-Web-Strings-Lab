@@ -60,3 +60,12 @@ if (name.length % 2 !== 0) {
   console.log(name)
 }
 
+//Problem Two
+
+let str = "Hello"
+
+if (str.length >= 3) {
+    console.log(str.slice(-3))
+} else if (str.length <= 3) {
+    console.log("ERROR: At least 3 characters needed")
+}
