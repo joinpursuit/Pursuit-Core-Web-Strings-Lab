@@ -47,3 +47,16 @@ let withoutLast = "Hello world"
 let separate = withoutLast.split(" ")
 
 separate.splice(0, separate.length-1).join(" ")
+
+//Bonus Questions
+
+//Problem One
+
+let name = "john"
+
+if (name.length % 2 !== 0) {
+  console.log(name + "#")
+} else {
+  console.log(name)
+}
+
