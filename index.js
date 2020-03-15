@@ -69,3 +69,14 @@ if (str.length >= 3) {
 } else if (str.length <= 3) {
     console.log("ERROR: At least 3 characters needed")
 }
+
+//Problem Three
+
+let x = "Hello"
+let vowels = "AaEeIiOoUu"
+
+if (vowels.includes(x[0])) {
+  console.log(x + " starts with a vowel")
+} else {
+console.log(x + " does not start with a vowel")
+}
