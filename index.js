@@ -17,3 +17,13 @@ let string = "cassidy"
 let copy = string.slice(6,7).toUpperCase()
 
 console.log(string.slice(0,6) + copy)
+
+//Problem Five
+
+let amount = 10
+
+if (amount === 1000000) {
+    console.log(amount + " dollars (pinky)")
+} else {
+    console.log(amount + " dollars")
+}
