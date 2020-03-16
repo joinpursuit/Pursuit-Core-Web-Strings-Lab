@@ -73,7 +73,6 @@ if (str.length >= 3) {
 //Problem Three
 
 let x = "Hello"
-let vowels = "AaEeIiOoUu"
 
 if(x[0].includes("A") || x[0].includes("E") ||x[0].includes("I") ||x[0].includes("O") ||x[0].includes("U") || x[0].includes("a") || x[0].includes("e") ||x[0].includes("i") ||x[0].includes("o") ||x[0].includes("u")){
   console.log(`${x} starts with a vowel`)
