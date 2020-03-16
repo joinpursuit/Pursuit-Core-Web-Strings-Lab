@@ -74,7 +74,7 @@ if (str.length >= 3) {
 
 let x = "Hello"
 
-if(x[0].includes("A") || x[0].includes("E") ||x[0].includes("I") ||x[0].includes("O") ||x[0].includes("U") || x[0].includes("a") || x[0].includes("e") ||x[0].includes("i") ||x[0].includes("o") ||x[0].includes("u")){
+if(x[0].includes("A") || x[0].includes("E") || x[0].includes("I") || x[0].includes("O") || x[0].includes("U") || x[0].includes("a") || x[0].includes("e") || x[0].includes("i") || x[0].includes("o") || x[0].includes("u")){
   console.log(`${x} starts with a vowel`)
 } else {
   console.log(`${x} does not start with a vowel`)
@@ -90,3 +90,10 @@ str1.slice(0, str1.length/2).concat(str2).concat(str1.slice(str1.length/2, str1.
 
 //Problem Five
 
+let x = "Cssdy"
+
+if (x.includes("A") || x.includes("E") || x.includes("I") || x.includes("O") || x.includes("U") || x.includes("a") || x.includes("e") || x.includes("i") || x.includes("o") || x.includes("u")) {
+  console.log(`${x} has a vowel`)
+} else {
+  console.log(`${x} does not have a vowel`)
+}
