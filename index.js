@@ -80,3 +80,10 @@ if (vowels.includes(x[0])) {
 } else {
 console.log(x + " does not start with a vowel")
 }
+
+//Problem Four
+
+let str1 = "help"
+let str2 = "me"
+
+str1.slice(0, str1.length/2).concat(str2).concat(str1.slice(str1.length/2, str1.length-0))
