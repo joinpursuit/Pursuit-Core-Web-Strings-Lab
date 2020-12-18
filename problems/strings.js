@@ -3,7 +3,9 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(string) {
+  hello
+}
 
 /**
  * Returns the length of a string
