@@ -3,15 +3,20 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
-
+function firstChar(string) {
+  return string.slice(0,1)
+  
+}
+console.log("pineapple")
 /**
  * Returns the length of a string
  * @param {string} - str
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+function stringLength(string) {
+  return string.length
+}
 
 /**
  * Returns the last character of any string
@@ -19,7 +24,10 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
+function lastLetter(string) {
+  return string.slice(string.length -1)
+ 
+}
 
 /**
  * Takes a single string variable and returns a copy of the string with the
