@@ -152,7 +152,12 @@ const verbing = (string) => {
  * @returns {string}
  */
 
-function removeLastWord() {}
+// function removeLastWord() {}
+const removeLastWord = (string) => {
+  let lastIndex = string.lastIndexOf(" ")
+  string = string.substring(0, lastIndex)
+  return string
+}
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -162,14 +167,27 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+// function everyOtherLetter() {}
+const everyOtherLetter = (string) => {
+  let newString = ""
+  for(let i = 0; i <= string.length; i += 1) {
+    if(i % 2 === 0) {
+      newString += string[i]
+    }
+  }
+  return newString
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+// function disemvowel() {}
+const disemvowel = (string) => {
+  return string.replace(/[aeiouAEIOU]/g,"")
+}
+
 
 /**
  * Takes a string sentence and returns a new sentence.
