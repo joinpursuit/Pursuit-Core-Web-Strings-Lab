@@ -109,7 +109,18 @@ function verbing(string) {
  * @returns {string}
  */
 
-function removeLastWord() {}
+
+function removeLastWord(string) {
+  let sentenceArray = string.split( " " )
+  let sentenceArray2 = string.split( " " )
+  return sentenceArray - (sentenceArray[sentenceArray.length - 1])
+if (sentenceArray2.length - 1 === "" ) {
+  return "";
+  
+}
+
+}
+console.log("helloworld")
 
 /**
  * Takes a string and returns a new string that has only the even
