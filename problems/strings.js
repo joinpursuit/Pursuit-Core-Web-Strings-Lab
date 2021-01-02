@@ -3,7 +3,14 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+//function firstChar() {}
+const firstChar = (str) => {
+if(str === "") {
+  return "";
+} else
+return str[0];
+}
+//console.log(firstChar("Corey"));
 
 /**
  * Returns the length of a string
@@ -11,16 +18,25 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
-
+//function stringLength() {}
+const stringLength = (str) => {
+  return str.length;
+}
 /**
  * Returns the last character of any string
  * @param {string} - str
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
-
+//function lastLetter() {}
+const lastLetter = (str) => {
+  
+  if (str === "") {
+    return "";
+  } else {
+    return str[str.length - 1];
+  }
+}
 /**
  * Takes a single string variable and returns a copy of the string with the
  * letter capitalized.
