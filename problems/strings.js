@@ -3,7 +3,13 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(str) {
+  if (str === "") {
+    return str
+  }
+  return str[0]
+}
+
 
 /**
  * Returns the length of a string
@@ -11,7 +17,7 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+function stringLength() { }
 
 /**
  * Returns the last character of any string
@@ -19,7 +25,7 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
+function lastLetter() { }
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -28,7 +34,7 @@ function lastLetter() {}
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+function capitalizeLastLetter() { }
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -43,7 +49,7 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+function drEvil() { }
 
 /**
  * 
@@ -68,7 +74,7 @@ verbing('go')
  
  */
 
-function verbing() {}
+function verbing() { }
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -77,7 +83,7 @@ function verbing() {}
  * @returns {string}
  */
 
-function removeLastWord() {}
+function removeLastWord() { }
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -87,14 +93,14 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter() { }
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel() { }
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -103,7 +109,7 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+function disemvowelLongWords() { }
 
 /**
  * Takes in a string and returns the middle char.
@@ -111,7 +117,7 @@ function disemvowel() {}
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+function middleCharacter() { }
 
 /**
  * Takes in a string and reverses it.
@@ -120,7 +126,7 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString() { }
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -129,7 +135,7 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords() { }
 
 module.exports = {
   firstChar,
