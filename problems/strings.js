@@ -3,7 +3,10 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(str) {
+  
+return str.slice(0, 1);
+}
 
 /**
  * Returns the length of a string
@@ -11,7 +14,10 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+function stringLength(str) {
+  return str.length;
+
+}
 
 /**
  * Returns the last character of any string
@@ -19,7 +25,10 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
+function lastLetter(str) {
+  return str.slice(str.length -1);
+
+}
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -28,7 +37,11 @@ function lastLetter() {}
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+
+let capLetter = str.slice(0, str.length - 1) + str.slice(str.length -1).toUpperCase()
+ return capLetter
+}
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -43,7 +56,14 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+function drEvil(num) {
+  if(num >= 1000000) {
+    return num + ' dollars (pinky)'
+  }
+    else 
+      return num + ' dollars'
+}
+
 
 /**
  * 
@@ -68,7 +88,17 @@ verbing('go')
  
  */
 
-function verbing() {}
+function verbing(str) {
+  if(str.slice( -3) === "ing" ){
+    return str + "ly"
+}
+  else if(str.length >= 3) {
+    return str + "ing"
+  }
+    
+  else 
+    return str
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -77,7 +107,14 @@ function verbing() {}
  * @returns {string}
  */
 
-function removeLastWord() {}
+function removeLastWord(str) {
+  let split = str.split(' ')
+  split.pop()
+return split.join(' ')
+
+
+
+}
 
 /**
  * Takes a string and returns a new string that has only the even
