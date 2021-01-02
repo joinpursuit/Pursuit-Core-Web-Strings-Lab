@@ -3,7 +3,12 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(str) {
+  if (str === "") {
+    return str;
+  }
+  return str[0];
+}
 
 /**
  * Returns the length of a string
@@ -11,7 +16,9 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+function stringLength(str) {
+  return str.length;
+}
 
 /**
  * Returns the last character of any string
@@ -19,7 +26,13 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
+function lastLetter(str) {
+  if (str === "") {
+    return str;
+  }
+
+  return str[str.length - 1];
+}
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -103,7 +116,7 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+function disemvowelLongWords() {}
 
 /**
  * Takes in a string and returns the middle char.
