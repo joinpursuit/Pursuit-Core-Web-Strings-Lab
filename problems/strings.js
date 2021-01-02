@@ -165,7 +165,10 @@ function disemvowel(str) {
  * @returns {string}
  */
 
- function disemvowelLongWords() {}
+ function disemvowelLongWords(str) {
+   let arr = str.split(" ")
+   for(let i = 0;)
+ }
 /**
  * Takes in a string and returns the middle char.
  * If there is no character in the middle return the middle two characters
@@ -203,6 +206,14 @@ function reverseString(str) {
  */
 
 function reverseSentenceWords(str) {
+  let arr = str.split(" ")
+
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = reverseString(arr[i]);
+
+  }
+  return arr.join(" ");
+}
   
 
 module.exports = {
