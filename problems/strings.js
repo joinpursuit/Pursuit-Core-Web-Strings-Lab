@@ -95,7 +95,15 @@ verbing('go')
  
  */
 
-function verbing() {}
+function verbing(str) {
+  if(str.length < 3) {
+    return str
+  } else if (str.slice(- 3) === "ing") {
+    return `${str}ly`
+  } else {
+    return `${str}ing`
+  }
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -124,9 +132,15 @@ function removeLastWord(str) {
  */
 
 function everyOtherLetter(str) {
-  for(i=0; i <str.length; i+= 2) {
-  
+  let even = ""
+  for(let i =0; i< str.length; i++) {
+    if( i%2 === 0) {
+      even += str[i];
+    }
   }
+  return even
+
+
 }
 
 /**
@@ -134,8 +148,16 @@ function everyOtherLetter(str) {
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
-
+function disemvowel(str) {
+  let vowArr = ["a","e", "i", "o", "u", "A", "E", "I","O","U"]
+  let newStr = "";
+  for(let i = 0; i < str.length; i += 1) {
+    if(!vowArr.includes(str[i])) {
+      newStr += str[i];
+    }
+  }
+    return newStr 
+}
 /**
  * Takes a string sentence and returns a new sentence.
  * Any word that has a length of 5 or more characters should be disemvoweled.
@@ -143,15 +165,20 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
-
+ function disemvowelLongWords() {}
 /**
  * Takes in a string and returns the middle char.
  * If there is no character in the middle return the middle two characters
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+function middleCharacter(str) {
+  if(str.length %2 === 1) {
+    return str[Math.floor(str.length / 2)]
+  } else { 
+    return str[(str.length / 2) - 1] + str[(str.length )/ 2]
+  }
+}
 
 /**
  * Takes in a string and reverses it.
@@ -160,7 +187,13 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString(str) {
+  let reverseStr = ""
+  for(let i = str.length - 1; i >= 0; i--) {
+    reverseStr += str[i]
+  }
+  return reverseStr
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -169,7 +202,8 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(str) {
+  
 
 module.exports = {
   firstChar,
