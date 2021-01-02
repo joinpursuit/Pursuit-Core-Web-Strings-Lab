@@ -82,15 +82,14 @@ verbing('go')
  */
 
 const verbing = (string) => {
- if (string.length >= 3 && string.slice(string.length -1) === "g") {
-  return string + `ly`;
- } else if (string.length >= 3) {
-   return string + `ing`;
- }
- else {
-   return string;
- }
-}
+  if (string.length >= 3 && string.slice(string.length - 1) === "g") {
+    return string + `ly`;
+  } else if (string.length >= 3) {
+    return string + `ing`;
+  } else {
+    return string;
+  }
+};
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -100,10 +99,10 @@ const verbing = (string) => {
  */
 
 const removeLastWord = (str) => {
-  let arr = str.split(" ")
-  arr.pop()
-  return arr.join(" ").toLocaleString()
-}
+  let arr = str.split(" ");
+  arr.pop();
+  return arr.join(" ").toLocaleString();
+};
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -114,19 +113,37 @@ const removeLastWord = (str) => {
  */
 
 const everyOtherLetter = (str) => {
-  let newStr = ""
-  for (let i = 0; i < str.length; i+=2) {
-    newStr += str[i]; 
+  let newStr = "";
+  for (let i = 0; i < str.length; i += 2) {
+    newStr += str[i];
   }
-  return newStr
-}
+  return newStr;
+};
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+const disemvowel = (str) => {
+  //  let newStr = ""
+  // for (let i = 0; i < str.length; i++) {
+  //   let currChar = str[i];
+  //   if (currChar !== "a" && currChar !== "e" && currChar !== "i" && currChar !== "o" && currChar !== "u" && currChar !== "A" && currChar !== "E" && currChar !== "I" && currChar !== "O" && currChar !== "U"  ) {
+  //     newStr += currChar;
+  //   }
+  // }
+  // return newStr;
+
+  let vowels = "aeiouAEIOU";
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    if (!vowels.includes(str[i])) {
+      newStr += str[i];
+    }
+  }
+  return newStr;
+};
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -135,7 +152,23 @@ function disemvowel() {}
  * @returns {string}
  */
 
-function disemvowelLongWords() {}
+const disemvowelLongWords = (str) => {
+  let arr = str.split(" ");
+  let vowels = "aeiouAEIOU";
+  let i = 0;
+  // let newStr = "";
+  while (i < arr.length) {
+    if (arr[i].length >= 5) {
+      if (!vowels.includes(arr[i])) {
+        arr.push();
+      }
+    } else {
+      arr.push();
+    }
+    i++;
+  }
+  return arr.join(" ").toLocaleString();
+};
 
 /**
  * Takes in a string and returns the middle char.
