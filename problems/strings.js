@@ -3,7 +3,9 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(str) {
+  return str.slice(0, 1);
+}
 
 /**
  * Returns the length of a string
@@ -11,7 +13,10 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+function stringLength(str) {
+  let number = str.length;
+  return number;
+}
 
 /**
  * Returns the last character of any string
@@ -19,7 +24,9 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
+function lastLetter(str) {
+  return str.slice(str.length - 1);
+}
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -28,7 +35,14 @@ function lastLetter() {}
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  if (str.length < 1) {
+    return str;
+  } else {
+    let copy = str.slice(0, str.length - 1) + str[str.length - 1].toUpperCase();
+    return copy;
+  }
+}
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -43,7 +57,13 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+function drEvil(num) {
+  if (num >= 1000000) {
+    return num + " dollars (pinky)";
+  } else {
+    return num + " dollars";
+  }
+}
 
 /**
  * 
@@ -68,7 +88,14 @@ verbing('go')
  
  */
 
-function verbing() {}
+function verbing(str) {
+  if (str.length < 3) {
+    return str;
+  } else if (str.slice(str.length - 3, str.length) === "ing") {
+    return str + "ly";
+  } else str.length >= 3;
+  return str + "ing";
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -77,7 +104,16 @@ function verbing() {}
  * @returns {string}
  */
 
-function removeLastWord() {}
+function removeLastWord(str) {
+  let splitStr = str.split(" ");
+  let lastWord = splitStr.pop(splitStr.length - 1);
+  let copy = splitStr.join(" ");
+  if (splitStr.length < 1) {
+    return "";
+  } else {
+    return copy;
+  }
+}
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -87,14 +123,38 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter(str) {
+  let output = "";
+  for (let i = 0; i < str.length; i++) {
+    if (i % 2 === 0) {
+      output += str[i];
+    }
+  }
+  return output;
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel(str) {
+  let output = "";
+  let vowels = {
+    a: true,
+    e: true,
+    i: true,
+    o: true,
+    u: true,
+  };
+  for (let i = 0; i < str.length; i++) {
+    let letter = str[i].toLowerCase();
+    if (!vowels[letter]) {
+      output += str[i];
+    }
+  }
+  return output;
+}
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -103,15 +163,33 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
-
+function disemvowelLongWords(str) {
+  let output = [];
+  let splitStr = str.split(" ");
+  for (let i = 0; i < splitStr.length; i++) {
+    let word = splitStr[i];
+    output.push(
+      word.length <= 4 ? word : disemvowel(word)
+      )
+  }
+  return output.join(" ");
+}
 /**
  * Takes in a string and returns the middle char.
  * If there is no character in the middle return the middle two characters
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+function middleCharacter(str) {
+  let splitStr = str.split("")
+  let midChar = splitStr[splitStr.length / 2]
+  let midChar2 = splitStr[splitStr.length / 2  - 1]
+  if(str.length % 2 !== 0) {
+    return midChar.toString() + midChar2.toString()
+  } else {
+    return midChar.toString()
+  }
+}
 
 /**
  * Takes in a string and reverses it.
