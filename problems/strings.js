@@ -3,7 +3,9 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(str) {
+  return str.slice(0, 1)
+  }
 
 /**
  * Returns the length of a string
@@ -11,7 +13,9 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+function stringLength(str) {
+  return str.length;
+}
 
 /**
  * Returns the last character of any string
@@ -19,16 +23,21 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
-
-/**
+function lastLetter(str) {
+  return str.slice( str.length -1, str.length);  
+  
+}
+  /**
  * Takes a single string variable and returns a copy of the string with the
  * letter capitalized.
  * @param {string} - str 'jimmy'
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  let lastLetter = str.slice( str.length -1, str.length)
+ return str.slice(0, str.length -1) + lastLetter.toUpperCase();
+}
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -43,7 +52,16 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+function drEvil(number) {
+  if( number < 1000000) {
+  return `${number} dollars`;
+  }else if (number >= 1000000)
+  {
+  return `${number} dollars (pinky)`;
+
+  }
+
+}
 
 /**
  * 
@@ -68,7 +86,19 @@ verbing('go')
  
  */
 
-function verbing() {}
+function verbing(string) {
+  if ( string.length > 3 && string.slice(string.length - 3, string.length) === "ing") {
+    return `${string}ly`;
+  }else if (string.length >= 3) {
+     return `${string}ing`
+    }else if ( string.length < 3) {
+      return `${string}`;
+    }
+  }
+  
+
+
+  
 
 /**
  * Takes a single sentence and returns a copy of the string without the
