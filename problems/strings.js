@@ -167,7 +167,12 @@ function disemvowel(str) {
 
  function disemvowelLongWords(str) {
    let arr = str.split(" ")
-   for(let i = 0;)
+   for(let i = 0; i <arr.length; i++) {
+     if(arr[i].length >= 5) {
+       arr[i] = disemvowel(arr[i])
+     }
+   }
+   return (arr.join(" "))
  }
 /**
  * Takes in a string and returns the middle char.
