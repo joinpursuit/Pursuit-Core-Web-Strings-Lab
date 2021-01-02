@@ -60,7 +60,13 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+function drEvil(number) {
+  if (number >= 1000000) {
+    return (number + " dollars (pinky)");
+  } else {
+    return (number + " dollars");
+  }
+}
 
 /**
  * 
@@ -82,10 +88,19 @@ verbing('swimming')
 verbing('go')
 // =>  'go'
 ```
+
  
  */
 
-function verbing() {}
+function verbing(string) {
+  if (string.length >= 3 && (string.slice(string.length -3, string[string.length]) === "ing")) {
+    return string + "ly"
+  } else if (string.length >= 3 && (string.slice(string.length -4, string.length -1) !== "ing")){
+    return string + "ing"
+  } else {
+    return string;
+  }
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
