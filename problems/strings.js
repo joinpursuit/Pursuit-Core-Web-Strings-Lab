@@ -3,7 +3,13 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+const firstChar = str => {
+  if(str.length < 1){
+    return ""
+  }else{
+    return (str[0]);
+  }
+}
 
 /**
  * Returns the length of a string
@@ -11,7 +17,9 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+const stringLength = (str) => {
+ return str.length
+}
 
 /**
  * Returns the last character of any string
@@ -19,7 +27,13 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
+const lastLetter = (str) => {
+  if(str.length < 1){
+    return ""
+  }else{
+    return (str[str.length - 1]);
+  }
+}
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -87,14 +101,28 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+const everyOtherLetter = string => {
+let newArray = []
+for(let i = 0;i <= string.length;i+=2){
+  newArray.push(string[i])
+}
+return newArray.join("");
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+const disemvowel = string => {
+  let noVowel = ''
+for(let i = 0; i <= string.length;i++){
+  if(string[i] === 'a'|| string[i] === 'e' || string[i] === 'i' || string[i] === 'o' || string[i] === 'u'){
+    noVowel = string.split(string[i]);
+  } 
+}
+console.log(noVowel);
+}
 
 /**
  * Takes a string sentence and returns a new sentence.
