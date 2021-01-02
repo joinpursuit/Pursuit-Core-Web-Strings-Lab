@@ -115,14 +115,16 @@ return newArray.join("");
  * @returns {string}
  */
 const disemvowel = string => {
-  let noVowel = ''
-for(let i = 0; i <= string.length;i++){
-  if(string[i] === 'a'|| string[i] === 'e' || string[i] === 'i' || string[i] === 'o' || string[i] === 'u'){
-    noVowel = string.split(string[i]);
-  } 
+  let output = "";
+  for(let i = 0; i < str.length; i+=1){
+    let currChar = str[i];
+    if(currChar !== "a" && currChar !== "e" && currChar !== "i" && currChar !== "o" && currChar !== "u" && currChar !== "A" && currChar !== "E" && currChar !== "I" && currChar !== "O" && currChar !== "U"){
+      output += currChar;
+    }
+  }
+  return output;
 }
-console.log(noVowel);
-}
+  
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -131,7 +133,11 @@ console.log(noVowel);
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+ const disemvowelLongWords = (string) => {
+   let newSentence = ''
+   
+
+ }
 
 /**
  * Takes in a string and returns the middle char.
