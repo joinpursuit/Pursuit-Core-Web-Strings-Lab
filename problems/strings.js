@@ -56,7 +56,13 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+function drEvil(number) {
+  if(number >= 1000000) {
+    return number + " dollars (pinky)"
+  } else {
+    return number + " dollars"
+  }
+}
 
 /**
  * 
@@ -81,7 +87,15 @@ verbing('go')
  
  */
 
-function verbing() {}
+function verbing(string) {
+  if(string.length < 3) {
+    return string
+  } else if (string.slice(-3) === "ing") {
+    return string + "ly"
+  } else {
+    return string + "ing"
+  }
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -90,7 +104,11 @@ function verbing() {}
  * @returns {string}
  */
 
-function removeLastWord() {}
+function removeLastWord(string) {
+  let array = string.split(" ")
+  let array1 = array.slice(0, array.length - 1).join(" ")
+  return array1
+}
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -100,14 +118,32 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter(string) {
+  let newstr = ""
+  for(let i=0; i < string.length; i += 2) {
+    newstr += string[i]
+    
+  }
+  return newstr;
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+// function disemvowel(string) {
+  
+//   let newstr = "";
+
+//   for(let i=0; i < string.length; i++) {
+//     let char = string[i].toLowerCase()
+//     if(char !== "a"|| char !== "e" || char !== "i" || char !== "o" || char !== "u") {
+//       newstr += char
+//     } 
+//   }
+//   return newstr;
+// }
 
 /**
  * Takes a string sentence and returns a new sentence.
