@@ -5,11 +5,10 @@
  */
 function firstChar(str) {
   if (str === "") {
-    return str
+    return str;
   }
-  return str[0]
+  return str[0];
 }
-
 
 /**
  * Returns the length of a string
@@ -17,7 +16,9 @@ function firstChar(str) {
  * @returns {number} - length of string
  */
 
-function stringLength() { }
+function stringLength(str) {
+  return str.length;
+}
 
 /**
  * Returns the last character of any string
@@ -25,7 +26,12 @@ function stringLength() { }
  * @returns {string} - last letter
  */
 
-function lastLetter() { }
+function lastLetter(str) {
+  if (str === "") {
+    return str;
+  }
+  return str[str.length - 1];
+}
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -34,7 +40,16 @@ function lastLetter() { }
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() { }
+function capitalizeLastLetter(str) {
+  if (str === "") {
+    return str;
+  }
+
+  let i = str.length - 1
+  let newStr = str.slice(0, i) + str[i].toUpperCase();
+  return newStr
+}
+
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -49,7 +64,12 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() { }
+function drEvil(num) {
+  if (num < 1000000) {
+    return num + ' dollars'
+  }
+  return num + ' dollars' + ' (pinky)'
+}
 
 /**
  * 
@@ -74,7 +94,15 @@ verbing('go')
  
  */
 
-function verbing() { }
+function verbing(str) {
+  if (str.length >= 3 && str.slice(str.length - 3, str.length) === "ing") {
+    return str + "ly"
+  } else if (str.length >= 3) {
+    return str + "ing"
+  } else {
+    return str
+  } 
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -83,7 +111,14 @@ function verbing() { }
  * @returns {string}
  */
 
-function removeLastWord() { }
+function removeLastWord(str) {
+  if (str === "") {
+    return str;
+  }
+  str.slice(0, -1)
+  str.split(" ")
+  return str
+}
 
 /**
  * Takes a string and returns a new string that has only the even
