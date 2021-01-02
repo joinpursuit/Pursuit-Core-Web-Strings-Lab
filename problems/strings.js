@@ -3,7 +3,9 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+const firstChar = (str) => {
+  return (str.charAt(0))
+}
 
 /**
  * Returns the length of a string
@@ -11,7 +13,9 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+const stringLength = (str) => {
+  return str.length;
+}
 
 /**
  * Returns the last character of any string
@@ -19,7 +23,9 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
+const lastLetter = (str) => {
+  return str.slice (- 1);
+}
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -28,7 +34,11 @@ function lastLetter() {}
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+const capitalizeLastLetter = (str) => {
+      
+      return str.slice(0, -1) + str.slice(-1).toUpperCase();
+    
+}
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -43,7 +53,8 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+const drEvil = (number) => 
+  
 
 /**
  * 
