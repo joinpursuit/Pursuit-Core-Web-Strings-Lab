@@ -3,7 +3,9 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(str) {
+  return 
+}
 
 /**
  * Returns the length of a string
@@ -77,7 +79,11 @@ function verbing() {}
  * @returns {string}
  */
 
-function removeLastWord() {}
+ function removeLastWord(str) {}
+//   let str = str.split ("  ")
+//   let lastWord = str.pop(str.length - 1)
+//   let finalStr = str.join ("  ")
+// }
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -94,7 +100,24 @@ function everyOtherLetter() {}
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel(str) {
+  let vowels = {
+    'a' : true,
+    'e' : true, 
+    'i' : true,
+    'o' : true,
+    'u' : true, 
+  };
+
+  let output = ""
+  for (let i = 0; i < str.length; i++){
+    let letter = str[i].toLowerCase();
+    if (!vowels[letter]) {
+      output += str[i]
+    }
+  }
+return output
+}
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -103,7 +126,24 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+ function disemvowelLongWords(str){
+  let vowels = {
+    'a' : true,
+    'e' : true, 
+    'i' : true,
+    'o' : true,
+    'u' : true, 
+  };
+
+  let output = ""
+  for (let i = 0; i < str.length; i++){
+    let letter = str[i].toLowerCase();
+    if (str.length >= 5) {
+      output += !vowels[letter]
+    }
+  }
+return output
+ }
 
 /**
  * Takes in a string and returns the middle char.
