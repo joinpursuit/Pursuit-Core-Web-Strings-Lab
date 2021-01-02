@@ -4,7 +4,9 @@
  * @returns {string} - first char
  */
 function firstChar(string) {
-  if (string.length === 0) return "";
+  if (string.length === 0) {
+    return "";
+  }
   return string[0];
 }
 
@@ -25,8 +27,8 @@ function stringLength(string) {
  */
 
 function lastLetter(string) {
-  if (string.length===0) return "";
-  return string[string.length-1]
+  if (string.length === 0) return "";
+  return string[string.length - 1]
 }
 
 /**
@@ -37,7 +39,11 @@ function lastLetter(string) {
  */
 
 function capitalizeLastLetter(string) {
-  return string[string.length-1]
+  if (string.length === 0) return "";
+
+  let lastLetter = string[string.length - 1].toUpperCase();
+  return string.slice(0, string.length - 1) + lastLetter;
+
 }
 
 /**
@@ -53,7 +59,15 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+function drEvil(number) {
+
+  if (number < 1000000) {
+    return number + " dollars"
+  } else {
+    return number + " dollars (pinky)"
+  }
+
+}
 
 /**
  * 
@@ -78,7 +92,17 @@ verbing('go')
  
  */
 
-function verbing() {}
+function verbing(string) {
+
+  if (string.length < 3) {
+    return string;
+  } else if (string.slice(string.length - 3) === "ing") {
+    return string + "ly"
+  } else {
+    return string + "ing"
+  }
+
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -87,8 +111,11 @@ function verbing() {}
  * @returns {string}
  */
 
-function removeLastWord() {}
-
+function removeLastWord(string) {
+  let newString = string.split(" ");
+  newString.pop();
+  return newString.join(" ");
+}
 /**
  * Takes a string and returns a new string that has only the even
  * indexed characters.
@@ -97,14 +124,14 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter() { }
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel() { }
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -113,7 +140,7 @@ function disemvowel() {}
  * @returns {string}
  */
 
-function disemvowelLongWords() {}
+function disemvowelLongWords() { }
 
 /**
  * Takes in a string and returns the middle char.
@@ -121,7 +148,7 @@ function disemvowelLongWords() {}
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+function middleCharacter() { }
 
 /**
  * Takes in a string and reverses it.
@@ -130,7 +157,7 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString() { }
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -139,7 +166,7 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords() { }
 
 module.exports = {
   firstChar,
