@@ -3,7 +3,13 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(str) {
+  if (str === "") {
+    return "";
+  } else {
+    return str[0];
+  }
+}
 
 /**
  * Returns the length of a string
@@ -11,7 +17,9 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+function stringLength(str) {
+  return str.length
+}
 
 /**
  * Returns the last character of any string
@@ -19,7 +27,13 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
+function lastLetter(str) {
+  if (str === "") {
+    return "";
+  } else {
+    return str[str.length - 1];
+  }
+}
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -28,7 +42,14 @@ function lastLetter() {}
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  if(str === "") {
+      return ""
+    } else {
+        newStr = str[str.length - 1].toUpperCase();
+      }
+      return str.slice(0, str.length -1) + newStr
+  }
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -43,7 +64,13 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+function drEvil(num) {
+  if(num >= 1000000) {
+    return `${num} dollars (pinky)`
+  } else {
+    return `${num} dollars`
+  }
+}
 
 /**
  * 
@@ -68,7 +95,15 @@ verbing('go')
  
  */
 
-function verbing() {}
+function verbing(str) {
+  if(str.length < 3) {
+    return str
+  } else if (str.slice(- 3) === "ing") {
+    return `${str}ly`
+  } else {
+    return `${str}ing`
+  }
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -77,7 +112,16 @@ function verbing() {}
  * @returns {string}
  */
 
-function removeLastWord() {}
+function removeLastWord(str) {
+  words = str.split(' ');
+  if(words.length <= 1){
+    return '';
+  }else{
+    words.pop()
+    newStr = words.join(" ")
+    return newStr
+  }
+}
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -87,15 +131,33 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter(str) {
+  let even = ""
+  for(let i =0; i< str.length; i++) {
+    if( i%2 === 0) {
+      even += str[i];
+    }
+  }
+  return even
+
+
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
-
+function disemvowel(str) {
+  let vowArr = ["a","e", "i", "o", "u", "A", "E", "I","O","U"]
+  let newStr = "";
+  for(let i = 0; i < str.length; i += 1) {
+    if(!vowArr.includes(str[i])) {
+      newStr += str[i];
+    }
+  }
+    return newStr 
+}
 /**
  * Takes a string sentence and returns a new sentence.
  * Any word that has a length of 5 or more characters should be disemvoweled.
@@ -103,15 +165,28 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
-
+ function disemvowelLongWords(str) {
+   let arr = str.split(" ")
+   for(let i = 0; i <arr.length; i++) {
+     if(arr[i].length >= 5) {
+       arr[i] = disemvowel(arr[i])
+     }
+   }
+   return (arr.join(" "))
+ }
 /**
  * Takes in a string and returns the middle char.
  * If there is no character in the middle return the middle two characters
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+function middleCharacter(str) {
+  if(str.length %2 === 1) {
+    return str[Math.floor(str.length / 2)]
+  } else { 
+    return str[(str.length / 2) - 1] + str[(str.length )/ 2]
+  }
+}
 
 /**
  * Takes in a string and reverses it.
@@ -120,7 +195,13 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString(str) {
+  let reverseStr = ""
+  for(let i = str.length - 1; i >= 0; i--) {
+    reverseStr += str[i]
+  }
+  return reverseStr
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -129,7 +210,16 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(str) {
+  let arr = str.split(" ")
+
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = reverseString(arr[i]);
+
+  }
+  return arr.join(" ");
+}
+  
 
 module.exports = {
   firstChar,
