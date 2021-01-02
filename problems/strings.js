@@ -3,7 +3,8 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar() {
+}
 
 /**
  * Returns the length of a string
@@ -83,6 +84,7 @@ function removeLastWord() {}
  * Takes a string and returns a new string that has only the even
  * indexed characters.
  * Do NOT split the string into an array.
+ * 
  * @param {string}
  * @returns {string}
  */
