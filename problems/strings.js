@@ -132,18 +132,19 @@ function everyOtherLetter(string) {
  * @param {string}
  * @returns {string}
  */
-// function disemvowel(string) {
+function disemvowel(string) {
   
-//   let newstr = "";
+  let newstr = "";
 
-//   for(let i=0; i < string.length; i++) {
-//     let char = string[i].toLowerCase()
-//     if(char !== "a"|| char !== "e" || char !== "i" || char !== "o" || char !== "u") {
-//       newstr += char
-//     } 
-//   }
-//   return newstr;
-// }
+  for(let i=0; i < string.length; i++) {
+    // let vowels = string.includes("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
+    let char = string[i]
+    if(char !== "a" && char !== "e" && char !== "i" && char !== "o" && char !== "u" && char !== "A" && char !== "E" && char !== "I" && char !== "O" && char !== "U"){
+      newstr += char
+    } 
+  }
+  return newstr;
+}
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -152,7 +153,17 @@ function everyOtherLetter(string) {
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+ function disemvowelLongWords(string){
+   let arr = string.split(" ")
+   for(let i = 0; i < arr.length; i++){
+     if(arr[i].length <= 4){
+      return arr.join(" ")
+     }else{
+      arr[i] = disemvowel(arr[i])
+      return arr.join(" ")
+     }
+   }
+ }
 
 /**
  * Takes in a string and returns the middle char.
@@ -160,7 +171,13 @@ function everyOtherLetter(string) {
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+function middleCharacter(string) {
+  if(string.length % 2 === 1){
+    return string[Math.floor(string.length /2)]
+  }else{
+    return string[(string.length / 2) - 1] + string[string.length/2]
+  }
+}
 
 /**
  * Takes in a string and reverses it.
@@ -169,7 +186,13 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString(string) {
+  let newString = ""
+  for(let i = string.length - 1; i >= 0; i--){
+    newString += string[i]
+  }
+  return newString
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -178,7 +201,13 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(string) {
+  let newArray = string.split(" ")
+  for(let i = 0; i < newArray.length; i++){
+    newArray[i] = reverseString(newArray[i])
+  }
+  return newArray.join(" ")
+}
 
 module.exports = {
   firstChar,
