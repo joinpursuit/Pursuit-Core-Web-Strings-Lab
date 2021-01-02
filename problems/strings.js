@@ -5,11 +5,10 @@
  */
 //function firstChar() {}
 const firstChar = (str) => {
-if(str === "") {
-  return "";
-} else
-return str[0];
-}
+  if (str === "") {
+    return "";
+  } else return str[0];
+};
 //console.log(firstChar("Corey"));
 
 /**
@@ -21,7 +20,8 @@ return str[0];
 //function stringLength() {}
 const stringLength = (str) => {
   return str.length;
-}
+};
+
 /**
  * Returns the last character of any string
  * @param {string} - str
@@ -30,13 +30,12 @@ const stringLength = (str) => {
 
 //function lastLetter() {}
 const lastLetter = (str) => {
-  
   if (str === "") {
     return "";
   } else {
     return str[str.length - 1];
   }
-}
+};
 /**
  * Takes a single string variable and returns a copy of the string with the
  * letter capitalized.
@@ -44,8 +43,15 @@ const lastLetter = (str) => {
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+//function capitalizeLastLetter() {}
+const capitalizeLastLetter = (str) => {
 
+  if ( str === "") {
+    return "";
+  } else {
+   return str.slice(0, str.length - 1) + str[str.length - 1].toUpperCase(); ;
+  }
+};
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
 and should add '(pinky)' at the end of the amount if it's 1 million or more. For example:
@@ -119,7 +125,7 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+function disemvowelLongWords() {}
 
 /**
  * Takes in a string and returns the middle char.
