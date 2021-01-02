@@ -3,24 +3,34 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-//function firstChar() {}
 const firstChar = (str) => {
   if (str === "") {
+<<<<<<< HEAD
     return "";
   } else return str[0];
 };
 //console.log(firstChar("Corey"));
 
+=======
+    return ""
+  } else {
+    return str[0]
+  }
+}
+>>>>>>> 2a42fcc3107f9969da5aea4427a9735d5d49b5e4
 /**
  * Returns the length of a string
  * @param {string} - str
  * @returns {number} - length of string
  */
 
-//function stringLength() {}
-const stringLength = (str) => {
+function stringLength(str) {
   return str.length;
+<<<<<<< HEAD
 };
+=======
+}
+>>>>>>> 2a42fcc3107f9969da5aea4427a9735d5d49b5e4
 
 /**
  * Returns the last character of any string
@@ -28,14 +38,23 @@ const stringLength = (str) => {
  * @returns {string} - last letter
  */
 
+<<<<<<< HEAD
 //function lastLetter() {}
 const lastLetter = (str) => {
+=======
+function lastLetter(str) {
+>>>>>>> 2a42fcc3107f9969da5aea4427a9735d5d49b5e4
   if (str === "") {
-    return "";
+    return ""
   } else {
-    return str[str.length - 1];
+    return str[str.length - 1]
   }
+<<<<<<< HEAD
 };
+=======
+}
+
+>>>>>>> 2a42fcc3107f9969da5aea4427a9735d5d49b5e4
 /**
  * Takes a single string variable and returns a copy of the string with the
  * letter capitalized.
@@ -43,8 +62,24 @@ const lastLetter = (str) => {
  * @returns {string} - 'jimmY'
  */
 
+<<<<<<< HEAD
 //function capitalizeLastLetter() {}
 const capitalizeLastLetter = (str) => {
+=======
+// function capitalizeLastLetter(str) {
+  const capitalizeLastLetter = (str) => {
+    if (str === "") {
+      return "";
+    } else {
+      return str.slice(0, str.length - 1) + str[str.length - 1].toUpperCase();
+    }
+  
+  
+    //   return str.toLowerCase().split(" ").map(function(str) {
+  //     return str.slice(0, -1) + str.slice(-1).toUpperCase();
+  // }).join(" ");
+};
+>>>>>>> 2a42fcc3107f9969da5aea4427a9735d5d49b5e4
 
   if ( str === "") {
     return "";
@@ -65,8 +100,14 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
-
+// function drEvil(number) {}
+const drEvil = (number) => {
+  if(number >= 1000000){
+    return number + " dollars " +`(pinky)`
+  } else {
+    return number + " dollars"
+}
+}
 /**
  * 
  * Create a `verbing` function.
@@ -90,7 +131,19 @@ verbing('go')
  
  */
 
-function verbing() {}
+// function verbing() {}
+const verbing = (string) => {
+  if(string.length >= 3) {
+    if(string.slice(string.length-3) === 'ing'){
+      return string + 'ly'
+    } else {
+    return string + 'ing'
+    }
+  } else {
+    return string
+  }
+  
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
