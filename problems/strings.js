@@ -3,7 +3,13 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(str) {
+  if (str === "") {
+    return "";
+  } else {
+    return str[0];
+  }
+}
 
 /**
  * Returns the length of a string
@@ -11,7 +17,9 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+function stringLength(str) {
+  return str.length
+}
 
 /**
  * Returns the last character of any string
@@ -19,7 +27,13 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
+function lastLetter(str) {
+  if (str === "") {
+    return "";
+  } else {
+    return str[str.length - 1];
+  }
+}
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -28,7 +42,14 @@ function lastLetter() {}
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  if(str === "") {
+      return ""
+    } else {
+        newStr = str[str.length - 1].toUpperCase();
+      }
+      return str.slice(0, str.length -1) + newStr
+  }
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -43,7 +64,13 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+function drEvil(num) {
+  if(num >= 1000000) {
+    return `${num} dollars (pinky)`
+  } else {
+    return `${num} dollars`
+  }
+}
 
 /**
  * 
@@ -77,7 +104,16 @@ function verbing() {}
  * @returns {string}
  */
 
-function removeLastWord() {}
+function removeLastWord(str) {
+  words = str.split(' ');
+  if(words.length <= 1){
+    return '';
+  }else{
+    words.pop()
+    newStr = words.join(" ")
+    return newStr
+  }
+}
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -87,7 +123,11 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter(str) {
+  for(i=0; i <str.length; i+= 2) {
+  
+  }
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
