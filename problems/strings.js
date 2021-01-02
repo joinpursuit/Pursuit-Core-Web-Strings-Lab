@@ -4,8 +4,7 @@
  * @returns {string} - first char
  */
 function firstChar(str) {
-   str = str[0];
-   return str
+   return str.slice(0,1); // why doesn't str[0] work for ""
 }
 
 
@@ -25,7 +24,10 @@ function stringLength(str) {
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
+function lastLetter(str) {
+  // return str[str.length - 1]
+  return str.slice(str.length -1)
+}
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -34,7 +36,10 @@ function lastLetter() {}
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  str = str.slice(0,3) + str[4].toUpperCase
+  return str
+}
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
