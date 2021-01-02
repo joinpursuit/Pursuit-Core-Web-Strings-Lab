@@ -149,12 +149,12 @@ const removeLastWord = str => {
  */
 
 // function everyOtherLetter() {}
-const everyOtherLetter = str => {
-  let newStr = [];
-  for(i = 0; i <= str.length; i+=2){
-    newStr.push(str[i]);
-  }
-  return newStr.join('');
+const everyOtherLetter = string => {
+let newArray = []
+for(let i = 0;i <= string.length;i+=2){
+  newArray.push(string[i])
+}
+return newArray.join("");
 }
 
 /**
@@ -162,7 +162,6 @@ const everyOtherLetter = str => {
  * @param {string}
  * @returns {string}
  */
-// function disemvowel() {}
 const disemvowel = str => {
   let output = "";
   for(let i = 0; i < str.length; i+=1){
@@ -173,7 +172,6 @@ const disemvowel = str => {
   }
   return output;
 }
-
 
 /**
  * Takes a string sentence and returns a new sentence.
