@@ -4,7 +4,11 @@
  * @returns {string} - first char
  */
 function firstChar(str) {
-   return str.slice(0,1); // why doesn't str[0] work for ""
+  if(str === "") {
+    return ""
+  } 
+  return str[0]
+  //  return str.slice(0,1); // why doesn't str[0] work for ""
 }
 
 
@@ -24,9 +28,12 @@ function stringLength(str) {
  * @returns {string} - last letter
  */
 
-function lastLetter(str) {
-  // return str[str.length - 1]
-  return str.slice(str.length -1)
+function lastLetter(str) { // why doesnt str[str.length -1]   ?????
+  if(str === "") {
+    return ""
+  }
+  return str[str.length - 1]
+  // return str.slice(str.length -1)
 }
 
 /**
@@ -37,7 +44,7 @@ function lastLetter(str) {
  */
 
 function capitalizeLastLetter(str) {
-  str = str.slice(0,3) + str[4].toUpperCase
+  str = str.slice(0,3) + str[4].toUpperCase()
   return str
 }
 
