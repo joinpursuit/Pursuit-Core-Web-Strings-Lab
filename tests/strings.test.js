@@ -41,7 +41,7 @@ describe("lastLetter", () => {
   });
 });
 
-describe.only("capitalizeLastLetter", () => {
+describe("capitalizeLastLetter", () => {
   test("returns the string with a captialized last latter", () => {
     expect(capitalizeLastLetter("")).toBe("");
     expect(capitalizeLastLetter("jimmy")).toBe("jimmY");
@@ -61,7 +61,7 @@ describe("drEvil", () => {
   });
 });
 
-describe("verbing", () => {
+describe.only("verbing", () => {
   test("words less than three are unchanged", () => {
     expect(verbing("I")).toBe("I");
     expect(verbing("am")).toBe("am");

@@ -45,7 +45,7 @@ function capitalizeLastLetter(str) {
   if(str === "") {
     return ""
   }
-  return str.slice(0,str.length - 1) + str[str.length -1].toUpperCase()
+  return str.slice(0,str.length - 1) + str[str.length -1].toUpperCase() // slice(0, -1) returns last character of the string
 }
 
 /**
@@ -61,7 +61,12 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+function drEvil(num) {
+  if(num < 1000000) {
+    return `${num} dollars`
+  } 
+  return `${num} dollars (pinky)`
+}
 
 /**
  * 
@@ -86,7 +91,12 @@ verbing('go')
  
  */
 
-function verbing() {}
+function verbing(str) { // come back to
+  if(str.length < 3){ return str} 
+  if(str.length >= 3) { return str + "ing"}
+  if(str.slice(-3) === "ing") { return + "ly"}
+  } 
+
 
 /**
  * Takes a single sentence and returns a copy of the string without the
