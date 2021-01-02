@@ -3,7 +3,13 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(str) {
+  if(str === ""){
+  return ""
+  }else{
+    return str[0]
+  }
+}
 
 /**
  * Returns the length of a string
@@ -11,7 +17,9 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+function stringLength(str) {
+  return str.length
+}
 
 /**
  * Returns the last character of any string
@@ -19,7 +27,9 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
+function lastLetter(str) {
+  return str.slice(str.length - 1)
+}
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -28,7 +38,10 @@ function lastLetter() {}
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  return str.slice(0, str.length - 1) + str.slice(-1).toUpperCase()
+  
+}
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
