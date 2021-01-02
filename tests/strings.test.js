@@ -41,7 +41,7 @@ describe("lastLetter", () => {
   });
 });
 
-describe("capitalizeLastLetter", () => {
+describe.only("capitalizeLastLetter", () => {
   test("returns the string with a captialized last latter", () => {
     expect(capitalizeLastLetter("")).toBe("");
     expect(capitalizeLastLetter("jimmy")).toBe("jimmY");

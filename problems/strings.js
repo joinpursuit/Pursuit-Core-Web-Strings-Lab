@@ -7,8 +7,7 @@ function firstChar(str) {
   if(str === "") {
     return ""
   } 
-  return str[0]
-  //  return str.slice(0,1); // why doesn't str[0] work for ""
+  return str[0] // why doesn't str[0] work for ""
 }
 
 
@@ -28,12 +27,11 @@ function stringLength(str) {
  * @returns {string} - last letter
  */
 
-function lastLetter(str) { // why doesnt str[str.length -1]   ?????
+function lastLetter(str) { // why doesnt str[str.length -1] on "" str
   if(str === "") {
     return ""
   }
   return str[str.length - 1]
-  // return str.slice(str.length -1)
 }
 
 /**
@@ -44,8 +42,10 @@ function lastLetter(str) { // why doesnt str[str.length -1]   ?????
  */
 
 function capitalizeLastLetter(str) {
-  str = str.slice(0,3) + str[4].toUpperCase()
-  return str
+  if(str === "") {
+    return ""
+  }
+  return str.slice(0,str.length - 1) + str[str.length -1].toUpperCase()
 }
 
 /**
