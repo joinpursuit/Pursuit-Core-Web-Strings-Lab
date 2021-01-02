@@ -142,11 +142,10 @@ function disemvowel(string) {
       string[i].toLowerCase() !== "i" &&
       string[i].toLowerCase() !== "u"
     )
-    newString += string[i];
+      newString += string[i];
   }
   return newString
 }
-console.log(disemvowel("sentence"))
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -156,10 +155,10 @@ console.log(disemvowel("sentence"))
  */
 
 function disemvowelLongWords(string) {
-  let arr=string.split(" ")
-  for (let i=0; i<arr.length; i+=1){
+  let arr = string.split(" ")
+  for (let i = 0; i < arr.length; i += 1) {
     if (arr[i].length > 4)
-    arr[i]=disemvowel(arr[i])
+      arr[i] = disemvowel(arr[i])
   }
   return (arr.join(" "))
 }
@@ -171,7 +170,12 @@ function disemvowelLongWords(string) {
  * @returns {string}
  */
 function middleCharacter(string) {
-  
+  if (string.length % 2 === 1) {
+    return string[(string.length - 1) / 2]
+  } else {
+    return string[Math.floor((string.length - 1) / 2)] + string[Math.ceil((string.length - 1) / 2)]
+  }
+
 }
 
 /**
@@ -181,7 +185,16 @@ function middleCharacter(string) {
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString(string) {
+  let newString = ""
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i]
+  }
+
+  return newString
+
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -190,7 +203,17 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(string) {
+  let arr = string.split(" ")
+
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = reverseString(arr[i]);
+
+  }
+  return arr.join(" ");
+
+}
+
 
 module.exports = {
   firstChar,
