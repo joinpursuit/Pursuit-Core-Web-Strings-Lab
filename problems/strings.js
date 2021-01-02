@@ -3,40 +3,37 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-//function firstChar() {}
 const firstChar = (str) => {
-if(str === "") {
-  return "";
-} else
-return str[0];
+  if (str === "") {
+    return ""
+  } else {
+    return str[0]
+  }
 }
-//console.log(firstChar("Corey"));
-
 /**
  * Returns the length of a string
  * @param {string} - str
  * @returns {number} - length of string
  */
 
-//function stringLength() {}
-const stringLength = (str) => {
+function stringLength(str) {
   return str.length;
 }
+
 /**
  * Returns the last character of any string
  * @param {string} - str
  * @returns {string} - last letter
  */
 
-//function lastLetter() {}
-const lastLetter = (str) => {
-  
+function lastLetter(str) {
   if (str === "") {
-    return "";
+    return ""
   } else {
-    return str[str.length - 1];
+    return str[str.length - 1]
   }
 }
+
 /**
  * Takes a single string variable and returns a copy of the string with the
  * letter capitalized.
@@ -44,7 +41,19 @@ const lastLetter = (str) => {
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+// function capitalizeLastLetter(str) {
+  const capitalizeLastLetter = (str) => {
+    if (str === "") {
+      return "";
+    } else {
+      return str.slice(0, str.length - 1) + str[str.length - 1].toUpperCase();
+    }
+  
+  
+    //   return str.toLowerCase().split(" ").map(function(str) {
+  //     return str.slice(0, -1) + str.slice(-1).toUpperCase();
+  // }).join(" ");
+};
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -59,8 +68,14 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
-
+// function drEvil(number) {}
+const drEvil = (number) => {
+  if(number >= 1000000){
+    return number + " dollars " +`(pinky)`
+  } else {
+    return number + " dollars"
+}
+}
 /**
  * 
  * Create a `verbing` function.
@@ -84,7 +99,19 @@ verbing('go')
  
  */
 
-function verbing() {}
+// function verbing() {}
+const verbing = (string) => {
+  if(string.length >= 3) {
+    if(string.slice(string.length-3) === 'ing'){
+      return string + 'ly'
+    } else {
+    return string + 'ing'
+    }
+  } else {
+    return string
+  }
+  
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
