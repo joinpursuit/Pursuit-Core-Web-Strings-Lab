@@ -17,7 +17,7 @@ function firstChar(string) {
  */
 
 function stringLength(string) {
-  return string.length
+  return string.length;
 }
 
 /**
@@ -28,7 +28,7 @@ function stringLength(string) {
 
 function lastLetter(string) {
   if (string.length === 0) return "";
-  return string[string.length - 1]
+  return string[string.length - 1];
 }
 
 /**
@@ -43,7 +43,6 @@ function capitalizeLastLetter(string) {
 
   let lastLetter = string[string.length - 1].toUpperCase();
   return string.slice(0, string.length - 1) + lastLetter;
-
 }
 
 /**
@@ -60,13 +59,11 @@ let amount = 1000000
 * @returns {string}
  */
 function drEvil(number) {
-
   if (number < 1000000) {
-    return number + " dollars"
+    return number + " dollars";
   } else {
-    return number + " dollars (pinky)"
+    return number + " dollars (pinky)";
   }
-
 }
 
 /**
@@ -93,15 +90,13 @@ verbing('go')
  */
 
 function verbing(string) {
-
   if (string.length < 3) {
     return string;
   } else if (string.slice(string.length - 3) === "ing") {
-    return string + "ly"
+    return string + "ly";
   } else {
-    return string + "ing"
+    return string + "ing";
   }
-
 }
 
 /**
@@ -124,14 +119,34 @@ function removeLastWord(string) {
  * @returns {string}
  */
 
-function everyOtherLetter() { }
+function everyOtherLetter(string) {
+  let newString = "";
+  for (let i = 0; i < string.length; i += 1) {
+    if (i % 2 === 0) newString += string[i];
+  }
+  return newString;
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() { }
+function disemvowel(string) {
+  let newString = "";
+  for (let i = 0; i < string.length; i += 1) {
+    if (
+      string[i].toLowerCase() !== "a" &&
+      string[i].toLowerCase() !== "e" &&
+      string[i].toLowerCase() !== "o" &&
+      string[i].toLowerCase() !== "i" &&
+      string[i].toLowerCase() !== "u"
+    )
+    newString += string[i];
+  }
+  return newString
+}
+console.log(disemvowel("sentence"))
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -140,7 +155,14 @@ function disemvowel() { }
  * @returns {string}
  */
 
-function disemvowelLongWords() { }
+function disemvowelLongWords(string) {
+  let arr=string.split(" ")
+  for (let i=0; i<arr.length; i+=1){
+    if (arr[i].length > 4)
+    arr[i]=disemvowel(arr[i])
+  }
+  return (arr.join(" "))
+}
 
 /**
  * Takes in a string and returns the middle char.
@@ -148,7 +170,9 @@ function disemvowelLongWords() { }
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() { }
+function middleCharacter(string) {
+  
+}
 
 /**
  * Takes in a string and reverses it.
@@ -157,7 +181,7 @@ function middleCharacter() { }
  * @returns {string}
  */
 
-function reverseString() { }
+function reverseString() {}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -166,7 +190,7 @@ function reverseString() { }
  * @returns {string}
  */
 
-function reverseSentenceWords() { }
+function reverseSentenceWords() {}
 
 module.exports = {
   firstChar,
