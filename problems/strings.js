@@ -99,7 +99,11 @@ const verbing = (string) => {
  * @returns {string}
  */
 
-function removeLastWord() {}
+const removeLastWord = (str) => {
+  let arr = str.split(" ")
+  arr.pop()
+  return arr.join(" ").toLocaleString()
+}
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -109,7 +113,13 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+const everyOtherLetter = (str) => {
+  let newStr = ""
+  for (let i = 0; i < str.length; i+=2) {
+    newStr += str[i]; 
+  }
+  return newStr
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
