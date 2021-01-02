@@ -3,7 +3,11 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(str) {
+   str = str[0];
+   return str
+}
+
 
 /**
  * Returns the length of a string
@@ -11,7 +15,9 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+function stringLength(str) {
+  return str.length
+}
 
 /**
  * Returns the last character of any string
