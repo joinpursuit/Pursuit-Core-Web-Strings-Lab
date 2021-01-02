@@ -5,6 +5,8 @@
  */
 function firstChar(str) {
   return str.slice(0, 1)
+}
+
 
 /**
  * Returns the length of a string
@@ -13,7 +15,7 @@ function firstChar(str) {
  */
 
 function stringLength(str) {
-  return string.length 
+  return str.length;
 }
 
 /**
@@ -107,9 +109,12 @@ function verbing(string) {
  */
 
 function removeLastWord(string) {
-  return string.slice(0, string.length-1)
+  let newWords= string.split(" ")
+  console.log(newWords)
+  let slice= newWords.slice(0, newWords.length-1).join(" ")
+  return slice 
 }
-
+console.log(removeLastWord("I love to sleep"))
 /**
  * Takes a string and returns a new string that has only the even
  * indexed characters.
@@ -118,14 +123,33 @@ function removeLastWord(string) {
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter(string) {
+  let newString =""
+  for (let i =0 ; i < string.length; i++)
+  if(i % 2 === 0){
+    newString += string[i]
+  }
+  return newString
+}
+console.log(everyOtherLetter("chicken"))
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel(string) {
+  let array=string.split("")
+  let newArray=[]
+  for(let i= 0; i<array.length; i++){
+    if(array[i] !== "a" && array[i] !== "e" && array[i] !=="i" && array[i] !== "o" && array[i] !=="u" 
+    && array[i] !== "A" && array[i] !== "E" && array[i] !== "I" && array[i] !== "O" && array[i] !=="U" ){
+      newArray.push(array[i])
+    }
+  }
+  return newArray.join("")
+}
+
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -134,7 +158,9 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+ function disemvowelLongWords(string){
+   
+ }
 
 /**
  * Takes in a string and returns the middle char.
