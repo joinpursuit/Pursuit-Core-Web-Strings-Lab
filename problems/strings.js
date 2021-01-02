@@ -4,9 +4,7 @@
  * @returns {string} - first char
  */
 function firstChar(string) {
-
-  return string.slice(0,1)
-  
+  return string.slice(0, 1);
 }
 
 /**
@@ -16,7 +14,7 @@ function firstChar(string) {
  */
 
 function stringLength(string) {
-  return string.length
+  return string.length;
 }
 
 /**
@@ -26,8 +24,7 @@ function stringLength(string) {
  */
 
 function lastLetter(string) {
-  return string.slice(string.length -1)
- 
+  return string.slice(string.length - 1);
 }
 
 /**
@@ -38,8 +35,10 @@ function lastLetter(string) {
  */
 
 function capitalizeLastLetter(string) {
-  string = string.slice(0,string.length -1) + string.slice([string.length -1 ]).toUpperCase()
-  return  string;
+  string =
+    string.slice(0, string.length - 1) +
+    string.slice([string.length - 1]).toUpperCase();
+  return string;
 }
 
 /**
@@ -56,10 +55,10 @@ let amount = 1000000
 * @returns {string}
  */
 function drEvil(number) {
-  if ( number < 1_000_000){
-    return number + " dollars"
-  }else{
-    return number + " dollars (pinky)"
+  if (number < 1_000_000) {
+    return number + " dollars";
+  } else {
+    return number + " dollars (pinky)";
   }
 }
 
@@ -87,18 +86,14 @@ verbing('go')
  */
 
 function verbing(string) {
-  if ( string.length >= 3 ){
-
-    if( string.slice(string.length -3) === "ing"){
-      return string += "ly"
-
-    }else{
-      return string += "ing"
+  if (string.length >= 3) {
+    if (string.slice(string.length - 3) === "ing") {
+      return (string += "ly");
+    } else {
+      return (string += "ing");
     }
-
-  }else if(string.length < 3){
-    
-      return string
+  } else if (string.length < 3) {
+    return string;
   }
 }
 
@@ -110,11 +105,10 @@ function verbing(string) {
  */
 
 function removeLastWord(string) {
-  
-  
-  
-  return string.slice(string [0], string[string.length -1 ])
-
+  let stringResult = string.split(" ");
+  stringResult.pop();
+  stringResult = stringResult.join(" ");
+  return stringResult;
 }
 
 /**
@@ -125,14 +119,42 @@ function removeLastWord(string) {
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter(string) {
+  let output = "";
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      output += string[i];
+    }
+  }
+  return output;
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel(string) {
+  let output = "";
+  for (let i = 0; i < string.length; i++) {
+    if (
+      string[i] === "a" ||
+      string[i] === "e" ||
+      string[i] === "i" ||
+      string[i] === "o" ||
+      string[i] === "u" ||
+      string[i] === "A" ||
+      string[i] === "E" ||
+      string[i] === "I" ||
+      string[i] === "O" ||
+      string[i] === "U") {
+        string.slice(i, i + 1)
+      } else {
+        output += string[i]
+      }
+  }
+  return output;
+}
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -141,7 +163,7 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+function disemvowelLongWords() {}
 
 /**
  * Takes in a string and returns the middle char.
