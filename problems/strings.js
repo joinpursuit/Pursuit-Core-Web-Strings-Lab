@@ -5,7 +5,7 @@
  */
 const firstChar = (str) => {
   return str.slice(0, 1);
-}
+};
 
 /**
  * Returns the length of a string
@@ -15,8 +15,7 @@ const firstChar = (str) => {
 
 const stringLength = (str) => {
   return str.length;
-}
-
+};
 
 /**
  * Returns the last character of any string
@@ -25,8 +24,8 @@ const stringLength = (str) => {
  */
 
 const lastLetter = (str) => {
-  return str.slice(str.length - 1)
-}
+  return str.slice(str.length - 1);
+};
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -36,8 +35,8 @@ const lastLetter = (str) => {
  */
 
 const capitalizeLastLetter = (str) => {
-  return str.slice(0, str.length - 1) + str.slice(str.length - 1).toUpperCase()
-}
+  return str.slice(0, str.length - 1) + str.slice(str.length - 1).toUpperCase();
+};
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -52,7 +51,12 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+const drEvil = (number) => {
+  if (number < 1000000) {
+    return number + ` dollars`;
+  }
+  return number + ` dollars (pinky)`;
+};
 
 /**
  * 
@@ -77,7 +81,16 @@ verbing('go')
  
  */
 
-function verbing() {}
+const verbing = (string) => {
+ if (string.length >= 3 && string.slice(string.length -1) === "g") {
+  return string + `ly`;
+ } else if (string.length >= 3) {
+   return string + `ing`;
+ }
+ else {
+   return string;
+ }
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -112,7 +125,7 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+function disemvowelLongWords() {}
 
 /**
  * Takes in a string and returns the middle char.
