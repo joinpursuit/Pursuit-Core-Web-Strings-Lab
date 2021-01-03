@@ -1,38 +1,53 @@
-/**
+/**DONE
  * Returns the first character of a string passed in.
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(str) {
+  str = str.slice(0, 1);
+  return str;
+}
 
-/**
+/** DONE
  * Returns the length of a string
  * @param {string} - str
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+function stringLength(str) {
+  return str.length;
+}
 
-/**
+/**DONE
  * Returns the last character of any string
  * @param {string} - str
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
-
-/**
+function lastLetter(str) {
+  if (str === "") {
+    return "";
+  }
+  return str[str.length - 1];
+}
+/**DONE
  * Takes a single string variable and returns a copy of the string with the
  * letter capitalized.
  * @param {string} - str 'jimmy'
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  if (str === "") {
+    return "";
+  }
+  str = str.slice(0, -1) + str[str.length - 1].toUpperCase();
+  return str;
+}
 
 /**
- *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
-and should add '(pinky)' at the end of the amount if it's 1 million or more. For example:
+ *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',and should 
+ * add '(pinky)' at the end of the amount if it's 1 million or more. For example:
 
 ```js
 let amount = 10
@@ -43,7 +58,13 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+function drEvil(amount) {
+  if (amount >= 1000000) {
+    return amount + " dollars (pinky)";
+  } else {
+    return amount + " dollars";
+  }
+}
 
 /**
  * 
@@ -68,7 +89,15 @@ verbing('go')
  
  */
 
-function verbing() {}
+function verbing(str) {
+  if(str.length >= 3 && !str.includes("ing")){
+    return str + "ing"
+  }else if (str.includes("ing")){
+    return str + "ly"
+  }else{
+    return str
+  }
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -77,9 +106,15 @@ function verbing() {}
  * @returns {string}
  */
 
-function removeLastWord() {}
+//DONE
+function removeLastWord(str) {
+  newStr = str.split(' ');
+  newStr.pop();
+  sentence = newStr.join(' ')
+  return sentence
+}
 
-/**
+/**DONE
  * Takes a string and returns a new string that has only the even
  * indexed characters.
  * Do NOT split the string into an array.
@@ -87,14 +122,31 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter(str) {
+  newStr = ""						
+  for (let i = 0; i < str.length; i += 1){
+if(i % 2 === 0){			
+newStr += str[i]
+      }
+  } 
+  return newStr
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel() {
+  array = ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y"]
+  newStr = ""						
+  for (let i = 0; i < str.length; i += 1){
+  if(!array.includes(str[i]))  {			
+  newStr += str[i]
+  }
+} 
+return newStr
+}
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -103,7 +155,7 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+function disemvowelLongWords() {}
 
 /**
  * Takes in a string and returns the middle char.
@@ -120,7 +172,16 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString(str) {
+    var word, words, reverse;
+    words = str.match(/(?:\w+)/g);
+    reverse = '';
+    while(word = words.pop()) {
+      reverse += word + ' ';
+    }
+
+    return reverse.trim();
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -129,7 +190,10 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(str) {
+  return str.split("").reverse().join("").split(" ").reverse().join(" ")
+}
+console.log(reverseSentenceWords("I like Cake in the Morning"))
 
 module.exports = {
   firstChar,
@@ -146,3 +210,5 @@ module.exports = {
   reverseString,
   reverseSentenceWords,
 };
+
+
