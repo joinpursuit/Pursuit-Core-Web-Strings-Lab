@@ -163,16 +163,34 @@ const disemvowel = (string) => {
  * @param {string}
  * @returns {string}
  */
-
- function disemvowelLongWords(){}
-
+// function disemvowelLongWords(){}
+const disemvowelLongWords = (string) => {
+  let wordsArray = string.split(" ")
+  for(let i = 0; i < wordsArray.length; i += 1) {
+    let word = wordsArray[i]
+    if(word.length >= 5) {
+      wordsArray[i] = disemvowel(word)
+    }
+  } return wordsArray.join(" ")
+}
 /**
  * Takes in a string and returns the middle char.
  * If there is no character in the middle return the middle two characters
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+// function middleCharacter() {}
+const middleCharacter = (string) => {
+  if(string.length % 2 !== 0) {
+    let index = Math.floor(string.length / 2)
+    let c = string.charAt(index)
+    return c
+  } else {
+    let index1 = (string.length / 2) - 1
+    let index2 = string.length / 2
+    return string.charAt(index1) + string.charAt(index2)
+  }
+}
 
 /**
  * Takes in a string and reverses it.
@@ -181,7 +199,14 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+// function reverseString() {}
+const reverseString = (string) => {
+  let newString = ""
+  for(i = string.length-1; i>=0; i -= 1) {
+    newString += string.charAt(i)
+  }
+  return newString
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -190,7 +215,15 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+// function reverseSentenceWords() {}
+const reverseSentenceWords = (string) => {
+  let reverseWordString = ""
+  for(i = string.length-1; i >= 0; i -= 1) {
+    // reverseWordString = string.charAt(i) + reverseWordString
+    reverseWordString = reverseWordString[string.length-1] + string.charAt(i)
+  }
+  return reverseWordString
+}
 
 module.exports = {
   firstChar,
