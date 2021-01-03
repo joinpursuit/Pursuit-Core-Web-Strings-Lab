@@ -154,21 +154,14 @@ const disemvowel = (str) => {
 
 const disemvowelLongWords = (str) => {
   let arr = str.split(" ");
-  let vowels = "aeiouAEIOU";
-  let i = 0;
-  // let newStr = "";
-  while (i < arr.length) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i].length >= 5) {
-      if (!vowels.includes(arr[i])) {
-        arr.push();
-      }
-    } else {
-      arr.push();
+      arr[i] = disemvowel(arr[i])
     }
-    i++;
+    
   }
-  return arr.join(" ").toLocaleString();
-};
+  return arr.join(" ")
+}
 
 /**
  * Takes in a string and returns the middle char.
