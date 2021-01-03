@@ -176,7 +176,14 @@ const disemvowelLongWords = (str) => {
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+const middleCharacter = (str) => {
+  let middleIndex = Math.floor(str.length / 2)
+  if (str.length % 2 === 1) {
+    return str[middleIndex]
+  } else {
+    return str[middleIndex - 1] + str[middleIndex]
+  }
+}
 
 /**
  * Takes in a string and reverses it.
@@ -185,7 +192,13 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+const reverseString = (str) => {
+  let newStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+  }
+  return newStr;
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -194,7 +207,15 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+const reverseSentenceWords = (str) => {
+  let arr = str.split("");
+  let reverseArr = arr.reverse();
+  let joinReverse = reverseArr.join("");
+  let reverseSplit = joinReverse.split(" ");
+  let splitReverse = reverseSplit.reverse();
+  let newStr = splitReverse.join(" ");
+  return newStr;
+}
 
 module.exports = {
   firstChar,
