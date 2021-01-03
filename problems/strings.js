@@ -3,7 +3,14 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(str) {
+
+if (str === "") {
+return str;
+} else {
+  return str[0];
+}
+}
 
 /**
  * Returns the length of a string
@@ -11,7 +18,9 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+function stringLength(str) {
+  return str.length;
+}
 
 /**
  * Returns the last character of any string
@@ -19,7 +28,13 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
+function lastLetter(str) {
+  if(str === "") {
+    return str
+  }
+  else {return str[str.length-1]
+  }
+}
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -28,7 +43,9 @@ function lastLetter() {}
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+   return (str.slice(0, str.length -1)) + (str.slice(str.length-1).toUpperCase())
+}
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -43,7 +60,13 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+function drEvil(number) {
+  if (number >= 1000000) {
+    return (number + " dollars (pinky)");
+  } else {
+    return (number + " dollars");
+  }
+}
 
 /**
  * 
@@ -65,10 +88,19 @@ verbing('swimming')
 verbing('go')
 // =>  'go'
 ```
+
  
  */
 
-function verbing() {}
+function verbing(string) {
+  if (string.length >= 3 && (string.slice(string.length -3, string[string.length]) === "ing")) {
+    return string + "ly"
+  } else if (string.length >= 3 && (string.slice(string.length -4, string.length -1) !== "ing")){
+    return string + "ing"
+  } else {
+    return string;
+  }
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -77,7 +109,13 @@ function verbing() {}
  * @returns {string}
  */
 
-function removeLastWord() {}
+function removeLastWord(string) {
+  let sentenceArray = string.split(" ");
+  sentenceArray.pop()
+    // console.log("I got this far!")
+    // console.log("I got to the else!")
+    return sentenceArray.join(" ")
+}
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -87,8 +125,15 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter(string) {
+  let newString = ""
+  for (let i = 0; i < string.length; i += 2) {
+    newString += string[i]
+  } return newString
+}
 
+
+// console.log(everyOtherLetter("beautiful"))
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
