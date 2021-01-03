@@ -114,7 +114,6 @@ function removeLastWord(string) {
   let slice= newWords.slice(0, newWords.length-1).join(" ")
   return slice 
 }
-console.log(removeLastWord("I love to sleep"))
 /**
  * Takes a string and returns a new string that has only the even
  * indexed characters.
@@ -131,7 +130,6 @@ function everyOtherLetter(string) {
   }
   return newString
 }
-console.log(everyOtherLetter("chicken"))
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
@@ -159,7 +157,17 @@ function disemvowel(string) {
  */
 
  function disemvowelLongWords(string){
-   
+   let array=string.split(" ")
+   let newArray=[]
+   for(let i=0; i<array.length; i++){
+     let words= array[i]
+     if(words.length >=5){
+       newArray.push(disemvowel(words))
+     }else {
+       newArray.push(words)
+     }
+    }
+    return newArray.join(" ")
  }
 
 /**
@@ -168,7 +176,15 @@ function disemvowel(string) {
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+function middleCharacter(string) {
+  let array =string.split("")
+  let middle=Math.floor(array.length/2)
+  if (array.length%2 !==0){
+    return (array[middle])
+  }else if( array.length%2 === 0){
+    return array[middle-1] + array[middle]
+  }
+}
 
 /**
  * Takes in a string and reverses it.
@@ -177,7 +193,13 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString(string) {
+  let newString= ""
+  for(let i=string.length-1; i>=0 ; i--){
+    newString+= string[i]
+  }
+  return newString
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -186,7 +208,15 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(string) {
+  let array=string.split(" ")
+  let newArray=[]
+  for(let i= 0; i<array.length; i++){
+    let words = array[i]
+    newArray.push(reverseString(words))
+  }
+  return newArray.join(" ")
+}
 
 module.exports = {
   firstChar,
