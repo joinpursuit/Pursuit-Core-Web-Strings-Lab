@@ -14,7 +14,7 @@ function firstChar(str) {
  */
 
 function stringLength(str) {
-  return str.length
+  return str.length;
 }
 
 /**
@@ -24,13 +24,12 @@ function stringLength(str) {
  */
 
 function lastLetter(str) {
-  if(str === ""){
-    return ""
-  }else {
+  if (str === "") {
+    return "";
+  } else {
     return str[str.length - 1];
   }
 }
-
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -40,14 +39,13 @@ function lastLetter(str) {
  */
 
 function capitalizeLastLetter(str) {
-  if(str === ""){
-    return ""
-  }else {
+  if (str === "") {
+    return "";
+  } else {
     str = str.slice(0, str.length - 1) + str[str.length - 1].toUpperCase();
-    return str
+    return str;
   }
 }
-
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -63,10 +61,10 @@ let amount = 1000000
 * @returns {string}
  */
 function drEvil(number) {
-  if(number < 1000000){
-    return `${number} dollars`
-  }else{
-    return `${number} dollars (pinky)`
+  if (number < 1000000) {
+    return `${number} dollars`;
+  } else {
+    return `${number} dollars (pinky)`;
   }
 }
 
@@ -94,12 +92,12 @@ verbing('go')
  */
 
 function verbing(string) {
-  if(string.length < 3){
+  if (string.length < 3) {
     return string;
-  }else if(string.length >= 3 && string.endsWith("ing")){
-    return (`${string}ly`);
-  }else{
-    return (`${string}ing`);
+  } else if (string.length >= 3 && string.endsWith("ing")) {
+    return `${string}ly`;
+  } else {
+    return `${string}ing`;
   }
 }
 
@@ -111,12 +109,12 @@ function verbing(string) {
  */
 
 function removeLastWord(string) {
-  if(string.split(" ").length <= 1){
-    return ""
-  }else {
-    return (string.substring(0, string.lastIndexOf(" ")))
+  if (string.split(" ").length <= 1) {
+    return "";
+  } else {
+    return string.substring(0, string.lastIndexOf(" "));
   }
-} 
+}
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -126,14 +124,29 @@ function removeLastWord(string) {
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter(string) {
+  newString = "";
+  for (let i = 0; i < string.length; i += 2) {
+    newString += string[i];
+  }
+  return newString;
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel(string) {
+  let output = "";
+  let vowels = "aeiouAEIOU";
+  for (let i = 0; i < string.length; i++) {
+    if (!vowels.includes(string[i])) {
+      output += string[i];
+    }
+  }
+  return output;
+}
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -142,7 +155,17 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+function disemvowelLongWords(string) {
+  newString = "";
+  let vowels = "aeiouAEIOU"
+  let words = string.split(" "); 
+  for(let i = 0; i <= words.length; i++) {
+    if(!vowels.includes(words[i])) {
+      newString += words[i];
+    }
+  }
+  return newString
+}
 
 /**
  * Takes in a string and returns the middle char.
@@ -150,7 +173,14 @@ function disemvowel() {}
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+function middleCharacter(string) {
+  let midChar = Math.floor(string.length / 2);
+  if(string.length % 2 === 1) {
+    return string[midChar];
+  }else {
+    return (string[midChar - 1] + string[midChar])
+  }
+} 
 
 /**
  * Takes in a string and reverses it.
@@ -159,7 +189,13 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString(string) {
+  let revString = "";
+  for(let i = string.length - 1; i >= 0; i--){
+    revString += string[i]
+  }
+  return revString
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -168,7 +204,9 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(string) {
+  return string.split("").reverse().join("").split(" ").reverse().join(" ")
+}
 
 module.exports = {
   firstChar,
