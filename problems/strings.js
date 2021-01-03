@@ -3,7 +3,14 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+// function firstChar() {}
+const firstChar = str => {
+  if(str === ''){
+    return '';
+  }else{
+    return str[0];
+  }
+}
 
 /**
  * Returns the length of a string
@@ -11,7 +18,10 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+// function stringLength() {}
+const stringLength = str => {
+  return str.length;
+}
 
 /**
  * Returns the last character of any string
@@ -19,7 +29,14 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
+// function lastLetter() {}
+const lastLetter = str => {
+  if(str === ''){
+    return '';
+  }else{
+    return str[str.length - 1];
+  }
+}
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -28,7 +45,21 @@ function lastLetter() {}
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+// function capitalizeLastLetter() {}
+const capitalizeLastLetter = str => {
+  if(str.length < 1){
+    return '';
+  }else{
+    let capitalLetter = str[str.length - 1].toUpperCase();
+    // console.log(capitalLetter);
+    // array = [1,2,3,4,5]
+            //  0 1 2 3 4
+            // if < 5 spots
+            // includes the first one
+            // but does not include the last position
+    return str.slice(0,str.length - 1) + capitalLetter;
+  }
+}
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -43,7 +74,14 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+// function drEvil() {}
+const drEvil = num => {
+  if(num >= 1000000){
+    return `${num} dollars (pinky)`;
+  }else{
+    return `${num} dollars`;
+  }
+}
 
 /**
  * 
@@ -68,7 +106,21 @@ verbing('go')
  
  */
 
-function verbing() {}
+// function verbing() {}
+const verbing = str => {
+  if(str.length < 3){
+    return str;
+  }else{
+    lastThreeLetters = str[str.length - 3] + str[str.length - 2] + str[str.length - 1];
+    if(lastThreeLetters === 'ing'){
+      return `${str}ly`;
+      // return str + 'ly'
+    }else{
+      return `${str}ing`;
+    }
+    
+  }
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -77,7 +129,16 @@ function verbing() {}
  * @returns {string}
  */
 
-function removeLastWord() {}
+// function removeLastWord() {}
+const removeLastWord = str => {
+  words = str.split(' ');
+  if(words.length <= 1){
+    return '';
+  }else{
+    words.pop();
+    return words.join(' ');
+  }
+}
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -87,14 +148,30 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+// function everyOtherLetter() {}
+const everyOtherLetter = string => {
+let newArray = []
+for(let i = 0;i <= string.length;i+=2){
+  newArray.push(string[i])
+}
+return newArray.join("");
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+const disemvowel = str => {
+  let output = "";
+  for(let i = 0; i < str.length; i+=1){
+    let currChar = str[i];
+    if(currChar !== "a" && currChar !== "e" && currChar !== "i" && currChar !== "o" && currChar !== "u" && currChar !== "A" && currChar !== "E" && currChar !== "I" && currChar !== "O" && currChar !== "U"){
+      output += currChar;
+    }
+  }
+  return output;
+}
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -103,7 +180,15 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+//  function disemvowelLongWords(){}
+const disemvowelLongWords = str => {
+  let words = str.split(' ');
+  for (let i = 0; i < words.length; i += 1) {
+    if (words[i].length > 4)
+      words[i] = disemvowel(words[i])
+  }
+  return (words.join(' '));
+}
 
 /**
  * Takes in a string and returns the middle char.
@@ -111,7 +196,9 @@ function disemvowel() {}
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+// function middleCharacter() {}
+const middleCharacter = str => {
+}
 
 /**
  * Takes in a string and reverses it.
@@ -120,7 +207,15 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+// function reverseString() {}
+const reverseString = str => {
+  let arr = string.split(' ');
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i].length > 4)
+      arr[i] = disemvowel(arr[i]);
+  }
+  return (arr.join(' '));
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
