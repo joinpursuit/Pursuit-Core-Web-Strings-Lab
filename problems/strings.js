@@ -213,7 +213,9 @@ function reverseString(string) {
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(string) {
+  return string.split("").reverse().join("").split(" ").reverse().join(" ")
+}
 
 module.exports = {
   firstChar,
