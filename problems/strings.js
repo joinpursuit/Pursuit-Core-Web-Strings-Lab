@@ -109,18 +109,13 @@ function verbing(string) {
  * @returns {string}
  */
 
-
 function removeLastWord(string) {
-  let sentenceArray = string.split( " " )
-  let sentenceArray2 = string.split( " " )
-  return sentenceArray - (sentenceArray[sentenceArray.length - 1])
-if (sentenceArray2.length - 1 === "" ) {
-  return "";
-  
+  let sentenceArray = string.split(" ");
+  sentenceArray.pop()
+    // console.log("I got this far!")
+    // console.log("I got to the else!")
+    return sentenceArray.join(" ")
 }
-
-}
-console.log("helloworld")
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -130,8 +125,15 @@ console.log("helloworld")
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter(string) {
+  let newString = ""
+  for (let i = 0; i < string.length; i += 2) {
+    newString += string[i]
+  } return newString
+}
 
+
+// console.log(everyOtherLetter("beautiful"))
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
