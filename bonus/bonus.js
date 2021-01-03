@@ -3,7 +3,18 @@
  * @param {string}
  * @returns {string}
  */
-function replaceVowels() {}
+function replaceVowels(string) {
+  let newString = "";
+  for (let i = 0; i < string.length; i++) {
+    if (string[i].toLowerCase() === "a" || string[i].toLowerCase() === "e" || string[i].toLowerCase() === "i" || string[i].toLowerCase() === "o" || string[i].toLowerCase() === "u") {
+      newString += "*";
+    } else {
+      newString += string[i]
+    }
+  }
+  return newString;
+
+}
 
 /**
  * Takes in a string and adds "#" if the string has
@@ -11,7 +22,13 @@ function replaceVowels() {}
  * @param {string}
  * @returns {string}
  */
-function makeStringEvenLength() {}
+function makeStringEvenLength(string) {
+  if (string.length % 2 === 1) {
+    string += "#"
+  }
+  return string;
+
+}
 
 /**
  * Takes in a string and returns the last three
@@ -21,14 +38,31 @@ function makeStringEvenLength() {}
  * @returns {string}
  */
 
-function lastThreeLetters() {}
+function lastThreeLetters(string) {
+  if (string.length < 3) {
+    throw Error("Input less than three characters")
+  } else {
+    return string.slice(string.length - 3)
+  }
+}
 
 /**
  * Takes in a string and returns whether or not that string starts with a vowel.
  * @param {string}
  * @returns {boolean}
  */
-function doesStartWithVowel() {}
+function doesStartWithVowel(string) {
+  switch (string[0]) {
+    case "a":
+    case "e":
+    case "i":
+    case "o":
+    case "u":
+      return true;
+    default:
+      return false;
+  }
+}
 
 /**
  * Takes in two strings and returns a new string
@@ -37,7 +71,10 @@ function doesStartWithVowel() {}
  * @param {string} str2
  * @returns {string}
  */
-function combineStrings() {}
+function combineStrings(str1, str2) {
+  return str1 + " " + str2;
+
+}
 /**
  * Write a function that takes in two strings, `str1` and `str2`,
  * return a new string with `str2` mashed into the middle of `str1`
@@ -47,7 +84,10 @@ function combineStrings() {}
  * @param {string} str2
  * @returns {string}
  */
-function mashUp() {}
+function mashUp(str1, str2) {
+  return str1.slice(0, ((str1.length) / 2)) + str2 + str1.slice(((str1.length) / 2))
+
+}
 /**
  * Takes in a string and returns whether or not is includes a vowel.
  * Don't use the || (OR) operator,  use the includes method and make it
@@ -55,7 +95,16 @@ function mashUp() {}
  * @param {string}
  * @returns {boolean}
  */
-function includesVowel() {}
+const includesVowel = string => {
+  let vowels = "aeiouAEIOU";
+  for (let i = 0; i < string.length; i++) {
+    if (vowels.includes(string[i])) {
+      return true;
+    }
+  }
+  return false;
+
+}
 
 /**
  * Takes in a string and returns the number of vowels that it contains.
@@ -64,7 +113,19 @@ function includesVowel() {}
  * @returns {number} number of vowels
  */
 
-function vowelCount() {}
+function vowelCount(string) {
+  let vowels = "aeiouAEIOU"
+  let total = 0
+
+  for (let i = 0; i < string.length; i++) {
+    if (vowels.includes(string[i])) {
+      total++
+    }
+  }
+  return total;
+
+
+}
 
 module.exports = {
   replaceVowels,
