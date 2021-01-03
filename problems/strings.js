@@ -5,19 +5,10 @@
  */
 const firstChar = (str) => {
   if (str === "") {
-<<<<<<< HEAD
     return "";
   } else return str[0];
 };
-//console.log(firstChar("Corey"));
 
-=======
-    return ""
-  } else {
-    return str[0]
-  }
-}
->>>>>>> 2a42fcc3107f9969da5aea4427a9735d5d49b5e4
 /**
  * Returns the length of a string
  * @param {string} - str
@@ -26,11 +17,7 @@ const firstChar = (str) => {
 
 function stringLength(str) {
   return str.length;
-<<<<<<< HEAD
-};
-=======
 }
->>>>>>> 2a42fcc3107f9969da5aea4427a9735d5d49b5e4
 
 /**
  * Returns the last character of any string
@@ -38,23 +25,14 @@ function stringLength(str) {
  * @returns {string} - last letter
  */
 
-<<<<<<< HEAD
-//function lastLetter() {}
-const lastLetter = (str) => {
-=======
 function lastLetter(str) {
->>>>>>> 2a42fcc3107f9969da5aea4427a9735d5d49b5e4
   if (str === "") {
-    return ""
+    return "";
   } else {
-    return str[str.length - 1]
+    return str[str.length - 1];
   }
-<<<<<<< HEAD
-};
-=======
 }
 
->>>>>>> 2a42fcc3107f9969da5aea4427a9735d5d49b5e4
 /**
  * Takes a single string variable and returns a copy of the string with the
  * letter capitalized.
@@ -62,31 +40,15 @@ function lastLetter(str) {
  * @returns {string} - 'jimmY'
  */
 
-<<<<<<< HEAD
-//function capitalizeLastLetter() {}
-const capitalizeLastLetter = (str) => {
-=======
 // function capitalizeLastLetter(str) {
-  const capitalizeLastLetter = (str) => {
-    if (str === "") {
-      return "";
-    } else {
-      return str.slice(0, str.length - 1) + str[str.length - 1].toUpperCase();
-    }
-  
-  
-    //   return str.toLowerCase().split(" ").map(function(str) {
-  //     return str.slice(0, -1) + str.slice(-1).toUpperCase();
-  // }).join(" ");
-};
->>>>>>> 2a42fcc3107f9969da5aea4427a9735d5d49b5e4
-
-  if ( str === "") {
+const capitalizeLastLetter = (str) => {
+  if (str === "") {
     return "";
   } else {
-   return str.slice(0, str.length - 1) + str[str.length - 1].toUpperCase(); ;
+    return str.slice(0, str.length - 1) + str[str.length - 1].toUpperCase();
   }
 };
+
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
 and should add '(pinky)' at the end of the amount if it's 1 million or more. For example:
@@ -102,12 +64,13 @@ let amount = 1000000
  */
 // function drEvil(number) {}
 const drEvil = (number) => {
-  if(number >= 1000000){
-    return number + " dollars " +`(pinky)`
+  if (number >= 1000000) {
+    return number + " dollars " + `(pinky)`;
   } else {
-    return number + " dollars"
-}
-}
+    return number + " dollars";
+  }
+};
+
 /**
  * 
  * Create a `verbing` function.
@@ -133,17 +96,16 @@ verbing('go')
 
 // function verbing() {}
 const verbing = (string) => {
-  if(string.length >= 3) {
-    if(string.slice(string.length-3) === 'ing'){
-      return string + 'ly'
+  if (string.length >= 3) {
+    if (string.slice(string.length - 3) === "ing") {
+      return string + "ly";
     } else {
-    return string + 'ing'
+      return string + "ing";
     }
   } else {
-    return string
+    return string;
   }
-  
-}
+};
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -152,12 +114,24 @@ const verbing = (string) => {
  * @returns {string}
  */
 
-// function removeLastWord() {}
+//function removeLastWord() {} -- I DO NOT UNDERSTAND HOW THIS WORKS
+// const removeLastWord = (string) => {
+//   let lastIndex = string.lastIndexOf(" ")
+//   string = string.substring(0, lastIndex)
+//   return string
+// }
+
+/* .split(" ") splits the string at the spaces
+ * .splice(0, -1) remove the last element or can use .pop()
+ * .join(" ") rejoin the string with a space in between each word
+ * newStr = str.split(" ").slice(0, -1).join(" ");
+ */
 const removeLastWord = (string) => {
-  let lastIndex = string.lastIndexOf(" ")
-  string = string.substring(0, lastIndex)
-  return string
-}
+  let newStr = "";
+  newStr = string.split(" ");
+  newStr.pop();
+  return newStr.join(" ");
+};
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -169,25 +143,26 @@ const removeLastWord = (string) => {
 
 // function everyOtherLetter() {}
 const everyOtherLetter = (string) => {
-  let newString = ""
-  for(let i = 0; i <= string.length; i += 1) {
-    if(i % 2 === 0) {
-      newString += string[i]
+  let newString = "";
+  for (let i = 0; i <= string.length; i += 1) {
+    if (i % 2 === 0) {
+      newString += string[i];
     }
   }
-  return newString
-}
+  return newString;
+};
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
+ * string.replace(/searchValue/gi, newValue)
+ * -- the g means global or gi for case-INsensetive would remove upper and lowers case occurances
  */
-// function disemvowel() {}
+//function disemvowel() {}
 const disemvowel = (string) => {
-  return string.replace(/[aeiouAEIOU]/g,"")
-}
-
+  return string.replace(/[aeiou]/gi, "");
+};
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -196,7 +171,21 @@ const disemvowel = (string) => {
  * @returns {string}
  */
 
-function disemvowelLongWords() {}
+//function disemvowelLongWords() {}
+const disemvowelLongWords = (string) => {
+//   let newStr = string. split(" ");
+//  let modified = ""; // how do i iterate through the newStr???
+//  let word = "";
+//   for (let i = 0; i < newStr.length; i++) {
+//    word = newStr[i];
+//     if (???.length >= 5) {
+//       modified += .replace(/[aeiou]/gi, "");
+//     } else {
+//       modified += ???; 
+//     }
+//   }
+//   return newStr;
+};
 
 /**
  * Takes in a string and returns the middle char.
@@ -204,8 +193,14 @@ function disemvowelLongWords() {}
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
-
+//function middleCharacter() {}
+const middleCharacter = (string) => {
+  if(string.length % 2 === 1) {
+    return string[Math.floor(string.length/2)]
+  } else {
+    return string[Math.floor(string.length/2) - 1] + string[Math.floor(string.length/2)]  
+  }
+}
 /**
  * Takes in a string and reverses it.
  * Do not use split
@@ -213,7 +208,14 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+//function reverseString() {}
+const reverseString = (string) => {
+  let newStr = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    newStr += string[i];
+  }
+  return newStr;
+};
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -222,7 +224,16 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+//function reverseSentenceWords() {}
+// how do i iterate through the newStr after I split it? Is it an Array now?
+const reverseSentenceWords = (string) => {
+  let reversed = "";
+  //let newStr = string.split(" ");
+  for (let i = string.length - 1; i >= 0; i--) {
+    reversed += string[i];
+  }
+  return reversed;
+}
 
 module.exports = {
   firstChar,
