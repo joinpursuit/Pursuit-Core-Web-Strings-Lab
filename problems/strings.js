@@ -180,7 +180,15 @@ const disemvowel = str => {
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+//  function disemvowelLongWords(){}
+const disemvowelLongWords = str => {
+  let words = str.split(' ');
+  for (let i = 0; i < words.length; i += 1) {
+    if (words[i].length > 4)
+      words[i] = disemvowel(words[i])
+  }
+  return (words.join(' '));
+}
 
 /**
  * Takes in a string and returns the middle char.
@@ -188,7 +196,9 @@ const disemvowel = str => {
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+// function middleCharacter() {}
+const middleCharacter = str => {
+}
 
 /**
  * Takes in a string and reverses it.
@@ -197,7 +207,15 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+// function reverseString() {}
+const reverseString = str => {
+  let arr = string.split(' ');
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i].length > 4)
+      arr[i] = disemvowel(arr[i]);
+  }
+  return (arr.join(' '));
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
