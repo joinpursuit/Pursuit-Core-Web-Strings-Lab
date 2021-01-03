@@ -3,7 +3,10 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(str) {
+  return str.slice(0, 1)
+}
+
 
 /**
  * Returns the length of a string
@@ -11,7 +14,9 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+function stringLength(str) {
+  return str.length;
+}
 
 /**
  * Returns the last character of any string
@@ -19,16 +24,21 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
-
-/**
+function lastLetter(str) {
+  return str.slice( str.length -1, str.length);  
+  
+}
+  /**
  * Takes a single string variable and returns a copy of the string with the
  * letter capitalized.
  * @param {string} - str 'jimmy'
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  let lastLetter = str.slice( str.length -1, str.length)
+ return str.slice(0, str.length -1) + lastLetter.toUpperCase();
+}
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -43,7 +53,16 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+function drEvil(number) {
+  if( number < 1000000) {
+  return `${number} dollars`;
+  }else if (number >= 1000000)
+  {
+  return `${number} dollars (pinky)`;
+
+  }
+
+}
 
 /**
  * 
@@ -68,7 +87,19 @@ verbing('go')
  
  */
 
-function verbing() {}
+function verbing(string) {
+  if ( string.length > 3 && string.slice(string.length - 3, string.length) === "ing") {
+    return `${string}ly`;
+  }else if (string.length >= 3) {
+     return `${string}ing`
+    }else if ( string.length < 3) {
+      return `${string}`;
+    }
+  }
+  
+
+
+  
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -77,8 +108,12 @@ function verbing() {}
  * @returns {string}
  */
 
-function removeLastWord() {}
-
+function removeLastWord(string) {
+  let newWords= string.split(" ")
+  console.log(newWords)
+  let slice= newWords.slice(0, newWords.length-1).join(" ")
+  return slice 
+}
 /**
  * Takes a string and returns a new string that has only the even
  * indexed characters.
@@ -87,14 +122,32 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter(string) {
+  let newString =""
+  for (let i =0 ; i < string.length; i++)
+  if(i % 2 === 0){
+    newString += string[i]
+  }
+  return newString
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel(string) {
+  let array=string.split("")
+  let newArray=[]
+  for(let i= 0; i<array.length; i++){
+    if(array[i] !== "a" && array[i] !== "e" && array[i] !=="i" && array[i] !== "o" && array[i] !=="u" 
+    && array[i] !== "A" && array[i] !== "E" && array[i] !== "I" && array[i] !== "O" && array[i] !=="U" ){
+      newArray.push(array[i])
+    }
+  }
+  return newArray.join("")
+}
+
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -103,7 +156,19 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+ function disemvowelLongWords(string){
+   let array=string.split(" ")
+   let newArray=[]
+   for(let i=0; i<array.length; i++){
+     let words= array[i]
+     if(words.length >=5){
+       newArray.push(disemvowel(words))
+     }else {
+       newArray.push(words)
+     }
+    }
+    return newArray.join(" ")
+ }
 
 /**
  * Takes in a string and returns the middle char.
@@ -111,7 +176,15 @@ function disemvowel() {}
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+function middleCharacter(string) {
+  let array =string.split("")
+  let middle=Math.floor(array.length/2)
+  if (array.length%2 !==0){
+    return (array[middle])
+  }else if( array.length%2 === 0){
+    return array[middle-1] + array[middle]
+  }
+}
 
 /**
  * Takes in a string and reverses it.
@@ -120,7 +193,13 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString(string) {
+  let newString= ""
+  for(let i=string.length-1; i>=0 ; i--){
+    newString+= string[i]
+  }
+  return newString
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -129,7 +208,15 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(string) {
+  let array=string.split(" ")
+  let newArray=[]
+  for(let i= 0; i<array.length; i++){
+    let words = array[i]
+    newArray.push(reverseString(words))
+  }
+  return newArray.join(" ")
+}
 
 module.exports = {
   firstChar,
