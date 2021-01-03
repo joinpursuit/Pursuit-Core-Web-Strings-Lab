@@ -213,7 +213,15 @@ function reverseString(string) {
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(string) {
+  let arr = string.split("")  // splits every space/letter in a string into an array 
+  arr = arr.reverse()  // reverses the order of the new array 
+  arr = arr.join("")  // it unites all the elements of the array into a string with no spacees in between
+  arr = arr.split(" ")   // it splits whereever there are spaces and outs that into a new array
+  arr = arr.reverse() // it reverses the order of the elements in the new array
+  return arr.join(" ") //it joins the elements into a new array and spaces will seperate them 
+}
+
 
 module.exports = {
   firstChar,
