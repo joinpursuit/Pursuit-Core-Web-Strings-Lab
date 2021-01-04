@@ -181,13 +181,13 @@ function disemvowelLongWords(str) {
  * @returns {string}
  */
 function middleCharacter(str) {
-  let splitStr = str.split("")
-  let midChar = splitStr[splitStr.length / 2]
-  let midChar2 = splitStr[splitStr.length / 2  - 1]
+  let midChar = (str.length-1/2)
+  let midChar2 = (str.length-1/2 - 1)
+
   if(str.length % 2 !== 0) {
-    return midChar.toString() + midChar2.toString()
+    return  str[midChar] + str[midChar2]
   } else {
-    return midChar.toString()
+    return  str[midChar]
   }
 }
 
