@@ -7,7 +7,17 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
+function firstChar(str) {
+  if (str.length === 0) {
+    return ''
+  } else {
+    return str[0]
+  }
+}
+
+//  console.log( firstChar("banana"))// returns "b"
+//  console.log(firstChar("pinapple"))// returns "p"
+//  console.log(firstChar(""))// returns ""
 
 
 /**
@@ -18,7 +28,9 @@ function firstChar() {}
  * example: stringLength("what") returns 4
  * example: stringLength("sixteen") returns 7
  */
-function stringLength() {}
+function stringLength(str) {
+  return str.length
+}
 
 
 /**
@@ -31,8 +43,10 @@ function stringLength() {}
  * example: lastLetter("") returns ""
  */
 
-function lastLetter() {
+function lastLetter(str) {
+  return str[str.length-1] || ''
 }
+// console.log(lastLetter('jame'))
 
 /**
  * Takes a string and returns a copy of the string with the last
@@ -43,7 +57,21 @@ function lastLetter() {
  * example: capitalizeLastLetter("jimmy") returns "jimmY"
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+let myString = str
+if (myString === '') {
+  return ''
+} else {
+myString = myString.slice(0, myString.length-1) + myString[myString.length-1].toUpperCase() 
+
+
+return myString 
+}
+
+}
+// console.log(capitalizeLastLetter(''))
+console.log(capitalizeLastLetter('jimmy'))
+console.log(capitalizeLastLetter('bird'))
 
 
 /**
@@ -56,7 +84,18 @@ function capitalizeLastLetter() {}
  * example: drEvil(10) returns "10 dollars"
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
-function drEvil() {}
+function drEvil(num) {
+  let evilMoney = num
+  let evilMonString = evilMoney.toString()
+  if (evilMoney >= 1000000) {
+    return evilMonString + " dollars (pinky)"
+  } else {
+    return evilMonString + " dollars"
+  }
+  
+}
+console.log(drEvil(1000001))
+console.log(drEvil(20))
 
 /**
  * verbing() should take a string. 
