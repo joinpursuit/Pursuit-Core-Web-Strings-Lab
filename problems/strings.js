@@ -7,8 +7,10 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
-
+function firstChar(str) {
+  return str.slice(0,1)
+}
+console.log(firstChar('sarah'))
 
 /**
  * Returns the length of a string
@@ -18,7 +20,10 @@ function firstChar() {}
  * example: stringLength("what") returns 4
  * example: stringLength("sixteen") returns 7
  */
-function stringLength() {}
+function stringLength(str) {
+  return str.length
+}
+console.log(stringLength('sarah'))
 
 
 /**
@@ -31,8 +36,10 @@ function stringLength() {}
  * example: lastLetter("") returns ""
  */
 
-function lastLetter() {
+function lastLetter(str) {
+  return str.slice(str.length - 1)
 }
+console.log(lastLetter('sarah'))
 
 /**
  * Takes a string and returns a copy of the string with the last
@@ -43,7 +50,11 @@ function lastLetter() {
  * example: capitalizeLastLetter("jimmy") returns "jimmY"
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  str = str.slice(0, str.length - 1) + str.slice([str.length - 1]).toUpperCase()
+  return str;
+}
+console.log(capitalizeLastLetter('sarah'))
 
 
 /**
@@ -56,7 +67,13 @@ function capitalizeLastLetter() {}
  * example: drEvil(10) returns "10 dollars"
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
-function drEvil() {}
+function drEvil(num) {
+  if (num < 1000000){
+    return `${num} dollars`
+  } else
+  return `${num} dollars (pinky)`
+}
+console.log(drEvil())
 
 /**
  * verbing() should take a string. 
@@ -69,8 +86,18 @@ function drEvil() {}
  * verbing('swimming') returns  'swimmingly'
  * verbing('go') returns  'go'
  */
-function verbing() {}
-
+function verbing(str) {
+  if (str.length >= 3 && !str.endsWith('ing')){
+    return `${str}ing`
+  }
+  else if (str.endsWith("ing")) {
+    str.replace("ing", "ly")
+    return `${str}ly`
+  }
+else if (str.length < 3)
+  return `${str}`
+}
+console.log(verbing('Sarahing'))
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -81,8 +108,10 @@ function verbing() {}
  * example: removeLastWord("Hello!") returns ""
  * example: removeLastWord("I eat cake") returns "I eat"
  */
-function removeLastWord() {}
-
+function removeLastWord(str) {
+  newStr = str.split(" ")
+}
+console.log(removeLastWord("Hello there you"))
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -94,7 +123,9 @@ function removeLastWord() {}
  * example: everyOtherLetter("Corey") returns "Cry"
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
-function everyOtherLetter() {}
+function everyOtherLetter(str) {
+  let str = ' '
+}
 
 
 /**
