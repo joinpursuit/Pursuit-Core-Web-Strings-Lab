@@ -20,8 +20,10 @@ firstChar("string")
  * example: stringLength("what") returns 4
  * example: stringLength("sixteen") returns 7
  */
-function stringLength() {}
-
+function stringLength(str) {
+  return str.length
+}
+stringLength("string")
 
 /**
  * Returns the last character of any string
