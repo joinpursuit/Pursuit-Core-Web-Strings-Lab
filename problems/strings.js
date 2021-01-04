@@ -94,8 +94,7 @@ function verbing(str) {
     return `${str}ing`
   }
 }
-console.log(verbing("hi"))
-
+verbing("string")
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -106,8 +105,11 @@ console.log(verbing("hi"))
  * example: removeLastWord("Hello!") returns ""
  * example: removeLastWord("I eat cake") returns "I eat"
  */
-function removeLastWord() {}
-
+function removeLastWord(str) {
+  let arr = str.split(" ")
+  return arr.slice(0,-1).join(" ")
+}
+removeLastWord("This is a string")
 
 /**
  * Takes a string and returns a new string that has only the even
