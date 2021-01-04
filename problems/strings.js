@@ -7,7 +7,13 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
+function firstChar(str) {
+  if (str.length === 0) {
+    return ''
+  }
+  return str[0]
+
+}
 
 
 /**
@@ -18,7 +24,9 @@ function firstChar() {}
  * example: stringLength("what") returns 4
  * example: stringLength("sixteen") returns 7
  */
-function stringLength() {}
+function stringLength(str) {
+  return str.length   
+}
 
 
 /**
@@ -31,7 +39,11 @@ function stringLength() {}
  * example: lastLetter("") returns ""
  */
 
-function lastLetter() {
+function lastLetter(str) {
+ if (str.length === 0){
+   return ''
+ }
+ return (str[str.length - 1])
 }
 
 /**
@@ -43,7 +55,14 @@ function lastLetter() {
  * example: capitalizeLastLetter("jimmy") returns "jimmY"
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  let beginning = str.slice(0, str.length -1)
+
+  if (str.length ===0){
+    return ""
+  } else
+  return beginning + str[str.length - 1].toUpperCase()
+}
 
 
 /**
@@ -56,7 +75,13 @@ function capitalizeLastLetter() {}
  * example: drEvil(10) returns "10 dollars"
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
-function drEvil() {}
+function drEvil(num) {
+   
+  if (num >= 1000000) {
+    return `${num} dollars (pinky)`
+  } else 
+   return `${num} dollars`
+}
 
 /**
  * verbing() should take a string. 
@@ -69,7 +94,20 @@ function drEvil() {}
  * verbing('swimming') returns  'swimmingly'
  * verbing('go') returns  'go'
  */
-function verbing() {}
+function verbing(str) {
+  let ending1 = 'ing'
+  let ending2 = 'ly'
+
+  if (str.slice(str.length -3) === ending1) { 
+    return str + ending2
+  } else if (str.length >= 3) {  
+    return str + ending1
+  } 
+  else {
+  return str
+}
+}
+
 
 
 /**
@@ -81,8 +119,12 @@ function verbing() {}
  * example: removeLastWord("Hello!") returns ""
  * example: removeLastWord("I eat cake") returns "I eat"
  */
-function removeLastWord() {}
-
+function removeLastWord(str) {
+let arr = str.split(' ')
+let subtractLastWorld = arr.slice(0 ,arr.length -1)
+let subtractLastWorld2 = subtractLastWorld.join(' ')
+return subtractLastWorld2
+}
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -117,7 +159,10 @@ function disemvowel() {}
  * example: disemvowelLongWords("hi i am your friend") returns "hi i am your frnd"
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
- function disemvowelLongWords(){}
+ function disemvowelLongWords(){
+
+
+ }
 
 
 /**
