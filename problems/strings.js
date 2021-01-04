@@ -3,7 +3,10 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar() {}
+function firstChar(str) {
+  return str[0] || str
+ 
+}
 
 /**
  * Returns the length of a string
@@ -11,7 +14,9 @@ function firstChar() {}
  * @returns {number} - length of string
  */
 
-function stringLength() {}
+function stringLength(str) {
+  return str.length
+}
 
 /**
  * Returns the last character of any string
@@ -19,7 +24,9 @@ function stringLength() {}
  * @returns {string} - last letter
  */
 
-function lastLetter() {}
+function lastLetter(str) {
+ return str[str.length-1] || str
+}
 
 /**
  * Takes a single string variable and returns a copy of the string with the
@@ -28,7 +35,15 @@ function lastLetter() {}
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  let str1 = ""
+ 
+  if(str.length !== 0) {
+    let str1 = str.slice(0, str.length-1) + str[str.length-1].toUpperCase()
+   return str1 
+  }
+ return str
+}
 
 /**
  *  Create a drEvil function that will take a single number variable, and log the '<variableAmount> dollars',
@@ -43,7 +58,14 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil() {}
+function drEvil(num) {
+
+  if (num < 1000000) {
+    return `${num} dollars`
+  } else {
+    return `${num} dollars (pinky)`
+  }
+}
 
 /**
  * 
@@ -68,7 +90,14 @@ verbing('go')
  
  */
 
-function verbing() {}
+function verbing(string) {
+  if(string.length >= 3 && string.slice(string.length-3) !== "ing") {
+return string + "ing"
+  } else if (string.length >= 3 && string.slice(string.length-3) === "ing") {
+    return string + "ly"
+  }
+  else {return string}
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -77,7 +106,13 @@ function verbing() {}
  * @returns {string}
  */
 
-function removeLastWord() {}
+function removeLastWord(string) {
+  let words = []
+  words = string.split(" ")
+  words.pop()
+  string = words.join(" ")
+  return string
+}
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -87,14 +122,32 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter(str) {
+  let stringEven = ""
+  for(let i = 0; i < str.length; i += 2) {
+    stringEven += str[i]
+  }
+  return stringEven
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel(str) {
+  let str2 = ""
+  if (str.length === 0) {
+    return str
+  } else {
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== "a" && str[i] !== 'e' && str[i] !== 'i' && str[i] !== "o" && str[i] !== "u" && str[i] !== "A" && str[i] !== "E" && str[i] !== "I" && str[i] !== "O" && str[i] !== "U")
+    str2 += str[i]
+  }
+}
+  return str2
+}
+
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -103,7 +156,32 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+ function disemvowelLongWords(str){
+   let words = []
+   let str1 = ""
+   let str2
+   words = str.split(" ")
+
+   for (let i = 0; i < words.length; i++) {
+    str1 = ""
+     
+   if(words[i].length >= 5) {
+     str2 = words[i]
+     
+    for (let j = 0; j < str2.length; j++) {
+      if (str2[j] !== "a" && str2[j] !== 'e' && str2[j] !== 'i' && str2[j] !== "o" && str2[j] !== "u" && str2[j] !== "A" && str2[j] !== "E" && str2[j] !== "I" && str2[j] !== "O" && str2[j] !== "U") {
+         str1 += str2[j]
+      }
+    }
+    words[i] = str1
+  }
+     
+    }
+   str1 = words.join(" ")
+
+   
+  return str1
+    }
 
 /**
  * Takes in a string and returns the middle char.
@@ -111,7 +189,16 @@ function disemvowel() {}
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+function middleCharacter(string) {
+  if(string.length % 2 === 0) {
+   let middle = string.slice((string.length/2)-1, (string.length/2) + 1)
+return middle
+  }
+  else if (string.length % 2 !== 0) {
+    return string[Math.floor(string.length/2)]
+    
+  }
+}
 
 /**
  * Takes in a string and reverses it.
