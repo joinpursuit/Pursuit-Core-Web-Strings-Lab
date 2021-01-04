@@ -121,8 +121,16 @@ removeLastWord("This is a string")
  * example: everyOtherLetter("Corey") returns "Cry"
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
-function everyOtherLetter() {}
-
+function everyOtherLetter(str) {
+  let string = ""
+  for(let i = 0; i < str.length; i++){
+    if(i % 2 === 0){
+      string += str[i]
+    }
+  }
+  return string
+}
+everyOtherLetter("string")
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
