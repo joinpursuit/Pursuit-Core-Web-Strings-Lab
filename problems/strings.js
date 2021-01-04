@@ -7,7 +7,13 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
+function firstChar(str) {
+  // return str[0] || str
+  if(str.length === 0) {
+    return ""
+  }
+    return str [0] 
+}
 
 
 /**
@@ -18,7 +24,9 @@ function firstChar() {}
  * example: stringLength("what") returns 4
  * example: stringLength("sixteen") returns 7
  */
-function stringLength() {}
+function stringLength(str) {
+  return str.length
+}
 
 
 /**
@@ -31,7 +39,12 @@ function stringLength() {}
  * example: lastLetter("") returns ""
  */
 
-function lastLetter() {
+function lastLetter(str) {
+  // return (str[str.length - 1]) || str
+  if (str.length === 0){
+    return ""
+  }
+  return str[str.length -1]
 }
 
 /**
@@ -43,7 +56,14 @@ function lastLetter() {
  * example: capitalizeLastLetter("jimmy") returns "jimmY"
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  if (str === "") {
+    return ""
+  } else {
+    let newString = str.slice (0, str.length -1) + str[str.length - 1].toUpperCase() 
+    return newString
+  }
+}
 
 
 /**
@@ -56,7 +76,13 @@ function capitalizeLastLetter() {}
  * example: drEvil(10) returns "10 dollars"
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
-function drEvil() {}
+function drEvil(num) {
+  if (num >= 1000000) {
+    return `${num} dollars (pinky)`
+  } else {
+    return `${num} dollars`
+  }
+}
 
 /**
  * verbing() should take a string. 
@@ -69,7 +95,24 @@ function drEvil() {}
  * verbing('swimming') returns  'swimmingly'
  * verbing('go') returns  'go'
  */
-function verbing() {}
+function verbing(str) {
+  if (str.length < 3) {
+    return str 
+  } else if (str.length >= 3 && str.includes("ing")) {
+    return str + "ly"
+  } else {
+    return str + "ing"
+  }
+  // function verbing(str) {
+  //   if (str.length < 3) {
+  //     return str
+  //   } else if (str.length >= 3 && str.slice(str.length - 3) != "ing") {
+  //     return str + "ing"
+  //   } else if (str.slice(str.length - 3) === "ing") {
+  //     return str + "ly"
+  //   }
+  // }
+}
 
 
 /**
@@ -81,7 +124,16 @@ function verbing() {}
  * example: removeLastWord("Hello!") returns ""
  * example: removeLastWord("I eat cake") returns "I eat"
  */
-function removeLastWord() {}
+function removeLastWord(str) {
+  // for (i = num.length -1 ; i >= 0; i--) {
+  //   if (str[i] === " "){
+  //     return 
+  //   }
+  // }
+
+  // let lastIndex = str.split(" ")
+  // console.log(str)
+}
 
 
 /**
@@ -94,7 +146,15 @@ function removeLastWord() {}
  * example: everyOtherLetter("Corey") returns "Cry"
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
-function everyOtherLetter() {}
+function everyOtherLetter(str) { 
+  let arr = []
+  for (let i = 0; i < str.length; i ++){
+    if (i % 2 === 0) {
+      arr.push(str[i])
+    }
+  }
+  return arr.join("")
+}
 
 
 /**
@@ -105,7 +165,17 @@ function everyOtherLetter() {}
  * example: disemvowel("aeiou") returns ""
  * example: disemvowel("Hello world!") returns "Hll wrld!"
  */
-function disemvowel() {}
+function disemvowel(str) {
+  let newArray = []
+  for (i = 0; i < str.length; i ++) {
+    if (str[i] !== "a" && str[i] !== "e" && str[i] !== "i" && str[i] !== "o" && str[i] !== "u") {
+      return newArray += str[i]
+    } else {
+      return ""
+    }
+  }
+  return newArray
+}
 
 
 /**
