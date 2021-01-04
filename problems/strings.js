@@ -49,7 +49,13 @@ lastLetter("string")
  * example: capitalizeLastLetter("jimmy") returns "jimmY"
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  return str.slice(0, str.length - 1) + str.slice(-1).toUpperCase()
+
+}
+capitalizeLastLetter("string")
+
+
 
 
 /**
@@ -62,7 +68,9 @@ function capitalizeLastLetter() {}
  * example: drEvil(10) returns "10 dollars"
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
-function drEvil() {}
+function drEvil(num) {
+
+}
 
 /**
  * verbing() should take a string. 
