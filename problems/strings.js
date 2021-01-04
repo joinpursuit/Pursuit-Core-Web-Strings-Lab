@@ -35,8 +35,10 @@ stringLength("string")
  * example: lastLetter("") returns ""
  */
 
-function lastLetter() {
+function lastLetter(str) {
+  return str.slice([str.length-1])
 }
+lastLetter("string")
 
 /**
  * Takes a string and returns a copy of the string with the last
