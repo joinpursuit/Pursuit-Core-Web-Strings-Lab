@@ -210,18 +210,12 @@ console.log(disemvowel("Hello world!"))
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
 function disemvowelLongWords(str) {
-    let i = 0
-    let catcher = ''
-    while (i < str.length) {
-        if (str.length > 5)
-            if ((str[i] !== 'a') && (str[i] !== 'e') && (str[i] !== 'i') && (str[i] !== 'o') && (str[i] !== 'u')) {
-                if ((str[i] !== 'A') && (str[i] !== 'E') && (str[i] !== 'I') && (str[i] !== 'O') && (str[i] !== 'U')) {
-                    catcher = catcher + str[i]
-                }
-            }
-        i++
+    let arr = str.split(" ")
+    for (let i = 0; i < arr.length; i += 1) {
+        if (arr[i].length > 4)
+            arr[i] = disemvowel(arr[i])
     }
-    return catcher
+    return (arr.join(" "))
 }
 
 console.log(disemvowelLongWords("hi i am your friend"))
@@ -235,8 +229,16 @@ console.log(disemvowelLongWords("hi i am your friend"))
  * example: middleCharacter("hello") returns "l"
  * example: middleCharacter("ostentatious") returns "ta"
  */
-function middleCharacter() {}
+function middleCharacter(str) {
+    let middleChar = Math.floor(str.length / 2)
+    if (str.length % 2 === 1) {
+        return str[middleChar]
+    } else {
+        return str[middleChar - 1] + str[middleChar]
+    }
+}
 
+console.log(middleCharacter("ostentatious"))
 
 /**
  * Takes in a string and reverses it.
@@ -248,7 +250,15 @@ function middleCharacter() {}
  * @param {string} str - an input string
  * @returns {string} - the return value string, reversed str
  */
-function reverseString() {}
+function reverseString(str) {
+    let newStr = ""
+    for (let i = str.length - 1; i >= 0; i--) {
+        newStr += str[i]
+    }
+    return newStr
+}
+
+console.log(reverseString("hello"))
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -260,7 +270,15 @@ function reverseString() {}
  * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(str) {
+    let array = str.split(" ")
+    for (let i = 0; i < array.length; i++) {
+        array[i] = reverseString(array[i])
+    }
+    return array.join(" ")
+}
+
+console.log(reverseSentenceWords("hello world"))
 
 module.exports = {
     firstChar,
