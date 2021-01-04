@@ -85,7 +85,16 @@ drEvil(5)
  * verbing('swimming') returns  'swimmingly'
  * verbing('go') returns  'go'
  */
-function verbing() {}
+function verbing(str) {
+  if(str.slice(-3) === "ing"){
+    return `${str}ly`
+  } else if (str.length < 3) {
+    return str
+  } else if (str.slice(-3) !== "ing"){
+    return `${str}ing`
+  }
+}
+console.log(verbing("hi"))
 
 
 /**
