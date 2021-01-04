@@ -7,8 +7,17 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
+function firstChar(str) {
+    
+    if (str.length === 0) {
+      return ""
+    }
+    return str[0]
+}
 
+console.log(firstChar("bananna"))
+console.log(firstChar("pineapple"))
+console.log(firstChar(""))
 
 /**
  * Returns the length of a string
@@ -18,8 +27,12 @@ function firstChar() {}
  * example: stringLength("what") returns 4
  * example: stringLength("sixteen") returns 7
  */
-function stringLength() {}
+function stringLength(str) {
+  return str.length
+}
 
+console.log(stringLength("what"))
+console.log(stringLength("sixteen"))
 
 /**
  * Returns the last character of any string
@@ -31,8 +44,15 @@ function stringLength() {}
  * example: lastLetter("") returns ""
  */
 
-function lastLetter() {
+function lastLetter(str) {
+  if(str.length === 0) {
+    return ""
+  }
+  return str[str.length - 1]
 }
+console.log(lastLetter("zappa"))
+console.log(lastLetter("sit on a potato pan otis"))
+console.log(lastLetter(""))
 
 /**
  * Takes a string and returns a copy of the string with the last
@@ -43,9 +63,20 @@ function lastLetter() {
  * example: capitalizeLastLetter("jimmy") returns "jimmY"
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  
+  let strMod = str.slice(str.length - 1)
+  let lastUpper = strMod.toUpperCase()
+  let withOut = str.slice(0, -1)
 
+  let all = withOut + lastUpper 
 
+return all
+
+}
+
+console.log(capitalizeLastLetter("jimmy"))
+console.log(capitalizeLastLetter("what is the meaning of life"))
 /**
  * Create a drEvil function that takes in a number
  * and returns "${number} dollars"
@@ -56,7 +87,16 @@ function capitalizeLastLetter() {}
  * example: drEvil(10) returns "10 dollars"
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
-function drEvil() {}
+function drEvil(num) {
+  if(num < 1000000) {
+    return num + " dollars"
+}
+  return num + " dollars" + " (pinky)"
+}
+  
+
+console.log(drEvil(10))
+console.log(drEvil(100000000))
 
 /**
  * verbing() should take a string. 
@@ -69,8 +109,19 @@ function drEvil() {}
  * verbing('swimming') returns  'swimmingly'
  * verbing('go') returns  'go'
  */
-function verbing() {}
+function verbing(str) {
+  if (str.length >= 3) {
+    return str + "ing"
+  } else if (str.endsWith("ing") === true) {
+      return str + "ly"
+  }     return str 
+}
+  
+  
 
+console.log(verbing("box"))
+console.log(verbing("swimming"))
+console.log(verbing("go"))
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -81,8 +132,13 @@ function verbing() {}
  * example: removeLastWord("Hello!") returns ""
  * example: removeLastWord("I eat cake") returns "I eat"
  */
-function removeLastWord() {}
+function removeLastWord(str) {
+  let newStr = str.slice - 1
+  return newStr
+}
 
+console.log(removeLastWord("Hello!")) 
+console.log(removeLastWord("I eat cake"))
 
 /**
  * Takes a string and returns a new string that has only the even
