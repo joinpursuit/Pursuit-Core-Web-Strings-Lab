@@ -140,8 +140,17 @@ everyOtherLetter("string")
  * example: disemvowel("aeiou") returns ""
  * example: disemvowel("Hello world!") returns "Hll wrld!"
  */
-function disemvowel() {}
-
+function disemvowel(str) {
+  let res = ""
+  let vowels = "aeiouAEIOU"
+  for(let i = 0; i < str.length; i++){
+    if(!vowels.includes(str[i])){
+      res += str[i]
+    }
+  }
+  return res
+}
+disemvowel("string")
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -152,7 +161,9 @@ function disemvowel() {}
  * example: disemvowelLongWords("hi i am your friend") returns "hi i am your frnd"
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
- function disemvowelLongWords(){}
+ function disemvowelLongWords(str){
+   
+ }
 
 
 /**
@@ -164,7 +175,9 @@ function disemvowel() {}
  * example: middleCharacter("hello") returns "l"
  * example: middleCharacter("ostentatious") returns "ta"
  */
-function middleCharacter() {}
+function middleCharacter(str) {
+
+}
 
 
 /**
@@ -189,7 +202,10 @@ function reverseString() {}
  * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(str) {
+  // let arr = str.split(" ")
+  // return arr.reverse().join(" ")
+}
 
 module.exports = {
   firstChar,
