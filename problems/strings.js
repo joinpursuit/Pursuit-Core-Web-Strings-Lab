@@ -7,8 +7,10 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
-
+function firstChar(str) {
+  return str = str.slice(0,1)
+}
+firstChar("string")
 
 /**
  * Returns the length of a string
