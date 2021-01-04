@@ -55,9 +55,6 @@ function capitalizeLastLetter(str) {
 }
 capitalizeLastLetter("string")
 
-
-
-
 /**
  * Create a drEvil function that takes in a number
  * and returns "${number} dollars"
@@ -69,8 +66,13 @@ capitalizeLastLetter("string")
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
 function drEvil(num) {
-
+  if(num < 1000000) {
+    return `${num} dollars`
+  } else {
+    return `${num} dollars (pinky)`
+  }
 }
+drEvil(5)
 
 /**
  * verbing() should take a string. 
