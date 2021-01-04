@@ -197,7 +197,9 @@ function firstChar(str) {
    * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
    */
   
-  function reverseSentenceWords() {}
+  function reverseSentenceWords(str) {
+    
+  }
   
   module.exports = {
     firstChar,
