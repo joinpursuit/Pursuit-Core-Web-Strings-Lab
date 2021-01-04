@@ -125,14 +125,17 @@ function verbing(str) {
  * example: removeLastWord("I eat cake") returns "I eat"
  */
 function removeLastWord(str) {
-  // for (i = num.length -1 ; i >= 0; i--) {
-  //   if (str[i] === " "){
-  //     return 
-  //   }
-  // }
-
-  // let lastIndex = str.split(" ")
-  // console.log(str)
+  let words = str.split(" ")
+  let sentence = ""
+  for (let i = 0; i < (words.length - 1); i++) {
+    if (i === 0) {
+      sentence = words[i]
+    }
+    else {
+    sentence = sentence + " " + words[i]
+    }
+  }
+  return sentence
 }
 
 
@@ -147,13 +150,13 @@ function removeLastWord(str) {
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
 function everyOtherLetter(str) { 
-  let arr = []
+  let newStr = []
   for (let i = 0; i < str.length; i ++){
     if (i % 2 === 0) {
-      arr.push(str[i])
+      newStr.push(str[i])
     }
   }
-  return arr.join("")
+  return newStr.join("")
 }
 
 
@@ -166,16 +169,18 @@ function everyOtherLetter(str) {
  * example: disemvowel("Hello world!") returns "Hll wrld!"
  */
 function disemvowel(str) {
-  let newArray = []
+  let newStr= ''
+  let strLowerCase = str.toLowerCase()
   for (i = 0; i < str.length; i ++) {
-    if (str[i] !== "a" && str[i] !== "e" && str[i] !== "i" && str[i] !== "o" && str[i] !== "u") {
-      return newArray += str[i]
+    if (strLowerCase[i] === "a" || strLowerCase[i] === "e" || strLowerCase[i] === "i" || strLowerCase[i] === "o" || strLowerCase[i] === "u") {
+      newStr = newStr + ""
     } else {
-      return ""
+      newStr = newStr + str[i]
     }
   }
-  return newArray
+  return newStr
 }
+// console.log(disemvowel("random variable"))
 
 
 /**
@@ -187,7 +192,30 @@ function disemvowel(str) {
  * example: disemvowelLongWords("hi i am your friend") returns "hi i am your frnd"
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
- function disemvowelLongWords(){}
+ function disemvowelLongWords(str){
+  let newWords = str.split(' ') 
+  let sentence = ''
+  for (let j = 0; j < newWords.length; j++) {
+    if (newWords[j].length >= 5) {
+      let disemvoweledWord = newWords[j]
+      if (j === 0) {
+        sentence = disemvowel(disemvoweledWord)
+      }
+      else {
+      sentence = sentence + " " + disemvowel(disemvoweledWord)
+      }
+    }
+    else {
+      if (j === 0) {
+        sentence = newWords[j]
+      }
+      else {
+      sentence = sentence + " " + newWords[j]
+      }
+    }
+  }
+  return sentence
+ }
 
 
 /**
@@ -199,7 +227,15 @@ function disemvowel(str) {
  * example: middleCharacter("hello") returns "l"
  * example: middleCharacter("ostentatious") returns "ta"
  */
-function middleCharacter() {}
+function middleCharacter(str) {
+  if ((str.length) % 2 === 1) {
+    return str[(str.length -1) / 2]
+  }
+  else {
+    let word = str[(str.length/2) - 1] + str[(str.length/2)]
+    return word
+  }
+}
 
 
 /**
@@ -212,7 +248,13 @@ function middleCharacter() {}
  * @param {string} str - an input string
  * @returns {string} - the return value string, reversed str
  */
-function reverseString() {}
+function reverseString(str) {
+  let newWord = ""
+  for (let i = str.length -1; i >= 0; i--){
+    newWord = newWord.concat(str[i])
+  }
+  return newWord
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -224,7 +266,9 @@ function reverseString() {}
  * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(str) {
+  let reverse = 
+}
 
 module.exports = {
   firstChar,
