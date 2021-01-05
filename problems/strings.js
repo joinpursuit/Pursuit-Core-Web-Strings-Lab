@@ -170,17 +170,18 @@ function disemvowel(string) {
 
  function disemvowelLongWords(string){
   let newString = string.split(' ')
-  let returnString = ''
+  let returnString = []
   for(let i = 0; i < newString.length; i++){
     if(newString[i].length >= 5){
       disemvowel(newString[i])
-      returnString = returnString + disemvowel(newString[i]) + " "
+      returnString.push(disemvowel(newString[i]))
   
     } else{
-      returnString = returnString + newString[i] + " "
+      returnString.push(newString[i])
     }
   }
-  return returnString
+
+  return returnString.join(" ")
 
  }
 
@@ -223,16 +224,15 @@ function reverseString(string) {
  */
 
 function reverseSentenceWords(string) {
-  // let element = string.split(' ')
-  // let reverse = ''
-  // for(let i = 0 ; i < element.length - 1; i++){
-  //     for(let j = element.length - 1; j >= 0; i--) {
-  //     reverse = reverse + element[j]
-  //   }
-  //  }
-  
-  // return reverse
+  let words = string.split(' ')
+  let reverse = []
+
+  for(let i = 0; i < words.length; i++){
+    reverse.push(reverseString(words[i]))
+  }
+  return reverse.join(" ")
 }
+
 
 module.exports = {
   firstChar,
