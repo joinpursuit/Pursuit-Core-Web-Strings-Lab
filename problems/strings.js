@@ -122,21 +122,14 @@ function verbing(str) {
  */
 
 function removeLastWord(str) {
-  newStr = str.split(" ")
-  newPopStr = newStr.pop()
-  lastStr = newStr.join()
-  
-  logStr = " "
-  for(i=0;i<lastStr.length;i++){
-    if (lastStr[i] === ","){
-      logStr[i] = " "
-  }else{
-    logStr[i] = lastStr[i]
-  }
-  }
-  return logStr
- }
- console.log(removeLastWord("Hi how are you!"))
+  arr = str.split(" ")
+  popArr = arr.pop()
+  newStr = arr.join(" ")
+
+
+  return newStr
+}
+//console.log(removeLastWord("Hi how are you!"))
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -146,14 +139,34 @@ function removeLastWord(str) {
  * @returns {string}
  */
 
-function everyOtherLetter() { }
-
+function everyOtherLetter(str) {
+  let newStr = []
+  for (i = 0; i < str.length; i++) {
+    if (i % 2 === 0) {
+      newStr.push(str[i])
+    }
+  }
+  return newStr.join("")
+}
+//console.log(everyOtherLetter("aabbccddeeff"))
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() { }
+function disemvowel(str) {
+  let arr = []
+  for (i = 0; i < str.length; i++) {
+    if (str[i] === "A" || str[i] === "a"|| str[i] === "E"|| str[i] === "e"|| str[i] === "I"|| str[i] === "i"|| str[i] === "O"|| str[i] === "o"|| str[i] === "U"|| str[i] === "u") {
+      arr.push("")
+    } else {
+      arr.push(str[i])
+    }
+    
+  }
+  return arr.join("")
+}
+//console.log(disemvowel("Hello World! Apple"))
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -162,15 +175,36 @@ function disemvowel() { }
  * @returns {string}
  */
 
-function disemvowelLongWords() { }
+function disemvowelLongWords(str) {
+  newArr = []
+  arr = str.split(" ")
+  for(i = 0; i < arr.length; i++){
+    if (arr[i].length >= 5){
+      newArr.push(disemvowel(arr[i]))
+    }else{
+      newArr.push(arr[i])
+    }
+  }
+  return newArr
 
+}
+//console.log(disemvowelLongWords("Hippo is my friend"))
 /**
  * Takes in a string and returns the middle char.
  * If there is no character in the middle return the middle two characters
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() { }
+function middleCharacter(str) {
+  char = ""
+  if((str.length % 2) === 1 ){
+    char = str[(str.length - 1)/2] 
+  }else{
+    char = str[((str.length)/2)-1] + str[(str.length)/2]
+  }
+  return char
+ }
+ console.log(middleCharacter("moindd"))
 
 /**
  * Takes in a string and reverses it.
