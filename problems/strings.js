@@ -184,12 +184,17 @@ function disemvowel(str) {
  * example: disemvowelLongWords("hi i am your friend") returns "hi i am your frnd"
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
- function disemvowelLongWords(){}
-//  let vowelArr = ["a","e", "i", "o", "u", "A", "E", "I", "O", "U"]
-//  let newWord = ""
+ function disemvowelLongWords(){
+  // let vowelArr = ["a","e", "i", "o", "u", "A", "E", "I", "O", "U"]
+  // let newWord = "";
 
-//  for (let i = 0; i < str.length; i ++)
-
+  // for(let i = 0; i < (str[str.length>5]); i++) {
+  //   if(!vowelArr.includes(str[i])) {
+  //     newWord += str[i];
+  //   }
+  // }
+  //   return newWord
+}
 /**
  * Takes in a string and returns the middle char.
  * If there is no character in the middle return the middle two characters
@@ -199,7 +204,14 @@ function disemvowel(str) {
  * example: middleCharacter("hello") returns "l"
  * example: middleCharacter("ostentatious") returns "ta"
  */
-function middleCharacter() {}
+function middleCharacter(str) {
+  if (str.length % 2 === 1) {
+    return str[Math.floor(str.length / 2)]
+  }
+    else {
+      return str[str.length / 2 - 1] + str[(str.length) / 2]
+    }
+}
 
 
 /**
@@ -212,7 +224,13 @@ function middleCharacter() {}
  * @param {string} str - an input string
  * @returns {string} - the return value string, reversed str
  */
-function reverseString() {}
+function reverseString(str) {
+  let reverseStr = ""
+  for ( let i = str.length - 1; i >= 0; i--) {
+    reverseStr += str[i]
+  }
+  return reverseStr
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
