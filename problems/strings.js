@@ -7,7 +7,11 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
+function firstChar(str) {
+  if (str.length === 0){
+    return ''
+  } else return str[0]
+}
 
 
 /**
@@ -18,7 +22,10 @@ function firstChar() {}
  * example: stringLength("what") returns 4
  * example: stringLength("sixteen") returns 7
  */
-function stringLength() {}
+function stringLength(str) {
+  return str.length
+}
+
 
 
 /**
@@ -31,7 +38,10 @@ function stringLength() {}
  * example: lastLetter("") returns ""
  */
 
-function lastLetter() {
+function lastLetter(str) {
+  if (str.length === 0){
+    return ''
+  } else return str[str.length-1]
 }
 
 /**
@@ -43,7 +53,15 @@ function lastLetter() {
  * example: capitalizeLastLetter("jimmy") returns "jimmY"
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  if (str === '') {
+    return ''.toUpperCase()
+  } else {
+newStr = str[str.length-1].toUpperCase();
+  }
+  return str.slice(0,str.length-1) + newStr
+  }
+
 
 
 /**
@@ -56,7 +74,12 @@ function capitalizeLastLetter() {}
  * example: drEvil(10) returns "10 dollars"
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
-function drEvil() {}
+function drEvil(num) {
+  if (num >= 1000000) {
+    return (num + " dollars (pinky)")
+  } else 
+  return (num + " dollars")
+}
 
 /**
  * verbing() should take a string. 
@@ -69,7 +92,14 @@ function drEvil() {}
  * verbing('swimming') returns  'swimmingly'
  * verbing('go') returns  'go'
  */
-function verbing() {}
+function verbing(str) {
+  if (str.length < 3) {
+    return str
+  } else if (str.slice(-3) === "ing") {
+    return str + "ly"
+  } else 
+  return str + "ing"
+} 
 
 
 /**
@@ -81,7 +111,13 @@ function verbing() {}
  * example: removeLastWord("Hello!") returns ""
  * example: removeLastWord("I eat cake") returns "I eat"
  */
-function removeLastWord() {}
+function removeLastWord(str) {
+ newLine = str.split(' ');
+ newLine.pop()
+ let string = newLine.join(" ")
+ return string
+}
+
 
 
 /**
@@ -94,7 +130,9 @@ function removeLastWord() {}
  * example: everyOtherLetter("Corey") returns "Cry"
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
-function everyOtherLetter() {}
+function everyOtherLetter(str) {
+
+}
 
 
 /**
