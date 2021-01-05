@@ -121,22 +121,14 @@ function removeLastWord(string) {
  * @returns {string}
  */
 
-function everyOtherLetter(string) {
-  let newStr = "";
-  for (let i = str.length; i <= str.length; i--) {
-    if (str[i] % 2 === 0) {
-      newStr += str[i];
-    }
-    return str;
+function everyOtherLetter(str) {
+  let evenIdxChar = "";
+  for (let i = 0; i <= str.length; i += 2) {
+      evenIdxChar += str[i];
   }
-  // while(str.length > 0){
-  //   if(str[i] % 2 === 0) {
-  //     newStr += str[i]
-  //   }
-  //   i--
-  // }
-  // return newStr
+  return evenIdxChar;
 }
+
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
