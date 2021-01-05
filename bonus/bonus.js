@@ -15,7 +15,7 @@ function replaceVowels(str) {
   }
   return res
 }
-
+replaceVowels("string")
 /**
  * Takes in a string and adds "#" if the string has
  * an odd number of characters.
@@ -29,7 +29,7 @@ function makeStringEvenLength(str) {
     return str
   }
 }
-
+makeStringEvenLength("string")
 /**
  * Takes in a string and returns the last three
  * letters of the string. If the string is less than
@@ -38,8 +38,14 @@ function makeStringEvenLength(str) {
  * @returns {string}
  */
 
-function lastThreeLetters() {}
-
+function lastThreeLetters(str) {
+  if(str.length < 3){
+   throw Error("Input less than three characters")
+  } else {
+    return newStr = str.slice(-3)
+  }
+}
+lastThreeLetters("string")
 /**
  * Takes in a string and returns whether or not that string starts with a vowel.
  * @param {string}
