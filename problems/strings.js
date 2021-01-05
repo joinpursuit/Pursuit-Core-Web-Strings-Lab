@@ -7,7 +7,9 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
+function firstChar(str) {
+return str[0] || str
+}
 
 
 /**
@@ -18,12 +20,14 @@ function firstChar() {}
  * example: stringLength("what") returns 4
  * example: stringLength("sixteen") returns 7
  */
-function stringLength() {}
+function stringLength(str) {
+ return str.length
+}
 
 
 /**
  * Returns the last character of any string
- * @param {string} - an input string
+ * @param {string} str - an input string
  * @returns {string} - last letter of the input string
  * 
  * example: lastLetter("zappa") returns "a"
@@ -31,7 +35,12 @@ function stringLength() {}
  * example: lastLetter("") returns ""
  */
 
-function lastLetter() {
+function lastLetter(str) {
+  if(str.length === 0){
+    return ""
+  } else {
+    return str[str.length-1]
+  }
 }
 
 /**
@@ -43,7 +52,12 @@ function lastLetter() {
  * example: capitalizeLastLetter("jimmy") returns "jimmY"
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+ let newstr = str.slice([str.length-1])
+ let upper = newstr.toUpperCase()
+ let without = str.slice(0, -1)
+ return without + upper
+}
 
 
 /**
@@ -56,8 +70,15 @@ function capitalizeLastLetter() {}
  * example: drEvil(10) returns "10 dollars"
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
-function drEvil() {}
-
+function drEvil(num) {
+ if (num >= 1000000){
+   return `${num} dollars (pinky)`
+  } else {
+   return `${num} dollars`
+ }
+  
+}
+  
 /**
  * verbing() should take a string. 
  * If its length is >= 3, it should add 'ing' to its end, unless it already ends in 'ing',
@@ -69,7 +90,18 @@ function drEvil() {}
  * verbing('swimming') returns  'swimmingly'
  * verbing('go') returns  'go'
  */
-function verbing() {}
+function verbing(str) {
+if (str.endsWith("ing")){
+  return str +'ly'
+} else if (str.length >= 3){
+  return str +'ing'
+} else {
+  return str
+}
+
+
+
+}
 
 
 /**
@@ -81,7 +113,9 @@ function verbing() {}
  * example: removeLastWord("Hello!") returns ""
  * example: removeLastWord("I eat cake") returns "I eat"
  */
-function removeLastWord() {}
+function removeLastWord(str) {
+  
+}
 
 
 /**
