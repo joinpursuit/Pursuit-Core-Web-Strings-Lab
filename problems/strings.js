@@ -90,9 +90,12 @@ function drEvil(num) {
  * verbing('go') returns  'go'
  */
 function verbing(str) {
-//   if (str.length >= 3 && str.slice(str.length-3) !== -1) {
-// } else{
-
+   if (str.length >= 3 && str.slice(str.length-3) !== -1) {
+     return str + 'ing';
+ } else if (str.length == 3) {
+ return str + 'ly';
+ } else
+ return str
 }
 
 
@@ -147,7 +150,8 @@ function everyOtherLetter(str) {
  * example: disemvowel("Hello world!") returns "Hll wrld!"
  */
 function disemvowel(str) {
-
+  let letters = []
+  return str.replace(letters)
 }
 
 
