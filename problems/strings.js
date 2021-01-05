@@ -4,12 +4,11 @@
  * @returns {string} - first char
  */
 function firstChar(str) {
-  if(str === "") {
-    return ""
-  } 
-  return str[0] // why doesn't str[0] work for ""
+  if (str === "") {
+    return "";
+  }
+  return str[0]; // why doesn't str[0] work for ""
 }
-
 
 /**
  * Returns the length of a string
@@ -18,7 +17,7 @@ function firstChar(str) {
  */
 
 function stringLength(str) {
-  return str.length
+  return str.length;
 }
 
 /**
@@ -27,11 +26,12 @@ function stringLength(str) {
  * @returns {string} - last letter
  */
 
-function lastLetter(str) { // why doesnt str[str.length -1] on "" str
-  if(str === "") {
-    return ""
+function lastLetter(str) {
+  // why doesnt str[str.length -1] on "" str
+  if (str === "") {
+    return "";
   }
-  return str[str.length - 1]
+  return str[str.length - 1];
 }
 
 /**
@@ -42,10 +42,10 @@ function lastLetter(str) { // why doesnt str[str.length -1] on "" str
  */
 
 function capitalizeLastLetter(str) {
-  if(str === "") {
-    return ""
+  if (str === "") {
+    return "";
   }
-  return str.slice(0,str.length - 1) + str[str.length -1].toUpperCase() // slice(0, -1) returns last character of the string
+  return str.slice(0, str.length - 1) + str[str.length - 1].toUpperCase(); // slice(0, -1) returns last character of the string
 }
 
 /**
@@ -62,10 +62,10 @@ let amount = 1000000
 * @returns {string}
  */
 function drEvil(num) {
-  if(num < 1000000) {
-    return `${num} dollars`
-  } 
-  return `${num} dollars (pinky)`
+  if (num < 1000000) {
+    return `${num} dollars`;
+  }
+  return `${num} dollars (pinky)`;
 }
 
 /**
@@ -91,12 +91,12 @@ verbing('go')
  
  */
 
-function verbing(str) { // come back to
-  if(str.length < 3){ return str} 
-  if(str.length >= 3) { return str + "ing"}
-  if(str.slice(-3) === "ing") { return + "ly"}
-  } 
-
+function verbing(str) {
+  // come back to
+  // if(str.length < 3){ return str}
+  // if(str.length >= 3) { return str + "ing"}
+  // if(str.slice(-3) === "ing") { return + "ly"}
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -105,7 +105,11 @@ function verbing(str) { // come back to
  * @returns {string}
  */
 
-function removeLastWord() {}
+function removeLastWord(string) {
+  let array = string.split(" ");
+  array.pop();
+  return array.join(" ");
+}
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -115,7 +119,22 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter(string) {
+  let newStr = "";
+  for (let i = str.length; i <= str.length; i--) {
+    if (str[i] % 2 === 0) {
+      newStr += str[i];
+    }
+    return str;
+  }
+  // while(str.length > 0){
+  //   if(str[i] % 2 === 0) {
+  //     newStr += str[i]
+  //   }
+  //   i--
+  // }
+  // return newStr
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
@@ -131,7 +150,7 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+function disemvowelLongWords() {}
 
 /**
  * Takes in a string and returns the middle char.

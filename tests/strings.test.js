@@ -61,7 +61,7 @@ describe("drEvil", () => {
   });
 });
 
-describe.only("verbing", () => {
+describe("verbing", () => {
   test("words less than three are unchanged", () => {
     expect(verbing("I")).toBe("I");
     expect(verbing("am")).toBe("am");
