@@ -198,17 +198,14 @@ console.log(disemvowel("COREY"))
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
  function disemvowelLongWords(str){
-// let string = ''
-let str1 = str.split(" ")
-// console.log(str.length)
-// console.log(str1)
-for( let i = 0; i < str.length; i ++){
-  if(str1[i].length >= 5) {
-    str1[i] = disemvowel(str1[i]);
+  let word = str.split(" ");
+  for (let i = 0; i < word.length; i++) {
+    if (word[i].length >= 5) {
+      word[i] = disemvowel(word[i]);
+    }
   }
+  return word.join(" ");
 }
-return str1.join(" ")
- }
 
 console.log(disemvowelLongWords("hi i am your friend"))
 // console.log(disemvowelLongWords("amber is the color of your energy"))
@@ -246,14 +243,15 @@ console.log(middleCharacter("kitten"))//("tt");
  * @param {string} str - an input string
  * @returns {string} - the return value string, reversed str
  */
-function reverseString() {
+function reverseString(str) {
   let revStr = "";
-  for (let i = str.length - 1; i >= 0; i--) {
+  for(let i = (str.length - 1); i >= 0; i--) {
     revStr += str[i];
   }
   return revStr;
 }
-
+console.log(reverseString("hello")) //returns "olleh")
+console.log(reverseString("sit on a potato pan otis")) //returns "sito nap otatop a no tis")
 /**
  * Takes in a sentence string and reverses each word but not the
  * order of the words.
@@ -264,7 +262,7 @@ function reverseString() {
  * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
  */
 
-function reverseSentenceWords() {
+function reverseSentenceWords(str) {
   let arr = str.split(" ");
   let output = [];
   for (let i = 0; i < arr.length; i++) {
