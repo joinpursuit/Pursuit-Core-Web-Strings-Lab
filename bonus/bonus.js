@@ -22,7 +22,13 @@ function replaceVowels(str) {
  * @param {string}
  * @returns {string}
  */
-function makeStringEvenLength() {}
+function makeStringEvenLength(str) {
+  if(str.length % 2 !== 0){
+    return `${str}#`
+  } else {
+    return str
+  }
+}
 
 /**
  * Takes in a string and returns the last three

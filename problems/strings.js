@@ -163,7 +163,7 @@ disemvowel("string")
  */
  function disemvowelLongWords(str){
  
- }
+}
 disemvowelLongWords(`amber is the color of your energy`)
 
 /**
@@ -204,6 +204,7 @@ function reverseString() {}
 
 function reverseSentenceWords(str) {
   let arr = str.split(" ")
+  
   return arr.reverse().join(" ")
 }
 
