@@ -267,7 +267,11 @@ function reverseString(str) {
  */
 
 function reverseSentenceWords(str) {
-  let reverse = 
+  let words = str.split (" ")
+  for (let i = 0; i < words.length; i ++){
+    words[i] = reverseString(words[i])
+  }
+  return words.join(" ")
 }
 
 module.exports = {
