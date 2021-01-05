@@ -7,8 +7,12 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
-
+function firstChar(str) {
+  if (str.length === 0){
+    return ''
+  } else if (str.length > 0)
+    return str[0]
+}
 
 /**
  * Returns the length of a string
@@ -18,8 +22,9 @@ function firstChar() {}
  * example: stringLength("what") returns 4
  * example: stringLength("sixteen") returns 7
  */
-function stringLength() {}
-
+function stringLength(str) {
+    return str.length
+}
 
 /**
  * Returns the last character of any string
@@ -31,8 +36,17 @@ function stringLength() {}
  * example: lastLetter("") returns ""
  */
 
-function lastLetter() {
+function lastLetter(str) {
+  if (str.length === 0){
+    return ''
+  } else {
+    return str[str.length - 1]
+  } 
 }
+//if (str.length > 0){
+//  return str[str.length - 1]
+//}
+
 
 /**
  * Takes a string and returns a copy of the string with the last
@@ -43,9 +57,16 @@ function lastLetter() {
  * example: capitalizeLastLetter("jimmy") returns "jimmY"
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
-function capitalizeLastLetter() {}
 
-
+function capitalizeLastLetter(str){
+  let str1 = str
+  if (str1 === ''){
+    return ''
+  } else {
+      let cap = str.slice(0, -1) + str.slice(-1).toUpperCase();
+  }return cap
+}
+// }
 /**
  * Create a drEvil function that takes in a number
  * and returns "${number} dollars"
@@ -56,7 +77,13 @@ function capitalizeLastLetter() {}
  * example: drEvil(10) returns "10 dollars"
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
-function drEvil() {}
+function drEvil(num) {
+  if(num < 100000000){
+    return `${num} dollars`
+  } else {
+   return `${num} dollars (pinky)`  
+  }
+}
 
 /**
  * verbing() should take a string. 
@@ -69,7 +96,16 @@ function drEvil() {}
  * verbing('swimming') returns  'swimmingly'
  * verbing('go') returns  'go'
  */
-function verbing() {}
+function verbing(str) {
+  if(str.length >= 3){
+    return str.concat('ing')
+  } else if(
+    str.slice(-3) === 'ing'){
+    return `${str}ly`
+  } else {
+    return `${str}ing`
+  }
+}
 
 
 /**
@@ -81,8 +117,9 @@ function verbing() {}
  * example: removeLastWord("Hello!") returns ""
  * example: removeLastWord("I eat cake") returns "I eat"
  */
-function removeLastWord() {}
-
+function removeLastWord(str) {
+  let chop = str.split(' ')
+  let last = chop[chop.length-1]
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -94,7 +131,16 @@ function removeLastWord() {}
  * example: everyOtherLetter("Corey") returns "Cry"
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
-function everyOtherLetter() {}
+function everyOtherLetter(str) {
+  if (str.length === 0){
+    return ''
+  } else if(str.length > 0){
+    for (i = str[i]; str.length % 2; i++){
+      return str[i]
+    }console.log('meowth')
+  }
+
+}
 
 
 /**
