@@ -7,7 +7,22 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
+function firstChar(str) {
+ if (str.length === 0) {   // Or just use this or operator in one step return str[0] || (str); console.log(firstChar("banana"));
+ return ""                                                                                   //  console.log(firstChar("pinapple"));
+                                                                                             //  console.log(firstChar(""));
+
+ }
+
+ return str[0] 
+
+}
+
+console.log(firstChar("banana"));
+console.log(firstChar("pinapple"));
+console.log(firstChar(""));
+
+
 
 
 /**
@@ -18,8 +33,12 @@ function firstChar() {}
  * example: stringLength("what") returns 4
  * example: stringLength("sixteen") returns 7
  */
-function stringLength() {}
+function stringLength(str) {
+ return str.length
 
+}
+console.log(stringLength("what"));
+console.log(stringLength("sixteen"));
 
 /**
  * Returns the last character of any string
@@ -31,8 +50,14 @@ function stringLength() {}
  * example: lastLetter("") returns ""
  */
 
-function lastLetter() {
+function lastLetter(str) {
+
+  return str.slice(str.length-1)
 }
+console.log(lastLetter('zappa'));
+console.log(lastLetter('sit on a potato pan otis'));
+console.log(lastLetter(''));
+
 
 /**
  * Takes a string and returns a copy of the string with the last
@@ -43,9 +68,21 @@ function lastLetter() {
  * example: capitalizeLastLetter("jimmy") returns "jimmY"
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  let lastLetter = str.slice(str.length-1) //r
+  let  firstPart = str.slice(0, -1) //st
+ return firstPart + lastLetter.toUpperCase() //st + R
 
 
+  //OR we can do it as following:
+//   let strMod= str.slice(str.length-1)
+//   let lastUpper = strMod.toUpperCase()
+//   let withOut = str.slice(0, str.length-1)
+//  return withOut + lastUpper
+}
+console.log(capitalizeLastLetter('jimmy'));
+console.log(capitalizeLastLetter('what is the meaning of life'));
+console.log(capitalizeLastLetter('Mom'));
 /**
  * Create a drEvil function that takes in a number
  * and returns "${number} dollars"
@@ -56,8 +93,10 @@ function capitalizeLastLetter() {}
  * example: drEvil(10) returns "10 dollars"
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
-function drEvil() {}
+function drEvil(num) {}
 
+let num = 10
+console.log(`${num} dollars`)
 /**
  * verbing() should take a string. 
  * If its length is >= 3, it should add 'ing' to its end, unless it already ends in 'ing',
