@@ -91,12 +91,14 @@ verbing('go')
  
  */
 
-function verbing(str) {
-  // come back to
-  // if(str.length < 3){ return str}
-  // if(str.length >= 3) { return str + "ing"}
-  // if(str.slice(-3) === "ing") { return + "ly"}
-}
+function verbing(str) { // come back to
+  if(str.slice(-3) === "ing") { 
+    return str + "ly"
+  } else if(str.length >= 3) {
+    return str + "ing"
+  } else {
+    return str} 
+  }
 
 /**
  * Takes a single sentence and returns a copy of the string without the
