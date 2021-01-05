@@ -81,7 +81,8 @@ combineStrings("string1", "string2")
  * @returns {string}
  */
 function mashUp(str1, str2) {
-
+  let halfStr1 = Math.floor(str1.length/2)
+  return str1.slice(0, halfStr1) + str2 + str1.slice(halfStr1)
 }
 /**
  * Takes in a string and returns whether or not is includes a vowel.
@@ -90,7 +91,15 @@ function mashUp(str1, str2) {
  * @param {string}
  * @returns {boolean}
  */
-function includesVowel(str) {}
+function includesVowel(str) {
+  let vowels = "AEIOUaeiou"
+  if(vowels.includes(str)){
+    return true
+  } else {
+    return false
+  }
+  
+}
 
 /**
  * Takes in a string and returns the number of vowels that it contains.

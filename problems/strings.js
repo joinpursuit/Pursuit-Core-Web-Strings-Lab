@@ -162,7 +162,6 @@ disemvowel("string")
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
  function disemvowelLongWords(str){
- 
 }
 disemvowelLongWords(`amber is the color of your energy`)
 
