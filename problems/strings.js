@@ -199,15 +199,15 @@ console.log(disemvowel("COREY"))
  */
  function disemvowelLongWords(str){
 // let string = ''
-let str1 = str.split()
+let str1 = str.split(" ")
 // console.log(str.length)
 // console.log(str1)
 for( let i = 0; i < str.length; i ++){
-  if(str1.length[i] >= 5) {
-    console.log(str1[i])
+  if(str1[i].length >= 5) {
+    str1[i] = disemvowel(str1[i]);
   }
 }
-// return string
+return str1.join(" ")
  }
 
 console.log(disemvowelLongWords("hi i am your friend"))
@@ -225,9 +225,11 @@ console.log(disemvowelLongWords("hi i am your friend"))
  * example: middleCharacter("ostentatious") returns "ta"
  */
 function middleCharacter(str) {
-  if(str.length % 2 === 0){
-
-  }
+    if (str.length % 2 === 1) {
+      return str[Math.floor(str.length / 2)];
+    } else {
+      return str[str.length / 2 - 1] + str[str.length / 2];
+    }
 
 }
 console.log(middleCharacter("Corey"))//("r");
@@ -244,7 +246,13 @@ console.log(middleCharacter("kitten"))//("tt");
  * @param {string} str - an input string
  * @returns {string} - the return value string, reversed str
  */
-function reverseString() {}
+function reverseString() {
+  let revStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    revStr += str[i];
+  }
+  return revStr;
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -256,7 +264,14 @@ function reverseString() {}
  * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords() {
+  let arr = str.split(" ");
+  let output = [];
+  for (let i = 0; i < arr.length; i++) {
+    output.push(arr[i].split("").reverse().join(""));
+  }
+  return output.join(" ");
+}
 
 module.exports = {
   firstChar,
