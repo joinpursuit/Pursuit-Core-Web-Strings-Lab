@@ -7,8 +7,24 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
 
+// One way of doing it:
+
+// function firstChar(str) {
+//   return str[0] || str
+// }
+
+function firstChar(str) {
+  if (str.length === 0) {
+    return ''
+  }
+  else {
+    return str[0]
+  }
+}
+
+console.log(firstChar(""))
+console.log(firstChar("banana"))
 
 /**
  * Returns the length of a string
@@ -18,8 +34,13 @@ function firstChar() {}
  * example: stringLength("what") returns 4
  * example: stringLength("sixteen") returns 7
  */
-function stringLength() {}
+function stringLength(str) {
+  return str.length
+}
 
+console.log(stringLength("Corey"))
+console.log(stringLength("corey"))
+console.log(stringLength(""))
 
 /**
  * Returns the last character of any string
@@ -31,8 +52,12 @@ function stringLength() {}
  * example: lastLetter("") returns ""
  */
 
-function lastLetter() {
+function lastLetter(str) {
+  return str[str.length - 1] || str
 }
+console.log(lastLetter(""))
+console.log(lastLetter("Corey"))
+console.log(lastLetter("cat"))
 
 /**
  * Takes a string and returns a copy of the string with the last
@@ -43,7 +68,21 @@ function lastLetter() {
  * example: capitalizeLastLetter("jimmy") returns "jimmY"
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+  let myStr = str
+
+  if (myStr === "") {
+    return ""
+  }
+  else {  
+    let capitalize = myStr.slice(0, myStr.length - 1) + myStr[myStr.length - 1].toUpperCase()
+    return capitalize
+  }
+}
+
+console.log(capitalizeLastLetter("Jimmy"))
+console.log(capitalizeLastLetter("cat"))
+console.log(capitalizeLastLetter(""))
 
 
 /**
@@ -56,7 +95,17 @@ function capitalizeLastLetter() {}
  * example: drEvil(10) returns "10 dollars"
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
-function drEvil() {}
+function drEvil(num) {
+  if (num < 1000000) {
+    return num + " dollars"
+  }
+  else {
+    return num + " dollars (pinky)"
+  }
+}
+
+console.log(drEvil(15))
+console.log(drEvil(1000001))
 
 /**
  * verbing() should take a string. 
@@ -69,8 +118,24 @@ function drEvil() {}
  * verbing('swimming') returns  'swimmingly'
  * verbing('go') returns  'go'
  */
-function verbing() {}
+function verbing(str) {
+let newStr = str
+let ing = "ing"
+//let sliced = newStr.slice(newStr.length - 3)
+if (newStr.length < 3) {
+  return str
+}
+else if (newStr.slice(newStr.length - 3) === ing) {
+  return newStr + "ly"
+}
+else {
+  return newStr + "ing"
+}
+}
 
+console.log(verbing("swimming"))
+console.log(verbing("box"))
+console.log(verbing("am"))
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -81,7 +146,17 @@ function verbing() {}
  * example: removeLastWord("Hello!") returns ""
  * example: removeLastWord("I eat cake") returns "I eat"
  */
-function removeLastWord() {}
+function removeLastWord(str) {
+
+  let newStr = str.split(" ")
+  let subtracted = newStr.slice(0, newStr.length - 1)
+  let string = subtracted.join(" ")
+  return string
+}
+
+console.log(removeLastWord("Hello"))
+console.log(removeLastWord("Hello world"))
+console.log(removeLastWord("I eat cake"))
 
 
 /**
@@ -94,7 +169,20 @@ function removeLastWord() {}
  * example: everyOtherLetter("Corey") returns "Cry"
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
-function everyOtherLetter() {}
+function everyOtherLetter(str) {
+let newStr = str
+let string = ""
+let i = 0
+while (i < str.length) {
+  string = newStr[i] + 2
+  i++
+}
+return string
+}
+//Still need to remove the commas in between words after the array is converted into a string
+console.log(everyOtherLetter("Corey"))
+console.log(everyOtherLetter("Skull candy"))
+
 
 
 /**
