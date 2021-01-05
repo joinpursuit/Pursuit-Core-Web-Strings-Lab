@@ -7,7 +7,13 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
+function firstChar(str) {
+  //return str[0] || str
+  if(str.length === 0) {
+    return ''
+  }
+  return str[0]
+}
 
 
 /**
@@ -18,7 +24,9 @@ function firstChar() {}
  * example: stringLength("what") returns 4
  * example: stringLength("sixteen") returns 7
  */
-function stringLength() {}
+function stringLength(str) {
+  return str.length
+}
 
 
 /**
@@ -31,7 +39,11 @@ function stringLength() {}
  * example: lastLetter("") returns ""
  */
 
-function lastLetter() {
+function lastLetter(str) {
+  if(str.length === 0) {
+    return ''
+  }
+  return str[str.length - 1]
 }
 
 /**
@@ -43,7 +55,15 @@ function lastLetter() {
  * example: capitalizeLastLetter("jimmy") returns "jimmY"
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+if (str === "") {
+  return ""
+} else {
+  let lastCap = str.slice(0,str.length -1) + str[str.length -1].toUpperCase()
+  return lastCap
+
+}
+}
 
 
 /**
@@ -56,7 +76,13 @@ function capitalizeLastLetter() {}
  * example: drEvil(10) returns "10 dollars"
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
-function drEvil() {}
+function drEvil(num) {
+  if (num < 1000000)
+  return `${num} dollars`
+  if (num >= 1000000) {
+    return `${num} dollars (pinky)`
+  } 
+}
 
 /**
  * verbing() should take a string. 
@@ -69,7 +95,17 @@ function drEvil() {}
  * verbing('swimming') returns  'swimmingly'
  * verbing('go') returns  'go'
  */
-function verbing() {}
+function verbing(str) {
+  if (str.length < 3) {
+    return str
+  } else if (str.length >= 3 && str.includes('ing')) {
+    return str + "ly"
+  }else {
+    return str + "ing"
+  }
+
+  
+}
 
 
 /**
@@ -81,7 +117,14 @@ function verbing() {}
  * example: removeLastWord("Hello!") returns ""
  * example: removeLastWord("I eat cake") returns "I eat"
  */
-function removeLastWord() {}
+function removeLastWord(str) { 
+  var newStr = str.split(0,str.length-1)
+    if(str === " "){
+  return ""
+  } else {
+    return newStr
+  }
+}
 
 
 /**
@@ -94,8 +137,17 @@ function removeLastWord() {}
  * example: everyOtherLetter("Corey") returns "Cry"
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
-function everyOtherLetter() {}
-
+function everyOtherLetter(str) {
+  let newStr = []
+//  if ( str[i] % 2 === 0)
+//  return newStr
+   for (i = 0; i < str.length; i++)
+if ( i % 2 === 0){
+// return 
+ newStr.push(str[i])
+}
+ return newStr.join("")
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
@@ -105,7 +157,18 @@ function everyOtherLetter() {}
  * example: disemvowel("aeiou") returns ""
  * example: disemvowel("Hello world!") returns "Hll wrld!"
  */
-function disemvowel() {}
+function disemvowel(str) {
+  let vowels = ['a','e','i','o','u', 'A', 'I','E','O','U']
+  let newStr = []
+  for( let i = 0; i < newStr.length; i ++) {
+    if (vowels === str)
+    newStr.pop(vowels)
+    return newStr
+  }
+// if(str[i] === vowels[i])
+// newStr,push(str[i])
+// return newStr(str[i])
+}
 
 
 /**
@@ -117,7 +180,9 @@ function disemvowel() {}
  * example: disemvowelLongWords("hi i am your friend") returns "hi i am your frnd"
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
- function disemvowelLongWords(){}
+ function disemvowelLongWords(str){
+
+ }
 
 
 /**
