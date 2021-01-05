@@ -67,7 +67,10 @@ doesStartWithVowel(`string`)
  * @param {string} str2
  * @returns {string}
  */
-function combineStrings() {}
+function combineStrings(str1, str2) {
+  return `${str1} ${str2}`
+}
+combineStrings("string1", "string2")
 /**
  * Write a function that takes in two strings, `str1` and `str2`,
  * return a new string with `str2` mashed into the middle of `str1`
