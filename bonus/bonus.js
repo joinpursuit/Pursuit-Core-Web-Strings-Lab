@@ -3,7 +3,18 @@
  * @param {string}
  * @returns {string}
  */
-function replaceVowels() {}
+function replaceVowels(str) {
+  let res = ""
+  let vowels = "aeiouAEIOU"
+  for(let i = 0; i < str.length; i++){
+    if(vowels.includes(str[i])){
+      res += "*"
+    } else {
+      res += str[i]
+    }
+  }
+  return res
+}
 
 /**
  * Takes in a string and adds "#" if the string has

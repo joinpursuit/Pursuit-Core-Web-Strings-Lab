@@ -162,9 +162,9 @@ disemvowel("string")
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
  function disemvowelLongWords(str){
-   
+ 
  }
-
+disemvowelLongWords(`amber is the color of your energy`)
 
 /**
  * Takes in a string and returns the middle char.
@@ -176,7 +176,7 @@ disemvowel("string")
  * example: middleCharacter("ostentatious") returns "ta"
  */
 function middleCharacter(str) {
-
+  
 }
 
 
@@ -203,8 +203,8 @@ function reverseString() {}
  */
 
 function reverseSentenceWords(str) {
-  // let arr = str.split(" ")
-  // return arr.reverse().join(" ")
+  let arr = str.split(" ")
+  return arr.reverse().join(" ")
 }
 
 module.exports = {
