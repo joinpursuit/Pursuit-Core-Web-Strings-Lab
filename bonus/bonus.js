@@ -80,7 +80,9 @@ combineStrings("string1", "string2")
  * @param {string} str2
  * @returns {string}
  */
-function mashUp() {}
+function mashUp(str1, str2) {
+
+}
 /**
  * Takes in a string and returns whether or not is includes a vowel.
  * Don't use the || (OR) operator,  use the includes method and make it
@@ -88,7 +90,7 @@ function mashUp() {}
  * @param {string}
  * @returns {boolean}
  */
-function includesVowel() {}
+function includesVowel(str) {}
 
 /**
  * Takes in a string and returns the number of vowels that it contains.
@@ -97,7 +99,16 @@ function includesVowel() {}
  * @returns {number} number of vowels
  */
 
-function vowelCount() {}
+function vowelCount(str) {
+  let numOfVowels = 0
+  let vowels ="AEIOUaeiou"
+  for(let i = 0; i < str.length; i++){
+    if(vowels.includes(str[i])){
+      numOfVowels++
+    }
+  }
+  return numOfVowels
+}
 
 module.exports = {
   replaceVowels,
