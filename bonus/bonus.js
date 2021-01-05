@@ -51,8 +51,15 @@ lastThreeLetters("string")
  * @param {string}
  * @returns {boolean}
  */
-function doesStartWithVowel() {}
-
+function doesStartWithVowel(str) {
+  let vowels = "aeiouAEIOU"
+  if (vowels.includes(str[0])) {
+    return true
+  } else {
+    return false
+  }
+}
+doesStartWithVowel(`string`)
 /**
  * Takes in two strings and returns a new string
  * with the two strings separated by a space.
