@@ -3,16 +3,33 @@
  * @param {string}
  * @returns {string}
  */
-function replaceVowels() {}
-
+function replaceVowels(str) {
+  let res = ""
+  let vowels = "aeiouAEIOU"
+  for(let i = 0; i < str.length; i++){
+    if(vowels.includes(str[i])){
+      res += "*"
+    } else {
+      res += str[i]
+    }
+  }
+  return res
+}
+replaceVowels("string")
 /**
  * Takes in a string and adds "#" if the string has
  * an odd number of characters.
  * @param {string}
  * @returns {string}
  */
-function makeStringEvenLength() {}
-
+function makeStringEvenLength(str) {
+  if(str.length % 2 !== 0){
+    return `${str}#`
+  } else {
+    return str
+  }
+}
+makeStringEvenLength("string")
 /**
  * Takes in a string and returns the last three
  * letters of the string. If the string is less than
@@ -21,15 +38,28 @@ function makeStringEvenLength() {}
  * @returns {string}
  */
 
-function lastThreeLetters() {}
-
+function lastThreeLetters(str) {
+  if(str.length < 3){
+   throw Error("Input less than three characters")
+  } else {
+    return newStr = str.slice(-3)
+  }
+}
+lastThreeLetters("string")
 /**
  * Takes in a string and returns whether or not that string starts with a vowel.
  * @param {string}
  * @returns {boolean}
  */
-function doesStartWithVowel() {}
-
+function doesStartWithVowel(str) {
+  let vowels = "aeiouAEIOU"
+  if (vowels.includes(str[0])) {
+    return true
+  } else {
+    return false
+  }
+}
+doesStartWithVowel(`string`)
 /**
  * Takes in two strings and returns a new string
  * with the two strings separated by a space.
@@ -37,7 +67,10 @@ function doesStartWithVowel() {}
  * @param {string} str2
  * @returns {string}
  */
-function combineStrings() {}
+function combineStrings(str1, str2) {
+  return `${str1} ${str2}`
+}
+combineStrings("string1", "string2")
 /**
  * Write a function that takes in two strings, `str1` and `str2`,
  * return a new string with `str2` mashed into the middle of `str1`
@@ -47,7 +80,10 @@ function combineStrings() {}
  * @param {string} str2
  * @returns {string}
  */
-function mashUp() {}
+function mashUp(str1, str2) {
+  let halfStr1 = Math.floor(str1.length/2)
+  return str1.slice(0, halfStr1) + str2 + str1.slice(halfStr1)
+}
 /**
  * Takes in a string and returns whether or not is includes a vowel.
  * Don't use the || (OR) operator,  use the includes method and make it
@@ -55,7 +91,15 @@ function mashUp() {}
  * @param {string}
  * @returns {boolean}
  */
-function includesVowel() {}
+function includesVowel(str) {
+  let vowels = "AEIOUaeiou"
+  if(vowels.includes(str)){
+    return true
+  } else {
+    return false
+  }
+  
+}
 
 /**
  * Takes in a string and returns the number of vowels that it contains.
@@ -64,7 +108,16 @@ function includesVowel() {}
  * @returns {number} number of vowels
  */
 
-function vowelCount() {}
+function vowelCount(str) {
+  let numOfVowels = 0
+  let vowels ="AEIOUaeiou"
+  for(let i = 0; i < str.length; i++){
+    if(vowels.includes(str[i])){
+      numOfVowels++
+    }
+  }
+  return numOfVowels
+}
 
 module.exports = {
   replaceVowels,
