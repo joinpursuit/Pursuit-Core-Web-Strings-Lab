@@ -135,7 +135,16 @@ function everyOtherLetter(str) {
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel(str) {
+  let vowels = ["a", "e", "i", "o", "u"]
+  newStr = "";
+ for (let i = 0; i < str.length; i++) {
+    if (!vowels.includes(str[i].toLowerCase())) {
+      newStr += str[i]
+    }
+  }
+ return newStr
+}
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -170,7 +179,12 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(str) {
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    newStr += str[i]
+  }
+}
 
 module.exports = {
   firstChar,
