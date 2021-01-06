@@ -120,8 +120,13 @@ const verbing = (string) => {
  * @returns {string}
  */
 
-function removeLastWord() {}
+// function removeLastWord() {}
+const removeLastWord = (string) => {
 
+  let lastIndex = string.lastIndexOf(" ")
+string = string.substring(0, lastIndex)
+return string
+}
 /**
  * Takes a string and returns a new string that has only the even
  * indexed characters.
@@ -130,14 +135,24 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
-
+// function everyOtherLetter() {}
+  const everyOtherLetter = (string) => {
+    let output = "";
+    for (let i = 0; i < string.length; i++) {
+      if (i % 2 === 0) {
+        output += string[i];
+      }
+    }
+    return output;
+  };
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel(string) {
+  return string.replace(/[aeiouAEIOU]/g, "")
+}
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -146,7 +161,22 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+ function disemvowelLongWords(string){
+  let str = [];
+  let words = string.split(" ");
+  for (let i = 0; i < words.length; i++){
+    let currWord = words[i];
+    console.log(i, currWord);
+    if (currWord.length >= 5) {
+      let newWord = disemvowel(currWord);
+      str.push(newWord);
+    } else {
+      str.push(currWord)
+    }
+  }
+  return str.join(" ");
+}
+ 
 
 /**
  * Takes in a string and returns the middle char.
@@ -154,7 +184,13 @@ function disemvowel() {}
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+function middleCharacter(string) {
+  if(string.length %2 === 1) {
+    return string[Math.floor(string.length / 2)]
+  } else { 
+    return string[(string.length / 2) - 1] + string[(string.length )/ 2]
+}
+}
 
 /**
  * Takes in a string and reverses it.
@@ -163,8 +199,16 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString(string) {
+  let newString = ""
 
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i]
+  }
+
+  return newString
+
+}
 /**
  * Takes in a sentence string and reverses each word but not the
  * order of the words.
@@ -172,8 +216,16 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(string) {
+  let str = string.split(" ")
 
+  for (let i = 0; i < str.length; i++) {
+    str[i] = reverseString(str[i]);
+
+  }
+  return str.join(" ");
+
+}
 module.exports = {
   firstChar,
   stringLength,
@@ -188,4 +240,5 @@ module.exports = {
   middleCharacter,
   reverseString,
   reverseSentenceWords,
-};
+}
+ 
