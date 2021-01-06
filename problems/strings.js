@@ -7,7 +7,9 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
+function firstChar(string) {
+  hello
+}
 
 
 /**
