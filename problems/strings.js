@@ -123,13 +123,13 @@ function verbing(str) {
 
 function removeLastWord(str) {
   arr = str.split(" ")
-  popArr = arr.pop()
+  arr.pop()
   newStr = arr.join(" ")
 
 
   return newStr
 }
-//console.log(removeLastWord("Hi how are you!"))
+console.log(removeLastWord("Hi how are you!"))
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -156,13 +156,13 @@ function everyOtherLetter(str) {
  */
 function disemvowel(str) {
   let arr = []
-  for (i = 0; i < str.length; i++) {
-    if (str[i] === "A" || str[i] === "a"|| str[i] === "E"|| str[i] === "e"|| str[i] === "I"|| str[i] === "i"|| str[i] === "O"|| str[i] === "o"|| str[i] === "U"|| str[i] === "u") {
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "A" || str[i] === "a" || str[i] === "E" || str[i] === "e" || str[i] === "I" || str[i] === "i" || str[i] === "O" || str[i] === "o" || str[i] === "U" || str[i] === "u") {
       arr.push("")
     } else {
       arr.push(str[i])
     }
-    
+
   }
   return arr.join("")
 }
@@ -176,16 +176,16 @@ function disemvowel(str) {
  */
 
 function disemvowelLongWords(str) {
-  newArr = []
-  arr = str.split(" ")
-  for(i = 0; i < arr.length; i++){
-    if (arr[i].length >= 5){
+ let newArr = []
+ let arr = str.split(" ")
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length >= 5) {
       newArr.push(disemvowel(arr[i]))
-    }else{
+    } else {
       newArr.push(arr[i])
     }
   }
-  return newArr
+  return newArr.join(" ")
 
 }
 //console.log(disemvowelLongWords("Hippo is my friend"))
@@ -197,14 +197,14 @@ function disemvowelLongWords(str) {
  */
 function middleCharacter(str) {
   char = ""
-  if((str.length % 2) === 1 ){
-    char = str[(str.length - 1)/2] 
-  }else{
-    char = str[((str.length)/2)-1] + str[(str.length)/2]
+  if ((str.length % 2) === 1) {
+    char = str[(str.length - 1) / 2]
+  } else {
+    char = str[((str.length) / 2) - 1] + str[(str.length) / 2]
   }
   return char
- }
- console.log(middleCharacter("moindd"))
+}
+//console.log(middleCharacter("moindd"))
 
 /**
  * Takes in a string and reverses it.
@@ -213,17 +213,37 @@ function middleCharacter(str) {
  * @returns {string}
  */
 
-function reverseString() { }
+function reverseString(str) {
+  let arr = []
+  let n = str.length -1 
+  for (let i = 0; i < str.length; i++){
+    arr[i] = str[n]
+    n--
+    
 
+  }
+  return arr.join("")
+ }
+//console.log(reverseString("Hi How Are You"))
 /**
  * Takes in a sentence string and reverses each word but not the
  * order of the words.
  * @param {string}
  * @returns {string}
- */
+ */ 
 
-function reverseSentenceWords() { }
+function reverseSentenceWords(str) {
+  let arr = str.split(" ")
+  let newArr = []
+  
+  for (let i = 0; i < arr.length; i++){
+    newArr.push(reverseString(arr[i]))
+    
+  }
 
+return newArr.join(" ")
+ }
+console.log(reverseSentenceWords("Hi How Are You"))
 module.exports = {
   firstChar,
   stringLength,
