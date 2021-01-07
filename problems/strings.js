@@ -91,14 +91,16 @@ verbing('go')
  
  */
 
-function verbing(str) { // come back to
-  if(str.slice(-3) === "ing") { 
-    return str + "ly"
-  } else if(str.length >= 3) {
-    return str + "ing"
+function verbing(str) {
+  // come back to
+  if (str.slice(-3) === "ing") {
+    return str + "ly";
+  } else if (str.length >= 3) {
+    return str + "ing";
   } else {
-    return str} 
+    return str;
   }
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -124,11 +126,10 @@ function removeLastWord(string) {
 function everyOtherLetter(str) {
   let evenIdxChar = "";
   for (let i = 0; i <= str.length; i += 2) {
-      evenIdxChar += str[i];
+    evenIdxChar += str[i];
   }
   return evenIdxChar;
 }
-
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
@@ -136,15 +137,18 @@ function everyOtherLetter(str) {
  * @returns {string}
  */
 function disemvowel(str) {
-  let vowels = ["a", "e", "i", "o", "u"]
-  newStr = "";
- for (let i = 0; i < str.length; i++) {
+  let vowels = ["a", "e", "i", "o", "u"];
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
     if (!vowels.includes(str[i].toLowerCase())) {
-      newStr += str[i]
+      // elements not included in string set all passed in letters toLowerCase
+      newStr += str[i];
     }
   }
- return newStr
+  return newStr;
 }
+
+// console.log(disemvowel("this is a song that never ends it goes on and on my friends"))
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -153,7 +157,29 @@ function disemvowel(str) {
  * @returns {string}
  */
 
-function disemvowelLongWords() {}
+function disemvowelLongWords(str) {
+  let vowels = ["a", "e", "i", "o", "u"];
+  let strArr = str.split(" ");
+  // console.log(strArr);
+  let newStr = "";
+  for (let i = 0; i < strArr.length; i++) {
+    let word = strArr[i];
+    // console.log(word)
+    if (word.length >= 5) {
+      str.split(vowels[i]);
+      newStr += strArr[i] + " ";
+      // console.log(newStr)
+      // newStr + vowels.includes(strArr[i].toLowerCase())
+      // console.log(strArr[i])
+    } else {
+      newStr += strArr[i] + " ";
+      // console.log(newStr)
+    }
+  }
+  return newStr;
+}
+
+// disemvowelLongWords("this is a song that never ends it goes on and on my friends")
 
 /**
  * Takes in a string and returns the middle char.
@@ -161,7 +187,16 @@ function disemvowelLongWords() {}
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+
+function middleCharacter(str) {
+  
+if (str.length % 2 !== 0) {
+   str = str[(str.length - 1) / 2];
+  } else {
+    str = str[str.length / 2 - 1] + str[str.length / 2]; 
+  }
+  return str
+}
 
 /**
  * Takes in a string and reverses it.
@@ -170,7 +205,13 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString(str) {
+  let newStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    newStr += str[i]
+  }
+  return newStr
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -180,11 +221,23 @@ function reverseString() {}
  */
 
 function reverseSentenceWords(str) {
+  let splitStr = str.split(" ");
+  let word = "";
   let newStr = "";
-  for (let i = 0; i < str.length; i++) {
-    newStr += str[i]
+  for (let i = splitStr.length - 1; i >= 0; i--) {
+    word = splitStr[i]
+    console.log(`${i} ${splitStr[i]} ${word}`)
+    // console.log(`${i} ${splitStr[i]}`)
+    for (let j = splitStr[i].length - 1; j >= 0; j--) {
+      // console.log(`${j} ${splitStr[i].length}`)
+      // newStr += word[j]
+    }
   }
+  return newStr
 }
+
+console.log(reverseSentenceWords("stac era eht tseb"))
+console.log(reverseSentenceWords("olleH dlrow"))
 
 module.exports = {
   firstChar,
