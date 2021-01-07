@@ -87,8 +87,8 @@ console.log(capitalizeLastLetter("jimmy"))
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
 function drEvil(num) {
-    if (num > 100000000) { return `${num} + " dollars" (pinky)` }
-    return `${num} + " dollars"`
+    if (num >= 1000000) { return `${num} dollars (pinky)` }
+    return `${num} dollars`
 }
 
 /**
@@ -103,11 +103,11 @@ function drEvil(num) {
  * verbing('go') returns  'go'
  */
 function verbing(str) {
-    let endStr = str.slice((str.length - 3), (str.length - 1))
+    let endStr = str.slice((str.length - 3), (str.length))
     if (str.length >= 3 && endStr === 'ing') {
-        return str + 'ly'
+        return str + `ly`
     } else if (str.length >= 3 && endStr != 'ing') {
-        return str + 'ing'
+        return str + `ing`
     }
     return str
 }
