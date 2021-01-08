@@ -157,7 +157,7 @@ function disemvowel(str) {
  * @returns {string}
  */
 
-function disemvowelLongWords(str) { // not complete
+function disemvowelLongWords(str) {
   let vowels = ["a", "e", "i", "o", "u"];
   let strArr = str.split(" ");
   // console.log(strArr);
@@ -221,21 +221,23 @@ function reverseString(str) {
  */
 
 function reverseSentenceWords(str) {
-  let strArr = str.split("");
-  let reverseWord = [];
-  let finalStr = "";
-  let finalArr = [];
-  for (let i = strArr.length - 1; i >= 0; i--) {
-    reverseWord.push(strArr[i])
-  } 
-  finalStr = reverseWord.join("")
-  finalStr = finalStr.split(" ")
-  for (let j = finalStr.length -1; j >= 0; j--) {
-    finalArr.push(finalStr[j])
+  let splitStr = str.split(" ");
+  let word = "";
+  let newStr = "";
+  for (let i = splitStr.length - 1; i >= 0; i--) {
+    word = splitStr[i]
+    console.log(`${i} ${splitStr[i]} ${word}`)
+    // console.log(`${i} ${splitStr[i]}`)
+    for (let j = splitStr[i].length - 1; j >= 0; j--) {
+      // console.log(`${j} ${splitStr[i].length}`)
+      // newStr += word[j]
+    }
   }
-  return finalArr.join(" ")
+  return newStr
 }
 
+console.log(reverseSentenceWords("stac era eht tseb"))
+console.log(reverseSentenceWords("olleH dlrow"))
 
 module.exports = {
   firstChar,
