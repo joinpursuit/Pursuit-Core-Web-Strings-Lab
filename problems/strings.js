@@ -128,12 +128,14 @@ function removeLastWord(str) {
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
 function everyOtherLetter(str) {
-  let num = []
-  for (let i = 0; i <str.length; i+2)
-  if(i % 2 == 0){
-    num = str[i].slice(0, -1)+ str[0] + str[2]+ str[str.length-1]
-    return num
-  }
+  let num = ""
+  for (let i = 0; i <str.length; i+=2){
+    if(i % 2 == 0){
+      num += str[i]
+      
+    }
+  }return num
+  
 }
 
 
@@ -146,8 +148,13 @@ function everyOtherLetter(str) {
  * example: disemvowel("Hello world!") returns "Hll wrld!"
  */
 function disemvowel(str) {
-
-  return str.split('e','o')
+let newStr = ""
+for (let i = 0; i <=str.length-1;i++){
+  if(str[i]!=='a' && str[i]!=='e' && str[i]!=='i' && str[i]!=='o' && str[i]!=='u' && str[i]!=='A' && str[i]!=='E' && str[i]!=='I' && str[i]!=='O' && str[i]!=='U'){
+    newStr += str[i]
+  }
+}
+  return newStr
 }
 
 
@@ -160,7 +167,17 @@ function disemvowel(str) {
  * example: disemvowelLongWords("hi i am your friend") returns "hi i am your frnd"
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
- function disemvowelLongWords(){}
+ function disemvowelLongWords(str){
+   let splitAr = str.split(' ')
+  let newStr = ""
+  for (i = 0; i < splitAr.length;i++){
+    if(splitAr[i].length >= 5){
+      newStr += disemvowel(splitAr[i]) + ' '
+    }else{
+      newStr += splitAr[i]+ ' '
+    }
+  }return newStr.trim()
+ }
 
 
 /**
@@ -172,8 +189,14 @@ function disemvowel(str) {
  * example: middleCharacter("hello") returns "l"
  * example: middleCharacter("ostentatious") returns "ta"
  */
-function middleCharacter() {}
-
+function middleCharacter(str) {
+  let newStr = str
+    if(str.length %2 !== 0){
+      return newStr[Math.floor(str.length/2)]
+    }else{
+      return newStr[(str.length/2)-1]+ newStr[str.length/2]
+    }
+}
 
 /**
  * Takes in a string and reverses it.
@@ -186,7 +209,11 @@ function middleCharacter() {}
  * @returns {string} - the return value string, reversed str
  */
 function reverseString(str) {
-  return str.reverse(str.length)
+  let string = ''
+for (i= str.length-1;i >= 0;i --){
+  string += str[i]
+}return string
+  
 }
 
 /**
@@ -200,10 +227,11 @@ function reverseString(str) {
  */
 
 function reverseSentenceWords(str) {
-  let sentece =['']
-  for (let i = 0; i <str.length; i++){
-    //return sentece.reverse(str[i])
-  }
+  let sentece = ''
+  let splitar =str.split(' ')
+  for (let i = 0; i <= splitar.length-1; i++){
+    sentece += ' ' + reverseString(splitar[i])
+  }return sentece.trim()
   
 }
 
