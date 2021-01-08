@@ -3,11 +3,11 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar(str) {
+const firstChar = (str) => {
   if (str === "") {
     return "";
   }
-  return str[0]; // why doesn't str[0] work for ""
+  return str[0];
 }
 
 /**
@@ -16,7 +16,7 @@ function firstChar(str) {
  * @returns {number} - length of string
  */
 
-function stringLength(str) {
+const stringLength = (str) => {
   return str.length;
 }
 
@@ -26,8 +26,7 @@ function stringLength(str) {
  * @returns {string} - last letter
  */
 
-function lastLetter(str) {
-  // why doesnt str[str.length -1] on "" str
+const lastLetter = (str) => {
   if (str === "") {
     return "";
   }
@@ -41,11 +40,11 @@ function lastLetter(str) {
  * @returns {string} - 'jimmY'
  */
 
-function capitalizeLastLetter(str) {
+const capitalizeLastLetter = (str) => {
   if (str === "") {
     return "";
   }
-  return str.slice(0, str.length - 1) + str[str.length - 1].toUpperCase(); // slice(0, -1) returns last character of the string
+  return str.slice(0, -1) + str[str.length - 1].toUpperCase();
 }
 
 /**
@@ -61,7 +60,8 @@ let amount = 1000000
 * @param {number}
 * @returns {string}
  */
-function drEvil(num) {
+
+const drEvil = (num) => {
   if (num < 1000000) {
     return `${num} dollars`;
   }
@@ -88,11 +88,9 @@ verbing('swimming')
 verbing('go')
 // =>  'go'
 ```
- 
  */
 
-function verbing(str) {
-  // come back to
+const verbing = (str) => {
   if (str.slice(-3) === "ing") {
     return str + "ly";
   } else if (str.length >= 3) {
@@ -109,7 +107,7 @@ function verbing(str) {
  * @returns {string}
  */
 
-function removeLastWord(string) {
+const removeLastWord = (string) => {
   let array = string.split(" ");
   array.pop();
   return array.join(" ");
@@ -123,7 +121,7 @@ function removeLastWord(string) {
  * @returns {string}
  */
 
-function everyOtherLetter(str) {
+const everyOtherLetter = (str) => {
   let evenIdxChar = "";
   for (let i = 0; i <= str.length; i += 2) {
     evenIdxChar += str[i];
@@ -136,19 +134,17 @@ function everyOtherLetter(str) {
  * @param {string}
  * @returns {string}
  */
-function disemvowel(str) {
+
+const disemvowel = (str) => {
   let vowels = ["a", "e", "i", "o", "u"];
   let newStr = "";
   for (let i = 0; i < str.length; i++) {
     if (!vowels.includes(str[i].toLowerCase())) {
-      // elements not included in string set all passed in letters toLowerCase
       newStr += str[i];
     }
   }
   return newStr;
 }
-
-// console.log(disemvowel("this is a song that never ends it goes on and on my friends"))
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -157,7 +153,7 @@ function disemvowel(str) {
  * @returns {string}
  */
 
-function disemvowelLongWords(str) {
+const disemvowelLongWords = (str) => {
   let vowels = ["a", "e", "i", "o", "u"];
   let strArr = str.split(" ");
   // console.log(strArr);
@@ -179,8 +175,6 @@ function disemvowelLongWords(str) {
   return newStr;
 }
 
-// disemvowelLongWords("this is a song that never ends it goes on and on my friends")
-
 /**
  * Takes in a string and returns the middle char.
  * If there is no character in the middle return the middle two characters
@@ -188,7 +182,7 @@ function disemvowelLongWords(str) {
  * @returns {string}
  */
 
-function middleCharacter(str) {
+const middleCharacter = (str) => {
   
 if (str.length % 2 !== 0) {
    str = str[(str.length - 1) / 2];
@@ -205,7 +199,7 @@ if (str.length % 2 !== 0) {
  * @returns {string}
  */
 
-function reverseString(str) {
+const reverseString = (str) => {
   let newStr = "";
   for (let i = str.length - 1; i >= 0; i--) {
     newStr += str[i]
@@ -220,20 +214,14 @@ function reverseString(str) {
  * @returns {string}
  */
 
-function reverseSentenceWords(str) {
+const reverseSentenceWords = (str) => {
   let strArr = str.split("");
-  let reverseWord = [];
-  let finalStr = "";
-  let finalArr = [];
-  for (let i = strArr.length - 1; i >= 0; i--) {
-    reverseWord.push(strArr[i])
-  } 
-  finalStr = reverseWord.join("")
-  finalStr = finalStr.split(" ")
-  for (let j = finalStr.length -1; j >= 0; j--) {
-    finalArr.push(finalStr[j])
-  }
-  return finalArr.join(" ")
+  let reverseArr = strArr.reverse();
+  let joinArr = reverseArr.join("");
+  let strArrAgain = joinArr.split(" ");
+  let reverseArrAgain = strArrAgain.reverse();
+  let newStr = reverseArrAgain.join(" ");
+  return newStr;
 }
 
 module.exports = {
