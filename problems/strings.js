@@ -1,3 +1,4 @@
+"use strict"
 /**
  * Returns the first character of a string passed in.
  * @param {string} - str
@@ -202,7 +203,7 @@ const middleCharacter = (string) => {
 // function reverseString() {}
 const reverseString = (string) => {
   let newString = ""
-  for(i = string.length-1; i>=0; i -= 1) {
+  for(let i = string.length-1; i>=0; i -= 1) {
     newString += string.charAt(i)
   }
   return newString
@@ -214,16 +215,51 @@ const reverseString = (string) => {
  * @param {string}
  * @returns {string}
  */
-
+//input: 'Hello World"
+//output: "olleH dlroW"
 // function reverseSentenceWords() {}
 const reverseSentenceWords = (string) => {
-  let reverseWordString = ""
-  for(i = string.length-1; i >= 0; i -= 1) {
-    // reverseWordString = string.charAt(i) + reverseWordString
-    reverseWordString = reverseWordString[string.length-1] + string.charAt(i)
-  }
-  return reverseWordString
+  let splitSentenceArray = string.split(""); //string becomes an array
+  console.log(splitSentenceArray)
+  let reverseSentenceArray = splitSentenceArray.reverse()
+  console.log(reverseSentenceArray)
+  let joinReverseArray = reverseSentenceArray.join("") //array becomes a string (at element level which takes spaces into account)
+  console.log(joinReverseArray)
+  let splitWordArray = joinReverseArray.split(" ") //string becomes an array (again)
+  console.log(splitWordArray)
+  let reverseWordArray = splitWordArray.reverse()
+  console.log(reverseWordArray)
+  let joinArray = reverseWordArray.join(" ")
+  console.log(joinArray)
+  return joinArray
 }
+reverseSentenceWords("cats are the best")
+
+  // let reversal = reverseSentenceArray.map(el => {
+  //   return el.split("").reverse().join(" ");
+  // });
+  // return reversal.join(" ")
+  // }
+  // console.log(reversal.join(" "))
+
+  // return string.split("").reverse().join("")
+  // let SentenceArray = string.split("")          // ["H", "e", "l", "l", "o", "", "W", "o", "r" "l", "d"]
+  // let firstWordArray = string.slice(0,5)
+  // let secondWordArray = string.slice(6, -1)
+  // let reverseFirst = firstWordArray.reverse()
+  // let reverseSecond = secondWordArray.reverse()
+  // for(let i = 0; i < string.length-1; i +=1) {
+    
+    // reverseSentenceWords("")
+    // reverseSentenceString += string.charAt(i) + string.charAt(4)
+//   let reverseWordString = ""
+//   for(i = string.length-1; i >= 0; i -= 1) {
+//     // reverseWordString = string.charAt(i) + reverseWordString
+//     reverseWordString = reverseWordString[string.length-1] + string[i]
+//   }
+//   return reverseWordString
+// }
+
 
 module.exports = {
   firstChar,
