@@ -4,8 +4,7 @@
  * @returns {string} - first char
  */
 function firstChar(str) {
-  return str[0] || str
- 
+  return str[0] || str;
 }
 
 /**
@@ -15,7 +14,7 @@ function firstChar(str) {
  */
 
 function stringLength(str) {
-  return str.length
+  return str.length;
 }
 
 /**
@@ -25,7 +24,7 @@ function stringLength(str) {
  */
 
 function lastLetter(str) {
- return str[str.length-1] || str
+  return str[str.length - 1] || str;
 }
 
 /**
@@ -36,13 +35,13 @@ function lastLetter(str) {
  */
 
 function capitalizeLastLetter(str) {
-  let str1 = ""
- 
-  if(str.length !== 0) {
-    let str1 = str.slice(0, str.length-1) + str[str.length-1].toUpperCase()
-   return str1 
+  let str1 = "";
+
+  if (str.length !== 0) {
+    let str1 = str.slice(0, str.length - 1) + str[str.length - 1].toUpperCase();
+    return str1;
   }
- return str
+  return str;
 }
 
 /**
@@ -59,11 +58,10 @@ let amount = 1000000
 * @returns {string}
  */
 function drEvil(num) {
-
   if (num < 1000000) {
-    return `${num} dollars`
+    return `${num} dollars`;
   } else {
-    return `${num} dollars (pinky)`
+    return `${num} dollars (pinky)`;
   }
 }
 
@@ -91,12 +89,13 @@ verbing('go')
  */
 
 function verbing(string) {
-  if(string.length >= 3 && string.slice(string.length-3) !== "ing") {
-return string + "ing"
-  } else if (string.length >= 3 && string.slice(string.length-3) === "ing") {
-    return string + "ly"
+  if (string.length >= 3 && string.slice(string.length - 3) !== "ing") {
+    return string + "ing";
+  } else if (string.length >= 3 && string.slice(string.length - 3) === "ing") {
+    return string + "ly";
+  } else {
+    return string;
   }
-  else {return string}
 }
 
 /**
@@ -107,11 +106,11 @@ return string + "ing"
  */
 
 function removeLastWord(string) {
-  let words = []
-  words = string.split(" ")
-  words.pop()
-  string = words.join(" ")
-  return string
+  let words = [];
+  words = string.split(" ");
+  words.pop();
+  string = words.join(" ");
+  return string;
 }
 
 /**
@@ -123,11 +122,11 @@ function removeLastWord(string) {
  */
 
 function everyOtherLetter(str) {
-  let stringEven = ""
-  for(let i = 0; i < str.length; i += 2) {
-    stringEven += str[i]
+  let stringEven = "";
+  for (let i = 0; i < str.length; i += 2) {
+    stringEven += str[i];
   }
-  return stringEven
+  return stringEven;
 }
 
 /**
@@ -136,18 +135,28 @@ function everyOtherLetter(str) {
  * @returns {string}
  */
 function disemvowel(str) {
-  let str2 = ""
+  let str2 = "";
   if (str.length === 0) {
-    return str
+    return str;
   } else {
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] !== "a" && str[i] !== 'e' && str[i] !== 'i' && str[i] !== "o" && str[i] !== "u" && str[i] !== "A" && str[i] !== "E" && str[i] !== "I" && str[i] !== "O" && str[i] !== "U")
-    str2 += str[i]
+    for (let i = 0; i < str.length; i++) {
+      if (
+        str[i] !== "a" &&
+        str[i] !== "e" &&
+        str[i] !== "i" &&
+        str[i] !== "o" &&
+        str[i] !== "u" &&
+        str[i] !== "A" &&
+        str[i] !== "E" &&
+        str[i] !== "I" &&
+        str[i] !== "O" &&
+        str[i] !== "U"
+      )
+        str2 += str[i];
+    }
   }
+  return str2;
 }
-  return str2
-}
-
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -156,32 +165,41 @@ function disemvowel(str) {
  * @returns {string}
  */
 
- function disemvowelLongWords(str){
-   let words = []
-   let str1 = ""
-   let str2
-   words = str.split(" ")
+function disemvowelLongWords(str) {
+  let words = [];
+  let str1 = "";
+  let str2;
+  words = str.split(" ");
 
-   for (let i = 0; i < words.length; i++) {
-    str1 = ""
-     
-   if(words[i].length >= 5) {
-     str2 = words[i]
-     
-    for (let j = 0; j < str2.length; j++) {
-      if (str2[j] !== "a" && str2[j] !== 'e' && str2[j] !== 'i' && str2[j] !== "o" && str2[j] !== "u" && str2[j] !== "A" && str2[j] !== "E" && str2[j] !== "I" && str2[j] !== "O" && str2[j] !== "U") {
-         str1 += str2[j]
+  for (let i = 0; i < words.length; i++) {
+    str1 = "";
+
+    if (words[i].length >= 5) {
+      str2 = words[i];
+
+      for (let j = 0; j < str2.length; j++) {
+        if (
+          str2[j] !== "a" &&
+          str2[j] !== "e" &&
+          str2[j] !== "i" &&
+          str2[j] !== "o" &&
+          str2[j] !== "u" &&
+          str2[j] !== "A" &&
+          str2[j] !== "E" &&
+          str2[j] !== "I" &&
+          str2[j] !== "O" &&
+          str2[j] !== "U"
+        ) {
+          str1 += str2[j];
+        }
       }
+      words[i] = str1;
     }
-    words[i] = str1
   }
-     
-    }
-   str1 = words.join(" ")
+  str1 = words.join(" ");
 
-   
-  return str1
-    }
+  return str1;
+}
 
 /**
  * Takes in a string and returns the middle char.
@@ -190,13 +208,11 @@ function disemvowel(str) {
  * @returns {string}
  */
 function middleCharacter(string) {
-  if(string.length % 2 === 0) {
-   let middle = string.slice((string.length/2)-1, (string.length/2) + 1)
-return middle
-  }
-  else if (string.length % 2 !== 0) {
-    return string[Math.floor(string.length/2)]
-    
+  if (string.length % 2 === 0) {
+    let middle = string.slice(string.length / 2 - 1, string.length / 2 + 1);
+    return middle;
+  } else if (string.length % 2 !== 0) {
+    return string[Math.floor(string.length / 2)];
   }
 }
 
@@ -207,7 +223,14 @@ return middle
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString(string) {
+  let newStr = "";
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newStr += string[i];
+  }
+  return newStr;
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -216,7 +239,17 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(string) {
+  let newStr = "";
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newStr += string[i];
+  }
+  let words = newStr.split(" ");
+  let wordsCorrect = words.reverse();
+  let stringCorrect = wordsCorrect.join(" ");
+  return stringCorrect;
+}
 
 module.exports = {
   firstChar,
