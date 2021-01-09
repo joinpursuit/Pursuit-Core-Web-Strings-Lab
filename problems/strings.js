@@ -4,8 +4,9 @@
  * @returns {string} - first char
  */
 function firstChar(str) {
+
   return str.slice(0, 1)
-  }
+};
 
 /**
  * Returns the length of a string
@@ -24,19 +25,19 @@ function stringLength(str) {
  */
 
 function lastLetter(str) {
-  return str.slice( str.length -1, str.length);  
-  
+  return str.slice(str.length - 1, str.length);
+
 }
-  /**
- * Takes a single string variable and returns a copy of the string with the
- * letter capitalized.
- * @param {string} - str 'jimmy'
- * @returns {string} - 'jimmY'
- */
+/**
+* Takes a single string variable and returns a copy of the string with the
+* letter capitalized.
+* @param {string} - str 'jimmy'
+* @returns {string} - 'jimmY'
+*/
 
 function capitalizeLastLetter(str) {
-  let lastLetter = str.slice( str.length -1, str.length)
- return str.slice(0, str.length -1) + lastLetter.toUpperCase();
+  let lastLetter = str.slice(str.length - 1, str.length)
+  return str.slice(0, str.length - 1) + lastLetter.toUpperCase();
 }
 
 /**
@@ -53,11 +54,10 @@ let amount = 1000000
 * @returns {string}
  */
 function drEvil(number) {
-  if( number < 1000000) {
-  return `${number} dollars`;
-  }else if (number >= 1000000)
-  {
-  return `${number} dollars (pinky)`;
+  if (number < 1000000) {
+    return `${number} dollars`;
+  } else if (number >= 1000000) {
+    return `${number} dollars (pinky)`;
 
   }
 
@@ -87,18 +87,18 @@ verbing('go')
  */
 
 function verbing(string) {
-  if ( string.length > 3 && string.slice(string.length - 3, string.length) === "ing") {
+  if (string.length > 3 && string.slice(string.length - 3, string.length) === "ing") {
     return `${string}ly`;
-  }else if (string.length >= 3) {
-     return `${string}ing`
-    }else if ( string.length < 3) {
-      return `${string}`;
-    }
+  } else if (string.length >= 3) {
+    return `${string}ing`
+  } else if (string.length < 3) {
+    return `${string}`;
   }
-  
+}
 
 
-  
+
+
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -107,24 +107,49 @@ function verbing(string) {
  * @returns {string}
  */
 
-function removeLastWord() {}
+function removeLastWord(str) {
+  let sytr = str.split(' ')
+  styr = sytr.pop()
+  return sytr.join(" ");
+};
 
 /**
  * Takes a string and returns a new string that has only the even
  * indexed characters.
  * Do NOT split the string into an array.
- * @param {string}
+ * @param {string} parameter
  * @returns {string}
  */
 
-function everyOtherLetter() {}
 
+function everyOtherLetter(str) {
+  // take a string
+  let str1 = "";
+
+  for (let i = 0; i < str.length; i += 2) {
+    let curStr = str[i];
+    if (curStr == str[0] || curStr !== str[0])
+      str1 += curStr;
+  }
+  return str1
+}
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel(str) {
+  // take a string
+  let str1 = "";
+  for (let i = 0; i < str.length; i++) {
+    let curStr = str[i];
+    if (curStr != 'a' && curStr != 'i' && curStr != 'o' && curStr != 'e' && curStr != 'u' && curStr != 'O' && curStr != 'E' && curStr != 'A' && curStr != 'U' && curStr != 'I') {
+      str1 += curStr;
+      console.log(str1)
+    }
+  }
+  return str1;
+}
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -133,7 +158,9 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+function disemvowelLongWords(str) {
+
+}
 
 /**
  * Takes in a string and returns the middle char.
@@ -141,7 +168,7 @@ function disemvowel() {}
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+function middleCharacter() { }
 
 /**
  * Takes in a string and reverses it.
@@ -150,7 +177,7 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString() { }
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -159,7 +186,7 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords() { }
 
 module.exports = {
   firstChar,
