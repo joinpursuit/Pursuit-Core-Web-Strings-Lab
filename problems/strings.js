@@ -106,6 +106,11 @@ function firstChar(str) {
    * example: removeLastWord("I eat cake") returns "I eat"
    */
   function removeLastWord(str) {
+  let words = str.split(" ")
+  words.pop()
+  let string = words.join(" ")
+
+  
     return str = str.substring(0, str.lastIndexOf(' '))
    //return str.split(' ', str.length-1) 
   };
@@ -117,7 +122,7 @@ function firstChar(str) {
    * Do NOT split the string into an array.
    * @param {string} str - an input string
    * @returns {string} - the return value containing even indexed characters
-   * 
+   * ////
    * example: everyOtherLetter("Corey") returns "Cry"
    * example: everyOtherLetter("Skull candy") returns "Sulcny"
    */
@@ -141,7 +146,12 @@ function firstChar(str) {
    * example: disemvowel("Hello world!") returns "Hll wrld!"
    */
   function disemvowel(str) {
-    return str.replace(/[aeiou]/gi, '')
+    
+      var vowels = ['a', 'e', 'i', 'o', 'u'];
+      
+      return str.split('').filter(function(el) {
+        return vowels.indexOf(el.toLowerCase()) == -1;
+      }).join('');
   }
   
   
@@ -154,8 +164,20 @@ function firstChar(str) {
    * example: disemvowelLongWords("hi i am your friend") returns "hi i am your frnd"
    * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
    */
-   function disemvowelLongWords(){}
-  
+   function disemvowelLongWords(str){
+     newArr = []
+    let arr = str.split(' ')
+    for(i = 0; i < arr.length; i++) {
+      if(arr[i].length < 5){
+        newArr.push(arr[i])
+      }
+      else {
+        newArr.push(disemvowel(arr[i]))
+      }
+    }
+    return newArr.join(' ')
+   }
+   
   
   /**
    * Takes in a string and returns the middle char.
@@ -166,7 +188,14 @@ function firstChar(str) {
    * example: middleCharacter("hello") returns "l"
    * example: middleCharacter("ostentatious") returns "ta"
    */
-  function middleCharacter() {}
+  function middleCharacter(str) {
+    // we take in string we split the string at its middle most character 
+    var middle = Math.floor(str.length/2); // 6
+    if (str.length % 2 == 0) // false true
+        return str[middle-1] + str[middle];
+    else
+        return str[middle]; //l
+  }
   
   
   /**
@@ -197,8 +226,13 @@ function firstChar(str) {
    * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
    */
   
-  function reverseSentenceWords(str) {
-    
+  
+  function reverseSentenceWords(string) {
+    let str = string.split(" ")
+    for (let i = 0; i < str.length; i++) {
+      str[i] = reverseString(str[i]);
+    }
+    return str.join(" ");
   }
   
   module.exports = {
