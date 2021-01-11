@@ -170,14 +170,16 @@ console.log(removeLastWord("I eat cake"))
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
 function everyOtherLetter(str) {
-let newStr = str
-let string = ""
 let i = 0
+let newStr = ""
 while (i < str.length) {
-  string = newStr[i] + 2
+  if (i % 2 === 0) {
+    newStr += str[i] //I can keep assigning different constant strings to newStr
+  }  
   i++
 }
-return string
+return newStr
+
 }
 //Still need to remove the commas in between words after the array is converted into a string
 console.log(everyOtherLetter("Corey"))
@@ -193,7 +195,22 @@ console.log(everyOtherLetter("Skull candy"))
  * example: disemvowel("aeiou") returns ""
  * example: disemvowel("Hello world!") returns "Hll wrld!"
  */
-function disemvowel() {}
+function disemvowel(str) {
+let vowel = "aeiou".toUpperCase() + "aeiou"
+let newStr = str
+let chars
+for (let i = 0; i < vowel.length; i++) {
+  chars = newStr.split(vowel[i])
+  console.log(chars)
+  newStr = chars.join('') //at this moment, the newStr is "Crey"
+  console.log(newStr)
+}
+return newStr
+}
+
+console.log(disemvowel('Corey'))
+console.log(disemvowel("Hello World!"))
+console.log(disemvowel("Hi, I have awesome nice friends"))
 
 
 /**
@@ -205,7 +222,13 @@ function disemvowel() {}
  * example: disemvowelLongWords("hi i am your friend") returns "hi i am your frnd"
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
- function disemvowelLongWords(){}
+ function disemvowelLongWords(str){
+
+ }
+
+ console.log(disemvowel('Corey'))
+ console.log(disemvowel("Hello World!"))
+ console.log(disemvowel("Hi, I have awesome nice friends"))
 
 
 /**
