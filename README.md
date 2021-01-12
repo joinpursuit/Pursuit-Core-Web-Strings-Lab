@@ -2,7 +2,7 @@
 
 
 # Strings Lab
-Get comfortable working with strings and iterating through them. [Documentation link](https://joinpursuit.github.io/Pursuit-Core-Web-Strings-Lab/)
+Get comfortable working with strings and iterating through them. [Documentation link](https://joinpursuit.github.io/Pursuit-Core-Web-Strings-Lab/).
 
 ## Learning Objectives
  * Be able to key / index into an string
