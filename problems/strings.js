@@ -215,9 +215,7 @@ const reverseString = (string) => {
  * @param {string}
  * @returns {string}
  */
-//input: 'Hello World"
-//output: "olleH dlroW"
-// function reverseSentenceWords() {}
+
 const reverseSentenceWords = (string) => {
   let splitSentenceArray = string.split(""); //string becomes an array
   console.log(splitSentenceArray)
@@ -235,30 +233,6 @@ const reverseSentenceWords = (string) => {
 }
 reverseSentenceWords("cats are the best")
 
-  // let reversal = reverseSentenceArray.map(el => {
-  //   return el.split("").reverse().join(" ");
-  // });
-  // return reversal.join(" ")
-  // }
-  // console.log(reversal.join(" "))
-
-  // return string.split("").reverse().join("")
-  // let SentenceArray = string.split("")          // ["H", "e", "l", "l", "o", "", "W", "o", "r" "l", "d"]
-  // let firstWordArray = string.slice(0,5)
-  // let secondWordArray = string.slice(6, -1)
-  // let reverseFirst = firstWordArray.reverse()
-  // let reverseSecond = secondWordArray.reverse()
-  // for(let i = 0; i < string.length-1; i +=1) {
-    
-    // reverseSentenceWords("")
-    // reverseSentenceString += string.charAt(i) + string.charAt(4)
-//   let reverseWordString = ""
-//   for(i = string.length-1; i >= 0; i -= 1) {
-//     // reverseWordString = string.charAt(i) + reverseWordString
-//     reverseWordString = reverseWordString[string.length-1] + string[i]
-//   }
-//   return reverseWordString
-// }
 
 
 module.exports = {
