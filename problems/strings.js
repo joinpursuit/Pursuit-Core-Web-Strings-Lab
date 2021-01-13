@@ -187,6 +187,17 @@ function disemvowel(str) {
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
  function disemvowelLongWords(str){
+  let arr = []
+  let splitter = str.split(" ") 
+  for(let i = 0; i < splitter.length; i++) {
+    if(splitter[i].length >= 5) {
+      arr.push(disemvowel(splitter[i]))
+    }
+    else{
+      arr.push(splitter[i])
+    }
+  }
+  return arr.join(" ")
  }
 
 
@@ -200,7 +211,17 @@ function disemvowel(str) {
  * example: middleCharacter("ostentatious") returns "ta"
  */
 function middleCharacter(str) {
-
+  let catcher = ''
+  let number = str.length
+  console.log(number)
+  if((number % 2) === 1) {
+    catcher = str[Math.round((number / 2) - 1)]
+    
+  }
+  else{
+    catcher = str[Math.round((number / 2) - 1)] + str[Math.round(number / 2)]
+  }
+  return catcher
 }
 
 
@@ -214,7 +235,15 @@ function middleCharacter(str) {
  * @param {string} str - an input string
  * @returns {string} - the return value string, reversed str
  */
-function reverseString(str) {}
+function reverseString(str) {
+  let arr = ''
+  let i = str.length - 1
+  while(i >= 0){
+    arr = arr + str[i]
+    i--
+  }
+  return arr
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -226,7 +255,20 @@ function reverseString(str) {}
  * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
  */
 
-function reverseSentenceWords(str) {}
+function reverseSentenceWords(str) {
+  let splitter = str.split(" ")
+  let i = 0
+  finalCatch = []
+  for(let key of splitter){
+      let catcher = ''
+      for(let i = key.length - 1; i >= 0; i--){
+          catcher = catcher + key[i]
+      }
+      finalCatch.push(catcher)
+  }
+  return finalCatch.join(" ")
+ 
+}
 
 module.exports = {
   firstChar,
