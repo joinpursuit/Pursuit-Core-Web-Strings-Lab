@@ -4,12 +4,11 @@
  * @returns {string} - first char
  */
 function firstChar(str) {
-
-if (str === "") {
-return str;
-} else {
-  return str[0];
-}
+  if (str === "") {
+    return str;
+  } else {
+    return str[0];
+  }
 }
 
 /**
@@ -29,10 +28,10 @@ function stringLength(str) {
  */
 
 function lastLetter(str) {
-  if(str === "") {
-    return str
-  }
-  else {return str[str.length-1]
+  if (str === "") {
+    return str;
+  } else {
+    return str[str.length - 1];
   }
 }
 
@@ -44,7 +43,7 @@ function lastLetter(str) {
  */
 
 function capitalizeLastLetter(str) {
-   return (str.slice(0, str.length -1)) + (str.slice(str.length-1).toUpperCase())
+  return str.slice(0, str.length - 1) + str.slice(str.length - 1).toUpperCase();
 }
 
 /**
@@ -62,9 +61,9 @@ let amount = 1000000
  */
 function drEvil(number) {
   if (number >= 1000000) {
-    return (number + " dollars (pinky)");
+    return number + " dollars (pinky)";
   } else {
-    return (number + " dollars");
+    return number + " dollars";
   }
 }
 
@@ -93,10 +92,16 @@ verbing('go')
  */
 
 function verbing(string) {
-  if (string.length >= 3 && (string.slice(string.length -3, string[string.length]) === "ing")) {
-    return string + "ly"
-  } else if (string.length >= 3 && (string.slice(string.length -4, string.length -1) !== "ing")){
-    return string + "ing"
+  if (
+    string.length >= 3 &&
+    string.slice(string.length - 3, string[string.length]) === "ing"
+  ) {
+    return string + "ly";
+  } else if (
+    string.length >= 3 &&
+    string.slice(string.length - 3, string.length) !== "ing"
+  ) {
+    return string + "ing";
   } else {
     return string;
   }
@@ -111,10 +116,16 @@ function verbing(string) {
 
 function removeLastWord(string) {
   let sentenceArray = string.split(" ");
-  sentenceArray.pop()
-    // console.log("I got this far!")
-    // console.log("I got to the else!")
-    return sentenceArray.join(" ")
+  sentenceArray.pop();
+  // console.log("I got this far!")
+  // console.log("I got to the else!")
+  // console.log("This is the string " + string)
+  // console.log("This is the new array: " + sentenceArray)
+  console
+    .log
+    // "This is the sentence array using join: " + sentenceArray.join(" ")
+    ();
+  return sentenceArray.join(" ");
 }
 
 /**
@@ -126,12 +137,12 @@ function removeLastWord(string) {
  */
 
 function everyOtherLetter(string) {
-  let newString = ""
+  let newString = "";
   for (let i = 0; i < string.length; i += 2) {
-    newString += string[i]
-  } return newString
+    newString += string[i];
+  }
+  return newString;
 }
-
 
 // console.log(everyOtherLetter("beautiful"))
 /**
@@ -139,7 +150,9 @@ function everyOtherLetter(string) {
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel(string) {
+  return string.replace(/[aeiou]/gi, "");
+}
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -148,7 +161,35 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+function disemvowelLongWords(string) {
+  let splitArray = [];
+  let newArray = [];
+  // newString = ""
+  splitArray = string.split(" ");
+  // console.log("This is the split array: " + splitArray);
+  for (i = 0; i < splitArray.length; i++) {
+    let currentWord = splitArray[i];
+    // console.log("The current word length is: " + currentWord.length);
+    if (currentWord.length >= 5) {
+      let wordsWithRemovedVowels = currentWord.replace(/[aeiou]/gi, "");
+      // // console.log(
+      //   "This is the current word with vowels removed using currentWord: " +
+      //     currentWord
+      // );
+      // // console.log(
+      //   "This is the current word with vowels removed - using method: " +
+      //     currentWord.replace(/[aeiou]/gi, "")
+      // );
+      newArray.push(wordsWithRemovedVowels);
+      // console.log("This is the updated split array: " + splitArray);
+    } else {
+      newArray.push(currentWord);
+    }
+  }
+  // console.log("Last update to newArray is: " + newArray);
+  return newArray.join(" ");
+}
+// console.log(disemvowelLongWords("Hi, I have awesome nice friends"));
 
 /**
  * Takes in a string and returns the middle char.
@@ -156,7 +197,14 @@ function disemvowel() {}
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+function middleCharacter(string) {
+  let middlePosition = Math.trunc(string.length / 2);
+  if (string.length % 2 !== 0) {
+    return string[middlePosition];
+  } else {
+    return [string[middlePosition - 1], string[middlePosition]].join("");
+  }
+}
 
 /**
  * Takes in a string and reverses it.
@@ -165,7 +213,14 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString(string) {
+  let newString = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  // console.log("This is the new string: " + newString);
+  return newString;
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -174,7 +229,36 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(string) {
+  //   let newArray = [];
+  //   let newSentence = "";
+
+  //   let splitArray = string.split(" ");
+
+  //   for (let i = 0; i < splitArray.count; i++) {
+  //     let currentWord = splitArray[i];
+  // console.log("This is the current word: " +)
+  //     for (let x = currentWord.length - 1; x >= 0; x--) {
+  //       //     reverseWord += currentWord[x];
+  //       newArray.push(currentWord[x]);
+  //     }
+  //     newArray.join(" ");
+  //     newSentence += newArray;
+  //   }
+  //   return newSentence;
+  // }
+
+  let emptyArray = [];
+  let newString = "";
+  let stringArray = string.split(" ");
+  for (let i = 0; i < stringArray.length; i++) {
+    newString = "";
+    let reverseWord = stringArray[i].split("").reverse().join("");
+    newString += reverseWord;
+    emptyArray.push(newString);
+  }
+  return emptyArray.join(" ");
+}
 
 module.exports = {
   firstChar,
