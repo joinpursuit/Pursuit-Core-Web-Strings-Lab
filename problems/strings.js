@@ -159,7 +159,18 @@ function disemvowel(str) {
  */
 
 function disemvowelLongWords(str) {
+  //take a sentence 
+  let str1 = " ";
+  for (let i = 0; i < str.length - 5; i++) {
+    let curStr = str1[i];
+    if (curStr != 'a' && curStr != 'i' && curStr != 'o' && curStr != 'e' && curStr != 'u' && curStr != 'O' && curStr != 'E' && curStr != 'A' && curStr != 'U' && curStr != 'I') {
+      str1 += curStr;
+      console.log(str1)
 
+    }
+  }
+
+  return str1
 }
 
 /**
