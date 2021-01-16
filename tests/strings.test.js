@@ -84,7 +84,7 @@ describe("removeLastWord", () => {
   });
 });
 
-describe("everyOtherLetter", () => {
+describe.only("everyOtherLetter", () => {
   test("returns a string with the even indexed characters", () => {
     expect(everyOtherLetter("Corey")).toBe("Cry");
     expect(everyOtherLetter("Hello World")).toBe("HloWrd");
