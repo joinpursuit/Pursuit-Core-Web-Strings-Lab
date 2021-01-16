@@ -156,23 +156,21 @@ const disemvowel = (str) => {
 const disemvowelLongWords = (str) => {
   let vowels = ["a", "e", "i", "o", "u"];
   let strArr = str.split(" ");
-  // console.log(strArr);
   let newStr = "";
   for (let i = 0; i < strArr.length; i++) {
     let word = strArr[i];
-    // console.log(word)
+    let space = " ";
     if (word.length >= 5) {
-      str.split(vowels[i]);
-      newStr += strArr[i] + " ";
-      // console.log(newStr)
-      // newStr + vowels.includes(strArr[i].toLowerCase())
-      // console.log(strArr[i])
+      for (let j = 0; j <= word.length - 1; j++) {
+        if (!vowels.includes(word[j].toLowerCase())) {
+          newStr += word[j] 
+        } 
+      } newStr += space;
     } else {
-      newStr += strArr[i] + " ";
-      // console.log(newStr)
+      newStr += word + space;
     }
   }
-  return newStr;
+  return newStr.trim();
 }
 
 /**
