@@ -6,7 +6,8 @@
 function firstChar(str) {
 
   return str.slice(0, 1)
-};
+}
+
 
 /**
  * Returns the length of a string
@@ -107,12 +108,12 @@ function verbing(string) {
  * @returns {string}
  */
 
-function removeLastWord(str) {
-  let sytr = str.split(' ')
-  styr = sytr.pop()
-  return sytr.join(" ");
-};
-
+function removeLastWord(string) {
+  let newWords = string.split(" ")
+  console.log(newWords)
+  let slice = newWords.slice(0, newWords.length - 1).join(" ")
+  return slice
+}
 /**
  * Takes a string and returns a new string that has only the even
  * indexed characters.
@@ -121,35 +122,41 @@ function removeLastWord(str) {
  * @returns {string}
  */
 
+function everyOtherLetter(arr) {
+  let output = "",
+  for (i = 0; i < arr.length; i += 2) {
+    console.log(i)
+    if (output[i] === arr[0]) {
+      output.push(output[i])
+      console.log(output[i])
+    } else {
 
-function everyOtherLetter(str) {
-  // take a string
-  let str1 = "";
-
-  for (let i = 0; i < str.length; i += 2) {
-    let curStr = str[i];
-    if (curStr == str[0] || curStr !== str[0])
-      str1 += curStr;
+      output += arr;
+    }
+    console.log(output)
   }
-  return str1
+  return output;
+
 }
+
+
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel(str) {
-  // take a string
-  let str1 = "";
-  for (let i = 0; i < str.length; i++) {
-    let curStr = str[i];
-    if (curStr != 'a' && curStr != 'i' && curStr != 'o' && curStr != 'e' && curStr != 'u' && curStr != 'O' && curStr != 'E' && curStr != 'A' && curStr != 'U' && curStr != 'I') {
-      str1 += curStr;
-      console.log(str1)
+function disemvowel(string) {
+  let array = string.split("")
+  let newArray = []
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] !== "a" && array[i] !== "e" && array[i] !== "i" && array[i] !== "o" && array[i] !== "u"
+      && array[i] !== "A" && array[i] !== "E" && array[i] !== "I" && array[i] !== "O" && array[i] !== "U") {
+      newArray.push(array[i])
     }
   }
-  return str1;
+  return newArray.join("")
 }
+
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -158,19 +165,18 @@ function disemvowel(str) {
  * @returns {string}
  */
 
-function disemvowelLongWords(str) {
-  //take a sentence 
-  let str1 = " ";
-  for (let i = 0; i < str.length - 5; i++) {
-    let curStr = str1[i];
-    if (curStr != 'a' && curStr != 'i' && curStr != 'o' && curStr != 'e' && curStr != 'u' && curStr != 'O' && curStr != 'E' && curStr != 'A' && curStr != 'U' && curStr != 'I') {
-      str1 += curStr;
-      console.log(str1)
-
+function disemvowelLongWords(string) {
+  let array = string.split(" ")
+  let newArray = []
+  for (let i = 0; i < array.length; i++) {
+    let words = array[i]
+    if (words.length >= 5) {
+      newArray.push(disemvowel(words))
+    } else {
+      newArray.push(words)
     }
   }
-
-  return str1
+  return newArray.join(" ")
 }
 
 /**
@@ -179,7 +185,15 @@ function disemvowelLongWords(str) {
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() { }
+function middleCharacter(string) {
+  let array = string.split("")
+  let middle = Math.floor(array.length / 2)
+  if (array.length % 2 !== 0) {
+    return (array[middle])
+  } else if (array.length % 2 === 0) {
+    return array[middle - 1] + array[middle]
+  }
+}
 
 /**
  * Takes in a string and reverses it.
@@ -188,7 +202,13 @@ function middleCharacter() { }
  * @returns {string}
  */
 
-function reverseString() { }
+function reverseString(string) {
+  let newString = ""
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i]
+  }
+  return newString
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -197,7 +217,15 @@ function reverseString() { }
  * @returns {string}
  */
 
-function reverseSentenceWords() { }
+function reverseSentenceWords(string) {
+  let array = string.split(" ")
+  let newArray = []
+  for (let i = 0; i < array.length; i++) {
+    let words = array[i]
+    newArray.push(reverseString(words))
+  }
+  return newArray.join(" ")
+}
 
 module.exports = {
   firstChar,
