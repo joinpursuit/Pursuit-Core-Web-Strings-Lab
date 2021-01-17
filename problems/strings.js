@@ -7,8 +7,10 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
-
+function firstChar(str) {
+  return str[0] || ""
+}
+console.log(firstChar("hello"))
 
 /**
  * Returns the length of a string
@@ -18,8 +20,11 @@ function firstChar() {}
  * example: stringLength("what") returns 4
  * example: stringLength("sixteen") returns 7
  */
-function stringLength() {}
-
+function stringLength(str) {
+ return (str.length)
+  
+}
+console.log(stringLength("hello"))
 
 /**
  * Returns the last character of any string
@@ -31,9 +36,10 @@ function stringLength() {}
  * example: lastLetter("") returns ""
  */
 
-function lastLetter() {
+function lastLetter(string) {
+ return string[string.length-1]|| ""
 }
-
+console.log(lastLetter(""))
 /**
  * Takes a string and returns a copy of the string with the last
  * letter capitalized.
@@ -43,9 +49,11 @@ function lastLetter() {
  * example: capitalizeLastLetter("jimmy") returns "jimmY"
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
-function capitalizeLastLetter() {}
+function capitalizeLastLetter(str) {
+return str.slice(0,str.length - 1) + str.slice(-1).toUpperCase()
+}
 
-
+console.log(capitalizeLastLetter('jimmy'))
 /**
  * Create a drEvil function that takes in a number
  * and returns "${number} dollars"
@@ -56,7 +64,13 @@ function capitalizeLastLetter() {}
  * example: drEvil(10) returns "10 dollars"
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
-function drEvil() {}
+function drEvil(num) {
+  if(num < 1000000) {
+    return `${num} dollars`
+  } else {
+    return `${num} dollars (pinky)`
+  }
+}
 
 /**
  * verbing() should take a string. 
@@ -69,9 +83,17 @@ function drEvil() {}
  * verbing('swimming') returns  'swimmingly'
  * verbing('go') returns  'go'
  */
-function verbing() {}
+function verbing(str) {
+ if (str.slice(-3) === 'ing'){
+   return `${str}ly`
+ } else if (str.length < 3) { 
+   return str
+ } else if (str.slice(-3) != 'ing') {
+   return `${str}ing`
+ }
+}
 
-
+console.log(verbing("hid"))
 /**
  * Takes a single sentence and returns a copy of the string without the
  * last word.
@@ -81,8 +103,11 @@ function verbing() {}
  * example: removeLastWord("Hello!") returns ""
  * example: removeLastWord("I eat cake") returns "I eat"
  */
-function removeLastWord() {}
-
+function removeLastWord(str) {
+  let arr = str.split(" ")
+return arr.slice(0,-1).join(" ")
+}
+console.log(removeLastWord('i eat cake'))
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -94,9 +119,17 @@ function removeLastWord() {}
  * example: everyOtherLetter("Corey") returns "Cry"
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
-function everyOtherLetter() {}
+function everyOtherLetter(str) {
+  let newStr = ""
+  for(let i=0; i < str.length; i+=2){
+    if(i % 2 === 0) {
+    newStr = newStr + str[i]
+  }
+}
+return newStr
+}
 
-
+console.log(everyOtherLetter("hello"))
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string} str - an input string
@@ -105,7 +138,29 @@ function everyOtherLetter() {}
  * example: disemvowel("aeiou") returns ""
  * example: disemvowel("Hello world!") returns "Hll wrld!"
  */
-function disemvowel() {}
+function disemvowel(str) {
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+   if (
+     str[i] === "a" ||
+     str[i] === "e" ||
+    str[i] === "i" ||
+   str[i] === "o" ||
+   str[i] === "u" ||
+   str[i] === "A" ||
+  str[i] === "E" ||
+ str[i] === "I" ||
+   str[i] === "O" ||
+  str[i] === "U") {
+     str = str + ""
+   } else {
+     newStr += str[i]
+     }
+  }
+ return newStr
+}
+
+console.log(disemvowel("hello"))
 
 
 /**
@@ -117,8 +172,16 @@ function disemvowel() {}
  * example: disemvowelLongWords("hi i am your friend") returns "hi i am your frnd"
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
- function disemvowelLongWords(){}
-
+ function disemvowelLongWords(str){
+   let newStr = str.split(" ")
+   for (let i = 0; i < newStr.length; i++){
+     if(newStr[i].length >= 5){
+       newStr[i] = disemvowel(newStr[i])
+     }
+   }return newStr.join(" ")
+   
+ }
+console.log(disemvowelLongWords("amber is the color of your energy"))
 
 /**
  * Takes in a string and returns the middle char.
@@ -129,8 +192,14 @@ function disemvowel() {}
  * example: middleCharacter("hello") returns "l"
  * example: middleCharacter("ostentatious") returns "ta"
  */
-function middleCharacter() {}
-
+function middleCharacter(str) {
+  if(str.length % 2 === 1){
+    return str[Math.floor(str.length/2)]
+  }else {
+    return str[str.length/2-1] + str[str.length/2]
+  }
+}
+console.log(middleCharacter("hello"))
 
 /**
  * Takes in a string and reverses it.
@@ -142,8 +211,13 @@ function middleCharacter() {}
  * @param {string} str - an input string
  * @returns {string} - the return value string, reversed str
  */
-function reverseString() {}
-
+function reverseString(str) {
+  let newStr = ""
+  for(let i = str.length -1; i >=0; i--){
+    newStr += str[i]
+  }return newStr
+}
+console.log(reverseString("hello"))
 /**
  * Takes in a sentence string and reverses each word but not the
  * order of the words.
@@ -154,7 +228,15 @@ function reverseString() {}
  * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(str) {
+ let newStr = str.split(" ")
+  for (let i = 0; i < newStr.length; i++) {
+      newStr[i] = reverseString(newStr[i])
+  }
+
+  return newStr.join(" ")
+}
+console.log(reverseSentenceWords("i am a do"))
 
 module.exports = {
   firstChar,
