@@ -8,13 +8,9 @@
  * example: firstChar("") returns ""
  */
 function firstChar(str) {
-  if (str === '') {
-    return ''
-  } else {
-    return str[0]
-  }
+  return str[0] || ""
 }
-
+console.log(firstChar("hello"))
 
 /**
  * Returns the length of a string
@@ -25,10 +21,10 @@ function firstChar(str) {
  * example: stringLength("sixteen") returns 7
  */
 function stringLength(str) {
- return stringLength1 = Number(str.length)
+ return (str.length)
   
 }
-
+console.log(stringLength("hello"))
 
 /**
  * Returns the last character of any string
@@ -41,13 +37,9 @@ function stringLength(str) {
  */
 
 function lastLetter(string) {
-  let stringLength2 = Number(string.length - 1)
-  if (string.length === 0) {
-    return ''
-  }
-  { return string[stringLength2]}
+ return string[string.length-1]|| ""
 }
-
+console.log(lastLetter(""))
 /**
  * Takes a string and returns a copy of the string with the last
  * letter capitalized.
@@ -100,6 +92,8 @@ function verbing(str) {
    return `${str}ing`
  }
 }
+
+console.log(verbing("hid"))
 /**
  * Takes a single sentence and returns a copy of the string without the
  * last word.
@@ -125,9 +119,17 @@ console.log(removeLastWord('i eat cake'))
  * example: everyOtherLetter("Corey") returns "Cry"
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
-function everyOtherLetter() {}
+function everyOtherLetter(str) {
+  let newStr = ""
+  for(let i=0; i < str.length; i+=2){
+    if(i % 2 === 0) {
+    newStr = newStr + str[i]
+  }
+}
+return newStr
+}
 
-
+console.log(everyOtherLetter("hello"))
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string} str - an input string
@@ -136,7 +138,29 @@ function everyOtherLetter() {}
  * example: disemvowel("aeiou") returns ""
  * example: disemvowel("Hello world!") returns "Hll wrld!"
  */
-function disemvowel() {}
+function disemvowel(str) {
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+   if (
+     str[i] === "a" ||
+     str[i] === "e" ||
+    str[i] === "i" ||
+   str[i] === "o" ||
+   str[i] === "u" ||
+   str[i] === "A" ||
+  str[i] === "E" ||
+ str[i] === "I" ||
+   str[i] === "O" ||
+  str[i] === "U") {
+     str = str + ""
+   } else {
+     newStr += str[i]
+     }
+  }
+ return newStr
+}
+
+console.log(disemvowel("hello"))
 
 
 /**
@@ -148,8 +172,16 @@ function disemvowel() {}
  * example: disemvowelLongWords("hi i am your friend") returns "hi i am your frnd"
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
- function disemvowelLongWords(){}
-
+ function disemvowelLongWords(str){
+   let newStr = str.split(" ")
+   for (let i = 0; i < newStr.length; i++){
+     if(newStr[i].length >= 5){
+       newStr[i] = disemvowel(newStr[i])
+     }
+   }return newStr.join(" ")
+   
+ }
+console.log(disemvowelLongWords("amber is the color of your energy"))
 
 /**
  * Takes in a string and returns the middle char.
@@ -160,8 +192,14 @@ function disemvowel() {}
  * example: middleCharacter("hello") returns "l"
  * example: middleCharacter("ostentatious") returns "ta"
  */
-function middleCharacter() {}
-
+function middleCharacter(str) {
+  if(str.length % 2 === 1){
+    return str[Math.floor(str.length/2)]
+  }else {
+    return str[str.length/2-1] + str[str.length/2]
+  }
+}
+console.log(middleCharacter("hello"))
 
 /**
  * Takes in a string and reverses it.
@@ -173,8 +211,13 @@ function middleCharacter() {}
  * @param {string} str - an input string
  * @returns {string} - the return value string, reversed str
  */
-function reverseString() {}
-
+function reverseString(str) {
+  let newStr = ""
+  for(let i = str.length -1; i >=0; i--){
+    newStr += str[i]
+  }return newStr
+}
+console.log(reverseString("hello"))
 /**
  * Takes in a sentence string and reverses each word but not the
  * order of the words.
@@ -185,7 +228,15 @@ function reverseString() {}
  * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(str) {
+ let newStr = str.split(" ")
+  for (let i = 0; i < newStr.length; i++) {
+      newStr[i] = reverseString(newStr[i])
+  }
+
+  return newStr.join(" ")
+}
+console.log(reverseSentenceWords("i am a do"))
 
 module.exports = {
   firstChar,
