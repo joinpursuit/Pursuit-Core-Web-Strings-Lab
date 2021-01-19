@@ -118,14 +118,12 @@ function verbing(str) {
  * example: removeLastWord("I eat cake") returns "I eat"
  */
 function removeLastWord(str) { 
-  var newStr = str.split(0,str.length-1)
-    if(str === " "){
-  return ""
-  } else {
-    return newStr
-  }
+  let strArr = []
+  strArr = str.split(" ")
+  strArr.pop()
+  str = strArr.join(" ")
+  return str
 }
-
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -158,17 +156,18 @@ if ( i % 2 === 0){
  * example: disemvowel("Hello world!") returns "Hll wrld!"
  */
 function disemvowel(str) {
-  let vowels = ['a','e','i','o','u', 'A', 'I','E','O','U']
-  let newStr = []
-  for( let i = 0; i < newStr.length; i ++) {
-    if (vowels === str)
-    newStr.pop(vowels)
-    return newStr
-  }
-// if(str[i] === vowels[i])
-// newStr,push(str[i])
-// return newStr(str[i])
+let vowels = ['a','e','i','o','u']
+ let newStr = "";
+ for(let i = 0; i < str.length; i++) {
+   let letter = str[i].toLowerCase();
+   if(!vowels.includes(letter)) {
+   newStr += str[i];
+ }
+};
+return newStr;
 }
+
+
 
 
 /**
@@ -181,8 +180,17 @@ function disemvowel(str) {
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
  function disemvowelLongWords(str){
-
+let strArr = []
+let arr = str.split(" ")
+ for(let i=0; i < arr.length; i++) {
+    if(arr[i].length >= 5) {
+      strArr.push(disemvowel(arr[i]))
+ } else {
+   strArr.push(arr[i])
  }
+ }
+ return strArr.join(' ')
+}
 
 
 /**
@@ -194,7 +202,16 @@ function disemvowel(str) {
  * example: middleCharacter("hello") returns "l"
  * example: middleCharacter("ostentatious") returns "ta"
  */
-function middleCharacter() {}
+function middleCharacter(str) {
+  let middleL = ""
+  
+  if(str.length % 2 == 0) {
+    middleL = `${str[(str.length/2) - 1]}${str[str.length/2]}`
+  }else {
+    middleL = `${str[Math.floor((str.length/2))]}`
+  }
+return middleL
+}
 
 
 /**
@@ -207,7 +224,14 @@ function middleCharacter() {}
  * @param {string} str - an input string
  * @returns {string} - the return value string, reversed str
  */
-function reverseString() {}
+function reverseString(str) {
+  newStr = ""
+  for(let i = 0; i <= str.length-1; i++) {
+    newStr = str.charAt(i) + newStr
+  }
+  return newStr
+}
+
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -219,7 +243,16 @@ function reverseString() {}
  * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(str) {
+  let strArr = str.split(" ")
+  for(let i = 0; i <= strArr.length - 1;  i++) {
+    strArr[i] = reverseString(strArr[i]) 
+  }
+  str = strArr.join(" ")
+  return str;  
+}
+    
+
 
 module.exports = {
   firstChar,
