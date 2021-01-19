@@ -106,8 +106,10 @@ if(str[str.length-1] === 'g'){
  * example: removeLastWord("I eat cake") returns "I eat"
  */
 function removeLastWord(str) {
-  return str = str.substring(0, str.lastIndexOf(' '))
- //return str.split(' ', str.length-1) 
+let newStrArr = str.split(' ')
+newStrArr.pop()
+let newStr = newStrArr.join(' ')
+return newStr
 };
 
 
@@ -141,9 +143,18 @@ function everyOtherLetter(str) {
  * example: disemvowel("Hello world!") returns "Hll wrld!"
  */
 function disemvowel(str) {
-//  return str.split('aeiou')
-return str.replace(/[aeiou]/gi, '')
+let newString = ''
+for(let i = 0; i < str.length; i++){
+  if(str[i] !== 'a' && str[i] !== 'e' && str[i] !== 'i' && str[i] !== 'o' && str[i] !== 'u' && str[i] !== 'A' && str[i] !== 'E' && str[i] !== 'I' && str[i] !== 'O' && str[i] !== 'U'){
+    newString += str[i]
+  }
 }
+  return newString
+};
+
+//This also works
+// return str.replace(/[aeiou]/gi, '')
+
 
 
 /**
@@ -156,12 +167,18 @@ return str.replace(/[aeiou]/gi, '')
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
  function disemvowelLongWords(str){
-  if(str.length >= 5){
-    return str.replace(/[aeiou]/gi, '')
+let arr = str.split(' ')
+let newArr = []
+for(let i = 0; i < arr.length; i++){
+  if(arr[i].length >= 5){
+    newArr.push(disemvowel(arr[i])) // I'm calling the disemvowel function on this function because it removes the vowels
   }else{
-    return str
+    newArr.push(arr[i])
   }
- }
+}
+  return newArr.join(' ')
+}
+
 
 
 /**
@@ -173,8 +190,15 @@ return str.replace(/[aeiou]/gi, '')
  * example: middleCharacter("hello") returns "l"
  * example: middleCharacter("ostentatious") returns "ta"
  */
-function middleCharacter() {}
+function middleCharacter(str) {
+let middleChar = Math.floor(str.length/2)
+  if(str.length % 2 !== 0){
+    return str[middleChar]
+  }else{
+    return str[middleChar - 1] + str[middleChar]
+  }
 
+}
 
 /**
  * Takes in a string and reverses it.
@@ -205,8 +229,15 @@ return newString
  */
 
 function reverseSentenceWords(str) {
-
+let strArr = str.split(' ')
+for(let i = 0; i < strArr.length; i++){
+  strArr[i] = reverseString(strArr[i])
 }
+  str = strArr.join(' ')
+  return str
+}
+// This also works:
+// return str.split("").reverse().join("").split(" ").reverse().join(" ") 
 
 module.exports = {
   firstChar,
