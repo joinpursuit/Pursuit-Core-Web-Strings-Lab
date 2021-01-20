@@ -145,7 +145,7 @@ function everyOtherLetter(str) {
 function disemvowel(str) {
 let newString = ''
 for(let i = 0; i < str.length; i++){
-  if(str[i] !== 'a' && str[i] !== 'e' && str[i] !== 'i' && str[i] !== 'o' && str[i] !== 'u' && str[i] !== 'A' && str[i] !== 'E' && str[i] !== 'I' && str[i] !== 'O' && str[i] !== 'U'){
+  if(str[i].toLowerCase() !== 'a' && str[i].toLowerCase() !== 'e' && str[i].toLowerCase() !== 'i' && str[i].toLowerCase() !== 'o' && str[i].toLowerCase() !== 'u'){
     newString += str[i]
   }
 }
