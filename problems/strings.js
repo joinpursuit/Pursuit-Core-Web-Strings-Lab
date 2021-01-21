@@ -184,16 +184,14 @@ function disemvowel(str) {
  * example: disemvowelLongWords("hi i am your friend") returns "hi i am your frnd"
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
- function disemvowelLongWords(){
-  // let vowelArr = ["a","e", "i", "o", "u", "A", "E", "I", "O", "U"]
-  // let newWord = "";
-
-  // for(let i = 0; i < (str[str.length>5]); i++) {
-  //   if(!vowelArr.includes(str[i])) {
-  //     newWord += str[i];
-  //   }
-  // }
-  //   return newWord
+ function disemvowelLongWords(str){
+  let arr = str.split(" ")
+  for(let i = 0; i <arr.length; i++) {
+    if(arr[i].length >= 5) {
+      arr[i] = disemvowel(arr[i])
+    }
+  }
+  return (arr.join(" "))
 }
 /**
  * Takes in a string and returns the middle char.
@@ -242,7 +240,14 @@ function reverseString(str) {
  * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(str) {
+  let arr = str.split (" ")
+  for (let i = 0; i < arr.length; i++){
+    arr[i] = reverseString(arr[i])
+  }
+  return arr.join(" ")
+
+}
 
 module.exports = {
   firstChar,
