@@ -3,12 +3,9 @@
  * @param {string} - str
  * @returns {string} - first char
  */
-function firstChar(str) {
-  if (str.length === 0) {
-    return ''
-  } else {
-    return str[0]
-  }
+function firstChar (str) {
+  return str[0] || ''
+
 }
 
 /**
@@ -18,7 +15,7 @@ function firstChar(str) {
  */
 
 function stringLength(str) {
-  return str.length 
+  return str.length
 }
 
 /**
@@ -38,14 +35,17 @@ function lastLetter(str) {
  * @returns {string} - 'jimmY'
  */
 function capitalizeLastLetter(str) {
-let mystr = str 
-if (myStr === '') {
-  return ''
-} else {
-  mystr = myString.slice(0, myStr.length - 1) + myStr[myStr.length - 1].toUpperCase()
-  return myStr
+let myStr = ''
+for (let i = 0; i < str.length; i += 1){
+  if (str[i] === str[str.length - 1]) {
+    myStr = myStr + str[i].toUpperCase()
+  } else {
+    myStr = myStr + str[i]
+  }
 }
+ return myStr
 }
+
 
 
 /**
@@ -62,14 +62,12 @@ let amount = 1000000
 * @returns {string}
  */
 function drEvil(num) {
-  let evilMoney = num
-  let evilMonStr = evilMoney.toString()
-  if (evilMoney >= 1000000) {
-    return evilMonstr + ' dollars (pinky'
- } else {
-   return evilMonStr + ' dollars'
+  if (num >= 1000000) {
+    return `${num} dollars (pinky)`
+ } 
+   return `${num} dollars`
  }
-}
+
 
 /**
  * 
@@ -94,7 +92,15 @@ verbing('go')
  
  */
 
-function verbing() {}
+function verbing(str) {
+ let s = str.slice((str.length - 3), (str.length))
+ if (str.length >= 3 && s === 'ing') {
+   return str + 'ly'
+ } else if (str.length >= 3 && s != 'ing') {
+   return str + 'ing'
+ }
+ return str
+}
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -103,7 +109,12 @@ function verbing() {}
  * @returns {string}
  */
 
-function removeLastWord() {}
+function removeLastWord(str) {
+let s = str.split(' ')
+s.pop()
+let newS = s.join(' ')
+return newS
+}
 
 /**
  * Takes a string and returns a new string that has only the even
@@ -113,14 +124,31 @@ function removeLastWord() {}
  * @returns {string}
  */
 
-function everyOtherLetter() {}
+function everyOtherLetter(str) {
+  let s = ''
+  for (let i = 0; i < str.length; i += 2) {
+    s = s + str[i]
+  }
+  return s
+}
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string}
  * @returns {string}
  */
-function disemvowel() {}
+function disemvowel(str) {
+  let s = ''
+  let noConst = 'aeiouAEIOU'
+  for (let i = 0; i < str.length; i += 1) {
+    if (!noConst.includes(str[i])) {
+      s = s + str[i]
+    } else {
+      s = s + ''
+    }
+  }
+  return s
+}
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -129,7 +157,18 @@ function disemvowel() {}
  * @returns {string}
  */
 
- function disemvowelLongWords(){}
+ function disemvowelLongWords(str){
+  let newS = ''
+  let s = str.split(' ')
+  for (let i = 0; i < s.length; i += 1) {
+    if (s[i].length >= 5) {
+      newS = newS + disemvowel(s[i]) + ' '
+    } else {
+      newS = newS + s[i] + ' '
+    }
+  }
+    return newS.trim()
+ }
 
 /**
  * Takes in a string and returns the middle char.
@@ -137,7 +176,13 @@ function disemvowel() {}
  * @param {string}
  * @returns {string}
  */
-function middleCharacter() {}
+function middleCharacter(str) {
+  if (str.length % 2 === 0) {
+    return str[(str.length / 2) - 1] + str[(str.length / 2)]
+  } else {
+    return str[(str.length - 1) / 2]
+  }
+}
 
 /**
  * Takes in a string and reverses it.
@@ -146,7 +191,13 @@ function middleCharacter() {}
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString(str) {
+let s = ''
+for (let i = str.length - 1; i >= 0; i -= 1) {
+ s = s + str[i]
+}
+return s
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -155,7 +206,14 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(str) {
+  let revWord = ''
+  let s = str.split(' ')
+  for (let i = 0; i < s.length; i += 1) {
+    revWord = revWord + reverseString(s[i]) + ' '
+  }
+  return revWord.trim()
+}
 
 module.exports = {
   firstChar,
