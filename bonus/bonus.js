@@ -3,8 +3,13 @@
  * @param {string}
  * @returns {string}
  */
-function replaceVowels() {}
-
+// function replaceVowels() {}
+//function replaceVowels() {}
+const replaceVowels = (string) => {
+	let newStr = "";
+	newStr += string.replace(/[aeiou]/gi, "*");
+	return newStr;
+};
 /**
  * Takes in a string and adds "#" if the string has
  * an odd number of characters.
