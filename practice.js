@@ -35,3 +35,9 @@
 // let str = "Happy new Year!"
 // str = str.slice(0, 6) + str[6].toUpperCase() + str.slice(7)
 // console.log(str)
+
+let str = "Happy New Year"
+let wordArray = str.split('');
+console.log(wordArray)
+
+let charArray = str.split("");
