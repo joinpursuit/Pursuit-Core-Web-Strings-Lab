@@ -14,7 +14,7 @@ const {
   reverseSentenceWords,
 } = require("../problems/strings");
 
-describe("firstChar", () => {
+describe.only("firstChar", () => {
   test("returns the first character", () => {
     expect(firstChar("")).toBe("");
     expect(firstChar("Corey")).toBe("C");
@@ -23,7 +23,7 @@ describe("firstChar", () => {
   });
 });
 
-describe("stringLength", () => {
+describe.only("stringLength", () => {
   test("returns the length of the string", () => {
     expect(stringLength("Corey")).toBe(5);
     expect(stringLength("cat")).toBe(3);
@@ -32,7 +32,7 @@ describe("stringLength", () => {
   });
 });
 
-describe("lastLetter", () => {
+describe.only("lastLetter", () => {
   test("returns the last letter of the string", () => {
     expect(lastLetter("Corey")).toBe("y");
     expect(lastLetter("cat")).toBe("t");
@@ -41,7 +41,7 @@ describe("lastLetter", () => {
   });
 });
 
-describe("capitalizeLastLetter", () => {
+describe.only("capitalizeLastLetter", () => {
   test("returns the string with a captialized last latter", () => {
     expect(capitalizeLastLetter("")).toBe("");
     expect(capitalizeLastLetter("jimmy")).toBe("jimmY");
@@ -50,7 +50,7 @@ describe("capitalizeLastLetter", () => {
   });
 });
 
-describe("drEvil", () => {
+describe.only("drEvil", () => {
   test("adds dollars to amounts less than 1 million", () => {
     expect(drEvil(10)).toBe("10 dollars");
     expect(drEvil(125)).toBe("125 dollars");
@@ -61,7 +61,7 @@ describe("drEvil", () => {
   });
 });
 
-describe("verbing", () => {
+describe.only("verbing", () => {
   test("words less than three are unchanged", () => {
     expect(verbing("I")).toBe("I");
     expect(verbing("am")).toBe("am");
@@ -76,7 +76,7 @@ describe("verbing", () => {
   });
 });
 
-describe("removeLastWord", () => {
+describe.only("removeLastWord", () => {
   test("removes the last word of a string", () => {
     expect(removeLastWord("Hello!")).toBe("");
     expect(removeLastWord("Hello word")).toBe("Hello");
@@ -84,7 +84,7 @@ describe("removeLastWord", () => {
   });
 });
 
-describe("everyOtherLetter", () => {
+describe.only("everyOtherLetter", () => {
   test("returns a string with the even indexed characters", () => {
     expect(everyOtherLetter("Corey")).toBe("Cry");
     expect(everyOtherLetter("Hello World")).toBe("HloWrd");
@@ -95,7 +95,7 @@ describe("everyOtherLetter", () => {
   });
 });
 
-describe("disemvowel", () => {
+describe.only("disemvowel", () => {
   test("removes all the vowels from a string", () => {
     expect(disemvowel("Hello World!")).toBe("Hll Wrld!");
     expect(disemvowel("COREY")).toBe("CRY");
@@ -103,7 +103,7 @@ describe("disemvowel", () => {
   });
 });
 
-describe("disemvowelLongWords", () => {
+describe.only("disemvowelLongWords", () => {
   test("removes all the vowels from a string", () => {
     expect(disemvowelLongWords("Hello World!")).toBe("Hll Wrld!");
     expect(disemvowelLongWords("COREY")).toBe("CRY");
@@ -124,7 +124,7 @@ describe("middleCharacter", () => {
   });
 });
 
-describe("reverseString", () => {
+describe.only("reverseString", () => {
   test("reverses a string", () => {
     expect(reverseString("Hello world")).toBe("dlrow olleH");
     expect(reverseString("cats are the best")).toBe("tseb eht era stac");
