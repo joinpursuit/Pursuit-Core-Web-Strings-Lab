@@ -150,11 +150,11 @@ const removeLastWord = str => {
 
 // function everyOtherLetter() {}
 const everyOtherLetter = string => {
-let newArray = []
-for(let i = 0;i <= string.length;i+=2){
-  newArray.push(string[i])
-}
-return newArray.join("");
+  let newArray = []
+  for(let i = 0;i <= string.length;i+=2){
+    newArray.push(string[i])
+  }
+  return newArray.join("");
 }
 
 /**
@@ -184,9 +184,10 @@ const disemvowel = str => {
 const disemvowelLongWords = str => {
   let words = str.split(' ');
   for (let i = 0; i < words.length; i += 1) {
-    if (words[i].length > 4)
-      words[i] = disemvowel(words[i])
+    if (words[i].length >= 5)
+      words[i] = disemvowel(words[i]);
   }
+  // console.log(words.join(' '));
   return (words.join(' '));
 }
 
@@ -198,6 +199,11 @@ const disemvowelLongWords = str => {
  */
 // function middleCharacter() {}
 const middleCharacter = str => {
+  if (str.length % 2 === 1) {
+    return str[Math.floor(str.length / 2)]
+  } else {
+    return str[(str.length / 2) - 1] + str[str.length / 2]
+  }
 }
 
 /**
@@ -209,12 +215,11 @@ const middleCharacter = str => {
 
 // function reverseString() {}
 const reverseString = str => {
-  let arr = string.split(' ');
-  for (let i = 0; i < arr.length; i += 1) {
-    if (arr[i].length > 4)
-      arr[i] = disemvowel(arr[i]);
+  let strRev = '';
+  for (let i = str.length - 1; i >= 0; i-- ){
+    strRev += str[i];
   }
-  return (arr.join(' '));
+  return strRev;
 }
 
 /**
@@ -224,7 +229,15 @@ const reverseString = str => {
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
+const reverseSentenceWords = str => {
+  let strArr = str.split(' ')
+
+  for (let i = 0; i < strArr.length; i++) {
+    strArr[i] = reverseString(strArr[i]);
+
+  }
+  return strArr.join(' ');
+}
 
 module.exports = {
   firstChar,
