@@ -168,9 +168,7 @@ function disemvowelLongWords(str) {
   let splitStr = str.split(" ");
   for (let i = 0; i < splitStr.length; i++) {
     let word = splitStr[i];
-    output.push(
-      word.length <= 4 ? word : disemvowel(word)
-      )
+    output.push(word.length <= 4 ? word : disemvowel(word));
   }
   return output.join(" ");
 }
@@ -181,13 +179,11 @@ function disemvowelLongWords(str) {
  * @returns {string}
  */
 function middleCharacter(str) {
-  let midChar = (str.length-1/2)
-  let midChar2 = (str.length-1/2 - 1)
-
-  if(str.length % 2 !== 0) {
-    return  str[midChar] + str[midChar2]
+  let midChar = Math.floor(str.length / 2);
+  if (str.length % 2 !== 0) {
+    return str[midChar];
   } else {
-    return  str[midChar]
+    return str[midChar - 1] + str[midChar];
   }
 }
 
@@ -198,7 +194,13 @@ function middleCharacter(str) {
  * @returns {string}
  */
 
-function reverseString() {}
+function reverseString(str) {
+  let newStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+  }
+  return newStr;
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -207,8 +209,13 @@ function reverseString() {}
  * @returns {string}
  */
 
-function reverseSentenceWords() {}
-
+function reverseSentenceWords(str) {
+  let newArr = str.split(" ");
+  for (let i = 0; i < newArr.length; i++) {
+    newArr[i] = reverseString(newArr[i]);
+  }
+  return newArr.join(" ");
+}
 module.exports = {
   firstChar,
   stringLength,
