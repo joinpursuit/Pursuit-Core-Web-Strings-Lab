@@ -7,7 +7,11 @@
  * example: firstChar("pinapple") returns "p"
  * example: firstChar("") returns ""
  */
-function firstChar() {}
+const firstChar = (str) => {
+	if (str === "") {
+		return "";
+	} else return str[0];
+};
 
 
 /**
@@ -18,7 +22,10 @@ function firstChar() {}
  * example: stringLength("what") returns 4
  * example: stringLength("sixteen") returns 7
  */
-function stringLength() {}
+
+function stringLength(str) {
+	return str.length;
+}
 
 
 /**
@@ -31,8 +38,13 @@ function stringLength() {}
  * example: lastLetter("") returns ""
  */
 
-function lastLetter() {
-}
+
+function lastLetter(str) {
+	if (str === "") {
+		return "";
+	} else {
+		return str[str.length - 1];
+	}
 
 /**
  * Takes a string and returns a copy of the string with the last
@@ -43,7 +55,17 @@ function lastLetter() {
  * example: capitalizeLastLetter("jimmy") returns "jimmY"
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
-function capitalizeLastLetter() {}
+
+
+// function capitalizeLastLetter(str) {
+const capitalizeLastLetter = (str) => {
+	if (str === "") {
+		return "";
+	} else {
+		return str.slice(0, str.length - 1) + str[str.length - 1].toUpperCase();
+	}
+};
+
 
 
 /**
@@ -56,7 +78,14 @@ function capitalizeLastLetter() {}
  * example: drEvil(10) returns "10 dollars"
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
-function drEvil() {}
+// function drEvil(number) {}
+const drEvil = (number) => {
+	if (number >= 1000000) {
+		return number + " dollars " + `(pinky)`;
+	} else {
+		return number + " dollars";
+	}
+};
 
 /**
  * verbing() should take a string. 
@@ -69,8 +98,20 @@ function drEvil() {}
  * verbing('swimming') returns  'swimmingly'
  * verbing('go') returns  'go'
  */
-function verbing() {}
 
+
+// function verbing() {}
+const verbing = (string) => {
+	if (string.length >= 3) {
+		if (string.slice(string.length - 3) === "ing") {
+			return string + "ly";
+		} else {
+			return string + "ing";
+		}
+	} else {
+		return string;
+	}
+};
 
 /**
  * Takes a single sentence and returns a copy of the string without the
@@ -81,7 +122,26 @@ function verbing() {}
  * example: removeLastWord("Hello!") returns ""
  * example: removeLastWord("I eat cake") returns "I eat"
  */
-function removeLastWord() {}
+
+
+//function removeLastWord() {} -- I DO NOT UNDERSTAND HOW THIS WORKS
+// const removeLastWord = (string) => {
+//   let lastIndex = string.lastIndexOf(" ")
+//   string = string.substring(0, lastIndex)
+//   return string
+// }
+
+/* .split(" ") splits the string at the spaces
+ * .splice(0, -1) remove the last element or can use .pop()
+ * .join(" ") rejoin the string with a space in between each word
+ * newStr = str.split(" ").slice(0, -1).join(" ");
+ */
+const removeLastWord = (string) => {
+	let newStr = "";
+	newStr = string.split(" ");
+	newStr.pop();
+	return newStr.join(" ");
+};
 
 
 /**
@@ -94,18 +154,34 @@ function removeLastWord() {}
  * example: everyOtherLetter("Corey") returns "Cry"
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
-function everyOtherLetter() {}
+
+
+// function everyOtherLetter() {}
+const everyOtherLetter = (string) => {
+	let newString = "";
+	for (let i = 0; i <= string.length; i += 1) {
+		if (i % 2 === 0) {
+			newString += string[i];
+		}
+	}
+	return newString;
+};
 
 
 /**
  * Takes in a string and returns a new string that has all the vowels removed.
  * @param {string} str - an input string
  * @returns {string} - return value string with all vowels removed
+ * string.replace(/searchValue/gi, newValue)
+ * -- the g means global or gi for case-INsensetive would remove upper and lowers case occurances
  * 
  * example: disemvowel("aeiou") returns ""
  * example: disemvowel("Hello world!") returns "Hll wrld!"
  */
-function disemvowel() {}
+//function disemvowel() {}
+const disemvowel = (string) => {
+	return string.replace(/[aeiou]/gi, "");
+};
 
 
 /**
@@ -117,7 +193,30 @@ function disemvowel() {}
  * example: disemvowelLongWords("hi i am your friend") returns "hi i am your frnd"
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
- function disemvowelLongWords(){}
+
+//function disemvowelLongWords() {}
+const disemvowelLongWords = (string) => {
+	let splitArr = string.split(" ");
+	let modified = "";
+	let word;
+	for (let i = 0; i < splitArr.length; i++) {
+		word = splitArr[i];
+		if (word.length >= 5) {
+			if (i === splitArr.length - 1) {
+				modified += word.replace(/[aeiou]/gi, "");
+			} else {
+				modified += word.replace(/[aeiou]/gi, "") + " ";
+			}
+		} else {
+			if (i === splitArr.length - 1) {
+				modified += word;
+			} else {
+				modified += word + " ";
+			}
+		}
+	}
+	return modified;
+};
 
 
 /**
@@ -129,7 +228,19 @@ function disemvowel() {}
  * example: middleCharacter("hello") returns "l"
  * example: middleCharacter("ostentatious") returns "ta"
  */
-function middleCharacter() {}
+
+//function middleCharacter() {}
+const middleCharacter = (string) => {
+	if (string.length % 2 === 1) {
+		return string[Math.floor(string.length / 2)];
+	} else {
+		return (
+			string[Math.floor(string.length / 2) - 1] +
+			string[Math.floor(string.length / 2)]
+		);
+	}
+};
+
 
 
 /**
@@ -142,7 +253,16 @@ function middleCharacter() {}
  * @param {string} str - an input string
  * @returns {string} - the return value string, reversed str
  */
-function reverseString() {}
+
+
+//function reverseString() {}
+const reverseString = (string) => {
+	let reversed = "";
+	for (let i = string.length - 1; i >= 0; i--) {
+		reversed += string[i]; 
+	}
+	return reversed;
+};
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -154,20 +274,84 @@ function reverseString() {}
  * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
  */
 
-function reverseSentenceWords() {}
+//function reverseSentenceWords() {}
+const reverseSentenceWords = (string) => {
+	let newStr = string.split(" ");
+	let reversedString = "";
+	for (let i = 0; i < newStr.length; i++) {
+		let word = newStr[i];
+		if (i === newStr.length - 1) {
+			let reversedWord = "";
+			for (let count = word.length - 1; count >= 0; count--) {
+				reversedWord += word[count];
+			}
+			reversedString += reversedWord;
+		} else {
+			let reversedWord = "";
+			for (let counter = word.length - 1; counter >= 0; counter--) {
+				reversedWord += word[counter];
+			}
+			reversedString += reversedWord + " ";
+		}
+	}
+	return reversedString;
+};
+console.log(reverseSentenceWords("Hi every body"));
+
+//Carlo Echeverri to Everyone (7:40 PM)
+// let newArr = [];
+// let newSent = "";
+// for (let i = 0; i < splitSent.length; i++) { //loop through the
+//   let word = splitSent[i];
+//   for (let j = word.length - 1; j > 0; j--) {
+//     newArr.push(word[j]);
+//   }
+//   newArr.join(" ");
+//   newSent += newArr;
+// }
+// return newSent;
+
+//vanessa watson (she/her/elle) to Everyone (8:04 PM)
+//Here’s Marsha’s problem using the relationship between strings & arrays:
+/* const reverseSentenceWords = (str) => {
+  let arr = str.split("");
+  console.log(arr);
+  let reverseArr = arr.reverse();
+  console.log(reverseArr);
+  let joinReverse = reverseArr.join("");
+  console.log(joinReverse);
+  let reverseSplit = joinReverse.split(" ");
+  console.log(reverseSplit);
+  let splitReverse = reverseSplit.reverse();
+  console.log(splitReverse);
+  let newStr = splitReverse.join(" ");
+  console.log(newStr);
+  return newStr;
+};
+
+reverseSentenceWords("cats are the best");
+ */
+
+//Carlo Echeverri
+/* function disemvowelLongWords(string) {
+
+  return string.split(" ").map(word => 
+     word.length >= 5 ? disemvowel(word) : word
+	).join(" “);} 
+*/
 
 module.exports = {
-  firstChar,
-  stringLength,
-  lastLetter,
-  capitalizeLastLetter,
-  drEvil,
-  verbing,
-  removeLastWord,
-  everyOtherLetter,
-  disemvowel,
-  disemvowelLongWords,
-  middleCharacter,
-  reverseString,
-  reverseSentenceWords,
+	firstChar,
+	stringLength,
+	lastLetter,
+	capitalizeLastLetter,
+	drEvil,
+	verbing,
+	removeLastWord,
+	everyOtherLetter,
+	disemvowel,
+	disemvowelLongWords,
+	middleCharacter,
+	reverseString,
+	reverseSentenceWords,
 };
