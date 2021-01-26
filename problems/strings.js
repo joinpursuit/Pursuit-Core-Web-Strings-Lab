@@ -197,25 +197,39 @@ const disemvowel = (str) => {
 // str.split(“ “) - splits words
 
 const disemvowelLongWords = (string) => {
-  let newSentence = string.split(" ");
-  for (let i = 0; i < newSentence.length; i++) {
-     newStr = newSentence[i];
-    if (
-      newStr !== "a" &&
-      newStr !== "e" &&
-      newStr !== "i" &&
-      newStr !== "o" &&
-      newStr !== "u" &&
-      newStr !== "A" &&
-      newStr !== "E" &&
-      newStr !== "I" &&
-      newStr !== "O" &&
-      newStr !== "U"
-    ) {
-      return newStr;
+  let newSentence = "";
+  let noVowels = "";
+  let newString = string.split(" ");
+  for (let i = 0; i < newString.length - 1; i++) {
+    word = newString[i]; // [cat bat lap] new string is the word
+    if (word.length >= 5) {
+      //remove vowels
+      for (let i = 0; i < word.length - 1; i++) {
+        //cat
+        letter = word[i]; //the letters in word
+        if (
+          letter === "a" ||
+          letter === "e" ||
+          letter === "i" ||
+          letter === "o" ||
+          letter === "u"
+        ) {
+          noVowels += "";
+        } else {
+          noVowels += letter;
+        }
+      }
+      
+    }
+  
+    if(newString.length - 1 === i){
+      newSentence += noVowels
+    }else{
+      newSentence += noVowels + " ";
     }
   }
-  //  return newSentence;
+  return newSentence;
+
 };
 
 /**
@@ -235,7 +249,7 @@ const middleCharacter = (string) => {
     //  string[Math.floor(string.length/2 - 1)]// gives second letter
     return (
       string[Math.floor(string.length / 2) - 1] + // 'v' // the[] formuala inside gives us the index of each letter it finds i. EVEN[Math.floor(Even.length is 4 / 2) - 1] this gives us the first index of the middle two characters.
-      string[Math.floor(string.length / 2)]// 'e' then 'v' + 'e' if the word used was even
+      string[Math.floor(string.length / 2)] // 'e' then 'v' + 'e' if the word used was even
     );
   } else {
     return string[Math.floor(string.length / 2)];
