@@ -200,11 +200,12 @@ const disemvowelLongWords = (string) => {
   let newSentence = "";
   let noVowels = "";
   let newString = string.split(" ");
-  for (let i = 0; i < newString.length - 1; i++) {
+  for (let i = 0; i < newString.length; i++) {
     word = newString[i]; // [cat bat lap] new string is the word
     if (word.length >= 5) {
       //remove vowels
-      for (let i = 0; i < word.length - 1; i++) {
+      for (let i = 0; i < word.length; i++) {
+        //off by one error length - 1
         //cat
         letter = word[i]; //the letters in word
         if (
@@ -212,24 +213,30 @@ const disemvowelLongWords = (string) => {
           letter === "e" ||
           letter === "i" ||
           letter === "o" ||
-          letter === "u"
+          letter === "u" ||
+          letter === "A" ||
+          letter === "E" ||
+          letter === "I" ||
+          letter === "O" ||
+          letter === "U"
         ) {
           noVowels += "";
         } else {
           noVowels += letter;
         }
       }
-      
+    } else {
+      noVowels += word;
     }
-  
-    if(newString.length - 1 === i){
-      newSentence += noVowels
-    }else{
+
+    if (newString.length - 1 === i) {
+      newSentence += noVowels;
+    } else {
       newSentence += noVowels + " ";
     }
+    noVowels = "";
   }
   return newSentence;
-
 };
 
 /**
