@@ -209,10 +209,11 @@ function middleCharacter(str) {
  * @returns {string} - the return value string, reversed str
  */
 function reverseString(str) {
-  let string = ''
-for (i= str.length-1;i >= 0;i --){
-  string += str[i]
-}return string
+  let backString = ''
+for (let i= str.length-1;i >= 0;i --){
+  backString += str[i]
+}
+return backString
   
 }
 
@@ -227,14 +228,35 @@ for (i= str.length-1;i >= 0;i --){
  */
 
 function reverseSentenceWords(str) {
-  let sentece = ''
-  let splitar =str.split(' ')
-  for (let i = 0; i <= splitar.length-1; i++){
-    sentece += ' ' + reverseString(splitar[i])
-  }return sentece.trim()
-  
-}
+  let wordsArr = str.split(" ")
+  const reverseWordsArr = []
+  for(let i =0; i < wordsArr.length;i++){
+    let currentWord = wordsArr[i]
+    let reverseWord = reverseString(currentWord)
+    reverseWordsArr.push(reverseWord)
+  }
+  return reverseWordsArr.join(" ")
 
+}
+reverseSentenceWords("hello world")
+
+// console.log(str)
+//   let reverseSentence = ""
+//   let wordsArr = str.split(" ")
+//   console.log(wordsArr)
+//   for(let i =0; i < wordsArr.length;i++){
+//     let currentWord = wordsArr[i]
+//     reverseSentence += " " + reverseString(currentWord)
+    
+//   }
+
+
+
+// let sentece = ''
+//   let splitar =str.split(' ')
+//   for (let i = 0; i <= splitar.length-1; i++){
+//     sentece += ' ' + reverseString(splitar[i])
+//   }return sentece.trim()
 module.exports = {
   firstChar,
   stringLength,
