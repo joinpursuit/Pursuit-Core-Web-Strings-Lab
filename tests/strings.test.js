@@ -56,8 +56,8 @@ describe("drEvil", () => {
     expect(drEvil(125)).toBe("125 dollars");
   });
   test("adds (pinky) to amounts 1 million or greater", () => {
-    expect(drEvil(1_000_000)).toBe("1000000 dollars (pinky)");
-    expect(drEvil(1_000_000_000)).toBe("1000000000 dollars (pinky)");
+    expect(drEvil(1000000)).toBe("1000000 dollars (pinky)");
+    expect(drEvil(1000000000)).toBe("1000000000 dollars (pinky)");
   });
 });
 
