@@ -8,7 +8,7 @@
  * example: firstChar("") returns ""
  */
 function firstChar(str) {
-return str[0] || str
+  return str[0] || str
 }
 
 
@@ -21,7 +21,7 @@ return str[0] || str
  * example: stringLength("sixteen") returns 7
  */
 function stringLength(str) {
- return str.length
+  return str.length
 }
 
 
@@ -36,10 +36,10 @@ function stringLength(str) {
  */
 
 function lastLetter(str) {
-  if(str.length === 0){
+  if (str.length === 0) {
     return ""
   } else {
-    return str[str.length-1]
+    return str[str.length - 1]
   }
 }
 
@@ -53,10 +53,10 @@ function lastLetter(str) {
  * example: capitalizeLastLetter("what is the meaning of life") returns "what is the meaning of lifE"
  */
 function capitalizeLastLetter(str) {
- let newstr = str.slice([str.length-1])
- let upper = newstr.toUpperCase()
- let without = str.slice(0, -1)
- return without + upper
+  let newstr = str.slice([str.length - 1])
+  let upper = newstr.toUpperCase()
+  let without = str.slice(0, -1)
+  return without + upper
 }
 
 
@@ -71,14 +71,14 @@ function capitalizeLastLetter(str) {
  * example: drEvil(100000000) returns "100000000 dollars (pinky)"
  */
 function drEvil(num) {
- if (num >= 1000000){
-   return `${num} dollars (pinky)`
+  if (num >= 1000000) {
+    return `${num} dollars (pinky)`
   } else {
-   return `${num} dollars`
- }
-  
+    return `${num} dollars`
+  }
+
 }
-  
+
 /**
  * verbing() should take a string. 
  * If its length is >= 3, it should add 'ing' to its end, unless it already ends in 'ing',
@@ -91,13 +91,13 @@ function drEvil(num) {
  * verbing('go') returns  'go'
  */
 function verbing(str) {
-if (str.endsWith("ing")){
-  return str +'ly'
-} else if (str.length >= 3){
-  return str +'ing'
-} else {
-  return str
-}
+  if (str.endsWith("ing")) {
+    return str + 'ly'
+  } else if (str.length >= 3) {
+    return str + 'ing'
+  } else {
+    return str
+  }
 
 
 
@@ -114,7 +114,10 @@ if (str.endsWith("ing")){
  * example: removeLastWord("I eat cake") returns "I eat"
  */
 function removeLastWord(str) {
-  
+  let words = str.split(" ")
+  let copy = words.slice(0 , words.length -1)
+  let copy2 = copy.join(' ')
+  return copy2
 }
 
 
@@ -128,7 +131,13 @@ function removeLastWord(str) {
  * example: everyOtherLetter("Corey") returns "Cry"
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
-function everyOtherLetter() {}
+function everyOtherLetter(str) {
+  let newString = ''
+  for (let i = 0; i < str.length; i += 2) {
+    newString += str[i]
+  }
+  return newString
+}
 
 
 /**
@@ -139,8 +148,16 @@ function everyOtherLetter() {}
  * example: disemvowel("aeiou") returns ""
  * example: disemvowel("Hello world!") returns "Hll wrld!"
  */
-function disemvowel() {}
-
+function disemvowel(string) {
+  let emptyString = "" 
+  
+       for (let i = 0; i <= string.length -1; i++){
+           if (string[i] !== "a" && string[i] !== "e" && string[i] !== "i" && string[i] !== "o" && string[i] !== "u" && string[i] !== "A" && string[i] !== "E" && string[i] !== "I" && string[i] !== "O" && string[i] !== "U"){
+              emptyString += string[i]
+           }
+       } return emptyString
+      
+    }
 
 /**
  * Takes a string sentence and returns a new sentence.
@@ -151,8 +168,21 @@ function disemvowel() {}
  * example: disemvowelLongWords("hi i am your friend") returns "hi i am your frnd"
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
- function disemvowelLongWords(){}
+function disemvowelLongWords(string){
+  let splitUp = string.split(' ')
+  let newString = ''
 
+  for(i = 0; i < splitUp.length ; i++){
+    if (splitUp[i].length >= 5){
+      newString += disemvowel(splitUp[i]) + ' '
+    } else {
+      newString += splitUp[i] + ' '
+    }
+  } return newString.trim()
+ 
+
+ }
+// console.log(disemvowelLongWords("amber is the color of your energy"))
 
 /**
  * Takes in a string and returns the middle char.
@@ -163,7 +193,15 @@ function disemvowel() {}
  * example: middleCharacter("hello") returns "l"
  * example: middleCharacter("ostentatious") returns "ta"
  */
-function middleCharacter() {}
+function middleCharacter(str) { 
+let midIndx = Math.floor(str.length/2)
+if(str.length % 2 ===1){
+  return str[midIndx]
+}
+else{
+  return str[midIndx - 1] + str[midIndx]
+}
+}
 
 
 /**
@@ -176,7 +214,12 @@ function middleCharacter() {}
  * @param {string} str - an input string
  * @returns {string} - the return value string, reversed str
  */
-function reverseString() {}
+function reverseString(string) {
+  let newString = ""
+    for (i = string.length -1 ; i >= 0; i--){
+        newString += string[i]
+    } return newString
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -188,8 +231,14 @@ function reverseString() {}
  * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(string) {
+  let newString = ""
+    let split = string.split(" ")
 
+    for (let i = 0; i <= split.length -1; i++ ){
+       newString += " " + reverseString(split[i])
+    } return newString.trim()
+}
 module.exports = {
   firstChar,
   stringLength,
