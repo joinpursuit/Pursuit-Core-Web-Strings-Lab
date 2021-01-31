@@ -135,15 +135,16 @@ function removeLastWord(str) {
  * example: everyOtherLetter("Skull candy") returns "Sulcny"
  */
 function everyOtherLetter(str) {
-  let string = []
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] % 2 === 0) {
-      string.push(str[i])
-      string.join('')
-      return string
+  let string = str
+  let array = []
+  for (let i = 0; i < string.length; i++){
+    if(i % 2 === 0){
+      array.push(str[i]);
     }
   }
+  return array.join('')
 }
+    
 
 
 /**
@@ -178,8 +179,16 @@ function disemvowel(str) {
  * example: disemvowelLongWords("hi i am your friend") returns "hi i am your frnd"
  * example: disemvowelLongWords("amber is the color of your energy") returns "mbr is the clr of your nrgy"
  */
- function disemvowelLongWords(){}
+ function disemvowelLongWords(str){
+   let arr = str.split(' ')
 
+   for(let i = 0; i < arr.length; i++){
+     if(arr[i].length >= 5){
+        arr[i] = disemvowel(arr[i]);
+     }
+  }
+  return arr.join(' ');
+}
 
 /**
  * Takes in a string and returns the middle char.
@@ -190,7 +199,21 @@ function disemvowel(str) {
  * example: middleCharacter("hello") returns "l"
  * example: middleCharacter("ostentatious") returns "ta"
  */
-function middleCharacter() {}
+function middleCharacter(str) {
+  let position;
+  let length;
+
+  if(str.length % 2 === 1) {
+      position = str.length / 2;
+      length = 1;
+  } else {
+      position = str.length / 2 - 1;
+      length = 2;
+  }
+
+  return str.substring(position, position + length)
+}
+ 
 
 
 /**
@@ -203,7 +226,13 @@ function middleCharacter() {}
  * @param {string} str - an input string
  * @returns {string} - the return value string, reversed str
  */
-function reverseString() {}
+function reverseString(str) {
+  let reverse = [];
+  for(let i = str.length; i >= 0; i--){
+    reverse.push(str[i]);
+  }
+  return reverse.join('')
+}
 
 /**
  * Takes in a sentence string and reverses each word but not the
@@ -215,7 +244,11 @@ function reverseString() {}
  * example: reverseSentenceWords("i am a racecar") returns "i ma a racecar"
  */
 
-function reverseSentenceWords() {}
+function reverseSentenceWords(str) {
+  let newStr = str.split('').reverse().join('').split(" ").reverse().join(" ");
+  
+  return newStr;
+}
 
 module.exports = {
   firstChar,
