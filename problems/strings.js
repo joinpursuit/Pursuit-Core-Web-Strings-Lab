@@ -135,7 +135,7 @@ const everyOtherLetter = (str) => {
  * @returns {string}
  */
 
-const disemvowel = (str) => {
+const disemvowel = (str) => { // Kaliliah - no method()
   let vowels = ["a", "e", "i", "o", "u"];
   let newStr = "";
   for (let i = 0; i < str.length; i++) {
@@ -212,7 +212,7 @@ const reverseString = (str) => {
  * @returns {string}
  */
 
-const reverseSentenceWords = (str) => {
+const reverseSentenceWords = (str) => { // Kaliliah - reverseString()
   let strArr = str.split("");
   let reverseArr = strArr.reverse();
   let joinArr = reverseArr.join("");

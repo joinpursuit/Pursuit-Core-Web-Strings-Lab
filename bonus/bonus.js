@@ -3,7 +3,15 @@
  * @param {string}
  * @returns {string}
  */
-function replaceVowels() {}
+function replaceVowels(str) {
+  let newStr = "";
+  const vowels = ["a", "e", "i", "o", "u"];
+  for (let char of str) {
+    if (vowels.includes(str)) {
+      newStr + char
+    }
+  }
+}
 
 /**
  * Takes in a string and adds "#" if the string has
